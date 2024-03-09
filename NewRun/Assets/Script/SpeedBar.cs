@@ -50,12 +50,11 @@ public class SpeedBar : MonoBehaviour
 
     public void DecreaseSpeedByPoison()
     {
-
+        curSpeed -= 1f;
     }
 
     public void IncreaseSpeedByIon()
     {
-        Debug.Log("이온으로 인한 속도 증가");
         curSpeed += 1f;
     }
 }

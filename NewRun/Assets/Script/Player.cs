@@ -13,9 +13,14 @@ public class Player : MonoBehaviour
 
     public bool poisonS = true;
     public bool poisonF = true;
+    public bool IonR = false;
+    public bool IonB = false;
 
     public SpeedBar speedBarScript;
-    public Ranvier ranvier;
+
+    private Transform child;
+    private Transform ionItemspace;
+    private Transform player;
 
     // Start is called before the first frame update
     void Start()
@@ -78,33 +83,46 @@ public class Player : MonoBehaviour
 
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "IonRed" || collision.gameObject.tag == "IonBlue")              SetChild(collision);
+        else if (collision.gameObject.tag == "PoisonFish" || collision.gameObject.tag == "PoisonSnake") SetChild(collision);
+
+        if (collision.gameObject.tag == "IonR" || collision.gameObject.tag == "IonB")
+            {
+                Debug.Log("플레이어 이온 흡입");
+                Destroy(collision.gameObject);
+                speedBarScript.IncreaseSpeedByIon();
+            }
+    }
+
+    private void SetChild(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "IonRed" || collision.gameObject.tag == "IonBlue") ionItemspace = collision.transform.GetChild(2);
+
+        child = collision.transform.GetChild(0);
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "IonRed")
         {
-            Debug.Log("IonRed 공간");
-            Transform child = collision.gameObject.transform.Find("IonR");
-            if (Input.GetKeyUp(KeyCode.A))
+            if (Input.GetKeyUp(KeyCode.A)) 
             {
-                if(child != null)
-                {
-                    child.gameObject.SetActive(true);
-                    speedBarScript.IncreaseSpeedByIon();
-                }
+                ionItemspace.gameObject.SetActive(false);
+                IonR = true; 
             }
+            if (IonR) TakeIon();
         }
         else if (collision.gameObject.tag == "IonBlue")
         {
-            Debug.Log("IonBlue 공간");
-            Transform child = collision.gameObject.transform.Find("IonB");
             if (Input.GetKeyUp(KeyCode.S))
             {
-                if (child != null)
-                {
-                    child.gameObject.SetActive(true);
-                    speedBarScript.IncreaseSpeedByIon();
-                }
+                ionItemspace.gameObject.SetActive(false);
+                IonB = true;
             }
+            if (IonB) TakeIon();
         }
         else if (collision.gameObject.tag == "PoisonFish")
         {
@@ -112,7 +130,7 @@ public class Player : MonoBehaviour
             if (Input.GetKeyUp(KeyCode.D))
             {
                 poisonF = false;
-                //Destroy(collision.gameObject);
+                DeletePoison();
             }
         }
         else if (collision.gameObject.tag == "PoisonSnake")
@@ -121,8 +139,26 @@ public class Player : MonoBehaviour
             if (Input.GetKeyUp(KeyCode.F))
             {
                 poisonS = false;
-                //Destroy(collision.gameObject);
+                DeletePoison();
             }
+        }
+    }
+
+    private void TakeIon()
+    {
+        if(child != null)
+        {
+            Vector3 direction = player.position - child.position;
+            direction.Normalize();
+            child.position += direction * 30f * Time.deltaTime;
+        }
+    }
+
+    private void DeletePoison()
+    {
+        if(child != null)
+        {
+            Destroy(child.gameObject);
         }
     }
 
@@ -130,15 +166,18 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.tag == "IonRed")
         {
+            IonR = false;
         }
         else if (collision.gameObject.tag == "IonBlue")
         {
+            IonB = false;
         }
         else if (collision.gameObject.tag == "PoisonFish")
         {
             if(poisonF) 
             { 
-                Debug.Log("PoisonFish 삭제가 되지 않음"); 
+                Debug.Log("PoisonFish 삭제가 되지 않음");
+                speedBarScript.DecreaseSpeedByPoison();
             }
             else 
             {
@@ -151,6 +190,7 @@ public class Player : MonoBehaviour
             if (poisonS)
             {
                 Debug.Log("PoisonFPoisonSnakeish 삭제가 되지 않음");
+                speedBarScript.DecreaseSpeedByPoison();
             }
             else
             {
