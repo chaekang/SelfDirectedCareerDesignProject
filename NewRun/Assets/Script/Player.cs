@@ -7,7 +7,14 @@ public class Player : MonoBehaviour
 {
     public GameObject PlayerObject;
 
+    public GameObject prfSynBar;
+    public GameObject canvas;
+    RectTransform synBar;
+
+    Camera cam;
+
     public float playerSpeed = 4f; // 플레이어 속도
+    public float synBarHeight;
 
     PlayerState state; // 플레이어 상태
 
@@ -22,19 +29,30 @@ public class Player : MonoBehaviour
     private Transform ionItemspace;
     private Transform player;
 
-    // Start is called before the first frame update
+
+    private void Awake()
+    {
+        //cam = Camera.main;
+    }
+
     void Start()
     {
         speedBarScript = FindObjectOfType<SpeedBar>();
         state = PlayerState.run;
+
+        synBar = Instantiate(prfSynBar, canvas.transform).GetComponent<RectTransform>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         Debug.Log("Player State: " + state); 
         PlayerchangeDirection();
         PlayerMove();
+
+        //Vector3 _synBarPos =
+            //cam.WorldToScreenPoint(new Vector3(transform.position.x, transform.position.y + synBarHeight, 0));
+
+        //synBar.position = _synBarPos;
     }
 
     // 플레이어 이동
@@ -75,12 +93,17 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-
+        // 벽 부딪힘
         if (collision.gameObject.tag == "Wall")
         {
             Debug.Log("Wall 충돌");
         }
 
+        // 시냅스 끝에 도착하면 멈춤
+        else if (collision.gameObject.tag == "StopPoint")
+        {
+            playerSpeed = 0f;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
