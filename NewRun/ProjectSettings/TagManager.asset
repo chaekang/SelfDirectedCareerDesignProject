@@ -3,7 +3,18 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - PoisonF
+  - PoisonFish
+  - PoisonS
+  - PoisonSnake
+  - IonItemSpace
+  - IonB
+  - IonBlue
+  - IonR
+  - IonRed
+  - Wall
+  - StopPoint
   layers:
   - Default
   - TransparentFX
