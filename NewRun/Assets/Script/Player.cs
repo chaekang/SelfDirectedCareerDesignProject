@@ -2,19 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum PlayerState {run, turn_up, turn_down, turn_right}; // 플레이어 상태 변수
+public enum PlayerState { run, turn_up, turn_down, turn_right }; // 플레이어 상태 변수
 public class Player : MonoBehaviour
 {
     public GameObject PlayerObject;
 
-    public GameObject prfSynBar;
-    public GameObject canvas;
-    RectTransform synBar;
-
-    Camera cam;
-
-    public float playerSpeed = 4f; // 플레이어 속도
-    public float synBarHeight;
+    public float playerSpeed; // 플레이어 속도
 
     PlayerState state; // 플레이어 상태
 
@@ -29,36 +22,25 @@ public class Player : MonoBehaviour
     private Transform ionItemspace;
     private Transform player;
 
-
-    private void Awake()
-    {
-        //cam = Camera.main;
-    }
-
+    // Start is called before the first frame update
     void Start()
     {
         speedBarScript = FindObjectOfType<SpeedBar>();
         state = PlayerState.run;
-
-        synBar = Instantiate(prfSynBar, canvas.transform).GetComponent<RectTransform>();
     }
 
+    // Update is called once per frame
     void Update()
     {
-        Debug.Log("Player State: " + state); 
+        Debug.Log("Player State: " + state);
         PlayerchangeDirection();
         PlayerMove();
-
-        //Vector3 _synBarPos =
-            //cam.WorldToScreenPoint(new Vector3(transform.position.x, transform.position.y + synBarHeight, 0));
-
-        //synBar.position = _synBarPos;
     }
 
     // 플레이어 이동
     void PlayerMove()
     {
-        if(state == PlayerState.run || state == PlayerState.turn_right)
+        if (state == PlayerState.run || state == PlayerState.turn_right)
         {
             transform.Translate(1 * playerSpeed * Time.deltaTime, 0, 0);
         }
@@ -72,7 +54,7 @@ public class Player : MonoBehaviour
 
         }
     }
-    
+
     // 플레이어 방향 전환 상태 저장
     void PlayerchangeDirection()
     {
@@ -89,34 +71,29 @@ public class Player : MonoBehaviour
             state = PlayerState.turn_down;
         }
     }
-   
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // 벽 부딪힘
+
         if (collision.gameObject.tag == "Wall")
         {
             Debug.Log("Wall 충돌");
         }
 
-        // 시냅스 끝에 도착하면 멈춤
-        else if (collision.gameObject.tag == "StopPoint")
-        {
-            playerSpeed = 0f;
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "IonRed" || collision.gameObject.tag == "IonBlue")              SetChild(collision);
+        if (collision.gameObject.tag == "IonRed" || collision.gameObject.tag == "IonBlue") SetChild(collision);
         else if (collision.gameObject.tag == "PoisonFish" || collision.gameObject.tag == "PoisonSnake") SetChild(collision);
 
         if (collision.gameObject.tag == "IonR" || collision.gameObject.tag == "IonB")
-            {
-                Debug.Log("플레이어 이온 흡입");
-                Destroy(collision.gameObject);
-                speedBarScript.IncreaseSpeedByIon();
-            }
+        {
+            Debug.Log("플레이어 이온 흡입");
+            Destroy(collision.gameObject);
+            speedBarScript.IncreaseSpeedByIon();
+        }
     }
 
     private void SetChild(Collider2D collision)
@@ -131,10 +108,10 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.tag == "IonRed")
         {
-            if (Input.GetKeyUp(KeyCode.A)) 
+            if (Input.GetKeyUp(KeyCode.A))
             {
                 ionItemspace.gameObject.SetActive(false);
-                IonR = true; 
+                IonR = true;
             }
             if (IonR) TakeIon();
         }
@@ -169,17 +146,20 @@ public class Player : MonoBehaviour
 
     private void TakeIon()
     {
-        if(child != null)
+        if (child != null)
         {
-            Vector3 direction = player.position - child.position;
-            direction.Normalize();
-            child.position += direction * 30f * Time.deltaTime;
+            if (child.name == "IonR" || child.name == "IonB")
+            {
+                Vector3 direction = player.position - child.position;
+                direction.Normalize();
+                child.position += direction * 40f * Time.deltaTime;
+            }
         }
     }
 
     private void DeletePoison()
     {
-        if(child != null)
+        if (child != null)
         {
             Destroy(child.gameObject);
         }
@@ -197,12 +177,12 @@ public class Player : MonoBehaviour
         }
         else if (collision.gameObject.tag == "PoisonFish")
         {
-            if(poisonF) 
-            { 
+            if (poisonF)
+            {
                 Debug.Log("PoisonFish 삭제가 되지 않음");
                 speedBarScript.DecreaseSpeedByPoison();
             }
-            else 
+            else
             {
                 poisonF = true;
                 Debug.Log("PoisonFish 삭제됨");
