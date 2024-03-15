@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum PlayerState { run, turn_up, turn_down, turn_right }; // 플레이어 상태 변수
 public class Player : MonoBehaviour
@@ -22,7 +23,8 @@ public class Player : MonoBehaviour
     private Transform ionItemspace;
     private Transform player;
 
-    // Start is called before the first frame update
+    public GameObject synapseBar;
+
     void Start()
     {
         speedBarScript = FindObjectOfType<SpeedBar>();
@@ -35,6 +37,9 @@ public class Player : MonoBehaviour
         Debug.Log("Player State: " + state);
         PlayerchangeDirection();
         PlayerMove();
+
+        // 시냅스에서 머리 위로 게이지바 띄우기
+        synapseBar.transform.position=Camera.main.WorldToScreenPoint(transform.position + new Vector3(0, 1.5f, 0));
     }
 
     // 플레이어 이동
@@ -75,12 +80,17 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-
+        // 벽과 충돌
         if (collision.gameObject.tag == "Wall")
         {
             Debug.Log("Wall 충돌");
         }
-
+        // 시냅스 끝에 도착
+        else if (collision.gameObject.tag == "StopPoint")
+        {
+            playerSpeed = 0f;
+            synapseBar.SetActive(true);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
