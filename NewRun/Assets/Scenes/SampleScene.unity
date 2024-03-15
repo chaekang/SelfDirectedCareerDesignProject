@@ -649,7 +649,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   curSpeed: 0
   maxSpeed: 4
-  slowSpeedRate: 0.5
+  slowSpeedRate: 1
   speedBar: {fileID: 237763460}
   playerScript: {fileID: 1206104506}
 --- !u!1 &519420028
@@ -5091,7 +5091,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2659740499438092698, guid: 0d103fbf5c8dd6540b51a47594085395, type: 3}
       propertyPath: playerSpeed
-      value: 4
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2659740499438092698, guid: 0d103fbf5c8dd6540b51a47594085395, type: 3}
       propertyPath: speedBarScript

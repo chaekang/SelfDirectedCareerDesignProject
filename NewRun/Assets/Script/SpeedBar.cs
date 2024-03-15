@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class SpeedBar : MonoBehaviour
 {
     public float curSpeed;
-    public float maxSpeed = 4f;
+    public float maxSpeed;
     public float slowSpeedRate;
 
     public Slider speedBar;
@@ -16,14 +16,16 @@ public class SpeedBar : MonoBehaviour
     void Start()
     {
         playerScript = FindObjectOfType<Player>();
-        SetSpeedBar(4f);
+        maxSpeed = playerScript.playerSpeed;
+        speedBar.maxValue = maxSpeed;
+        SetSpeedBar(maxSpeed);
     }
 
     // Update is called once per frame
     void Update()
     {
         CheckSpeed();
-        
+
     }
 
     void SetSpeedBar(float num)
@@ -40,9 +42,9 @@ public class SpeedBar : MonoBehaviour
             curSpeed = 0f;
             Debug.Log("==== 게임오버 ====");
         }
-        else if(curSpeed > 4f)
+        else if (curSpeed > maxSpeed)
         {
-            curSpeed = 4f;
+            curSpeed = maxSpeed;
         }
         speedBar.value = curSpeed;
         playerScript.playerSpeed = curSpeed;

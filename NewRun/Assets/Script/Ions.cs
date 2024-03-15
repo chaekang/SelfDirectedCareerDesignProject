@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Ions : MonoBehaviour
@@ -8,7 +9,10 @@ public class Ions : MonoBehaviour
 
     private float randomTorque;
     private Vector2 randomForce;
+
     private Vector3 currentPosition;
+    private Vector3 colliderCenter;
+    private Vector3 forceDirection;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +28,7 @@ public class Ions : MonoBehaviour
 
     void ApplyRandomForce()
     {
-        randomForce = Random.insideUnitCircle.normalized * Random.Range(0.0015f, 0.0035f);
+        randomForce = Random.insideUnitCircle.normalized * Random.Range(0.0025f, 0.0045f);
         randomTorque = Random.Range(-1.0f, 1.0f);
 
         rb.angularVelocity = 0f;
@@ -35,12 +39,16 @@ public class Ions : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "IonSpace" || collision.gameObject.tag == "IonItemSpace")
+        if (collision.gameObject.tag == "IonItemSpace")
         {
-            Debug.Log("Ion 범위 초과");
+            Debug.Log("Ion 범위 초과" + rb.gameObject.name);
 
-            Vector3 closestPoint = collision.ClosestPoint(currentPosition);
-            transform.position = closestPoint;
+            colliderCenter = collision.bounds.center;
+            currentPosition = transform.position;
+
+            forceDirection = colliderCenter - currentPosition;
+
+            rb.AddForce(forceDirection.normalized * 0.35f, ForceMode2D.Impulse);
         }
     }
 
