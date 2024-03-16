@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
     private Transform player;
 
     public GameObject synapseBar;
+    public bool isSynapse = false;
 
     void Start()
     {
@@ -90,6 +91,7 @@ public class Player : MonoBehaviour
         {
             playerSpeed = 0f;
             synapseBar.SetActive(true);
+            isSynapse = true;
         }
     }
 

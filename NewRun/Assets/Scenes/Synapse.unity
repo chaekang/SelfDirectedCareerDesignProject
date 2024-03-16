@@ -553,6 +553,7 @@ GameObject:
   - component: {fileID: 1279991680}
   - component: {fileID: 1279991679}
   - component: {fileID: 1279991678}
+  - component: {fileID: 1279991682}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -643,6 +644,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1279991682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1279991677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4ba4e29873998c458182ffc0ed3ccff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  passBar: {fileID: 997928108372340763}
+  player: {fileID: 2659740499409807400}
+  maxPoint: 100
+  curPoint: 0
+  decreaseRate: 20
 --- !u!1 &1308749144
 GameObject:
   m_ObjectHideFlags: 0
@@ -1179,6 +1197,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5248001002033341300, guid: 522708b88e143cb4cb4b8b592fb954ae, type: 3}
   m_PrefabInstance: {fileID: 997928108372340760}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &997928108372340763 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1918714261834852503, guid: 522708b88e143cb4cb4b8b592fb954ae, type: 3}
+  m_PrefabInstance: {fileID: 997928108372340760}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 997928108372340762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2659740499409807400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1199,6 +1228,7 @@ MonoBehaviour:
   IonB: 0
   speedBarScript: {fileID: 0}
   synapseBar: {fileID: 997928108372340762}
+  isSynapse: 0
 --- !u!4 &4153081340224030679
 Transform:
   m_ObjectHideFlags: 0
