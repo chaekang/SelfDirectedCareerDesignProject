@@ -15,6 +15,7 @@ TagManager:
   - IonRed
   - Wall
   - StopPoint
+  - NT_Destroy
   layers:
   - Default
   - TransparentFX
