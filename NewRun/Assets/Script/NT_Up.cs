@@ -10,11 +10,12 @@ public class NT_Up : MonoBehaviour
     private int routeToGo;          // 다음 곡선의 인덱스 저장
     private float tParam;           // 곡선 공식의 t 매개변수
     private Vector2 NTPosition;     // 신경전달물질의 위치
-    public float speedModifier;     // 신경전달물질의 속도
+    private float speedModifier;     // 신경전달물질의 속도
     private bool coroutineAllowed;  // 코루틴 1개만 실행되게 함
 
     private void Start()
     {
+        speedModifier = Random.Range(0.3f, 0.8f);
         routeToGo = 0;
         tParam = 0f;
         coroutineAllowed = true;
@@ -47,7 +48,7 @@ public class NT_Up : MonoBehaviour
                 Mathf.Pow(tParam, 3) * p3;
 
             transform.position = NTPosition;
-            yield return new WaitForEndOfFrame();
+            yield return null;
         }
         tParam = 0f;
 
@@ -56,6 +57,7 @@ public class NT_Up : MonoBehaviour
         if (routeToGo > routes.Length - 1)
         {
             routeToGo = 0;
+            GameManager.instance.pool.ReturnToPool(1, gameObject);
         }
         coroutineAllowed = true;
     }
