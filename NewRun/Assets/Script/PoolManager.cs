@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
-using UnityEngine.Pool;
 
 public class PoolManager : MonoBehaviour
 {
@@ -26,6 +25,7 @@ public class PoolManager : MonoBehaviour
         if (pools[index].Count > 0)
         {
             select = pools[index].Dequeue();
+            select.SetActive(true);
         }
         else
         {
