@@ -21,7 +21,8 @@ public class SynapseBar : MonoBehaviour
 
     private void Update()
     {
-        if (player.isSynapse)
+
+        if (player.isStart)
         {
             curPoint -= decreaseRate * Time.deltaTime;
         }
@@ -36,7 +37,7 @@ public class SynapseBar : MonoBehaviour
             {
                 Debug.Log("스테이지 클리어!");
                 curPoint = 100;
-                player.isSynapse = false;
+                player.isStart = false;
             }
         }
 

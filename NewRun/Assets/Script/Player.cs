@@ -24,7 +24,8 @@ public class Player : MonoBehaviour
     private Transform player;
 
     public GameObject synapseBar;
-    public bool isSynapse = false;
+    public bool onSynapse = false;    // NT 분출
+    public bool isStart = false;      // 시냅스 기믹 시작
 
     void Start()
     {
@@ -32,7 +33,6 @@ public class Player : MonoBehaviour
         state = PlayerState.run;
     }
 
-    // Update is called once per frame
     void Update()
     {
         Debug.Log("Player State: " + state);
@@ -40,7 +40,7 @@ public class Player : MonoBehaviour
         PlayerMove();
 
         // 시냅스에서 머리 위로 게이지바 띄우기
-        synapseBar.transform.position=Camera.main.WorldToScreenPoint(transform.position + new Vector3(0, 1.5f, 0));
+        synapseBar.transform.position = Camera.main.WorldToScreenPoint(transform.position + new Vector3(0, 1.5f, 0));
     }
 
     // 플레이어 이동
@@ -91,7 +91,8 @@ public class Player : MonoBehaviour
         {
             playerSpeed = 0f;
             synapseBar.SetActive(true);
-            isSynapse = true;
+            onSynapse = true;
+            isStart = true;
         }
     }
 

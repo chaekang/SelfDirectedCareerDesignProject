@@ -15,7 +15,7 @@ public class Spawner : MonoBehaviour
 
     private void Update()
     {
-        if (GameManager.instance.player.isSynapse)
+        if (GameManager.instance.player.onSynapse)
         {
             timer += Time.deltaTime;
 
@@ -55,14 +55,29 @@ public class Spawner : MonoBehaviour
         int randomNumber = Random.Range(0, 100);
         int returnNum = 0;
 
-        if (randomNumber < curPoint - 20)
+        if (curPoint < 50)
         {
-            returnNum = 0;
+            if (randomNumber < curPoint)
+            {
+                returnNum = 0;
+            }
+            else
+            {
+                returnNum = 1;
+            }
         }
         else
         {
-            returnNum = 1;
+            if (randomNumber < curPoint - 10)
+            {
+                returnNum = 0;
+            }
+            else
+            {
+                returnNum = 1;
+            }
         }
+
         return returnNum;
     }
 }
