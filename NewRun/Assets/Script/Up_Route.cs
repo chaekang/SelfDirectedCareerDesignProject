@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NT_Up_Route : MonoBehaviour
+public class Up_Route : MonoBehaviour
 {
     public Transform[] controlPoints;
 
