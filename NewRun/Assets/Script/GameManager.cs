@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public Player player;
     public PoolManager pool;
     public SynapseBar SynapseBar;
+    public Spawner spawner;
 
     private void Awake()
     {
