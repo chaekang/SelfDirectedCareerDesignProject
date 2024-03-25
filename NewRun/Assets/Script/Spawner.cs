@@ -4,14 +4,10 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    private BoxCollider2D area;
+    public BoxCollider2D[] area;
 
     private float timer;
 
-    private void Start()
-    {
-        area = GetComponent<BoxCollider2D>();
-    }
 
     private void Update()
     {
@@ -27,7 +23,7 @@ public class Spawner : MonoBehaviour
         }
     }
 
-    private Vector2 GetRandomPosition()
+    private Vector2 GetRandomPosition(BoxCollider2D area)
     {
         Vector2 basePosition = transform.position;  //오브젝트의 위치
         Vector2 size = area.size;                   //box colider2d, 즉 맵의 크기 벡터
@@ -44,9 +40,17 @@ public class Spawner : MonoBehaviour
     void Spawn()
     {
         float curPoint = GameManager.instance.SynapseBar.curPoint;
-        Vector2 spawnPosition = GetRandomPosition();
+        Vector2 spawnPosition = GetRandomPosition(area[0]);
 
         GameObject spawnedPrefab = GameManager.instance.pool.Get(GenerateRandomNumber(curPoint));
+        spawnedPrefab.transform.position = spawnPosition;
+    }
+
+    void SpawnAfterCollide()
+    {
+        Vector2 spawnPosition = GetRandomPosition(area[1]);
+
+        GameObject spawnedPrefab = GameManager.instance.pool.Get(GenerateRandomAfterCollide());
         spawnedPrefab.transform.position = spawnPosition;
     }
 
@@ -79,5 +83,11 @@ public class Spawner : MonoBehaviour
         }
 
         return returnNum;
+    }
+
+    int GenerateRandomAfterCollide()
+    {
+        int randomNumber = Random.Range(0, 2);
+        return randomNumber + 2;
     }
 }
