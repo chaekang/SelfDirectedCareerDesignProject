@@ -126,7 +126,8 @@ public class Player : MonoBehaviour
                 ionItemspace.gameObject.SetActive(false);
                 IonR = true;
             }
-            if (IonR) TakeIon();
+            if (IonR && child.name == "IonR") TakeIon();
+            else Debug.Log("No in IonRed collider");
         }
         else if (collision.gameObject.tag == "IonBlue")
         {
@@ -135,7 +136,8 @@ public class Player : MonoBehaviour
                 ionItemspace.gameObject.SetActive(false);
                 IonB = true;
             }
-            if (IonB) TakeIon();
+            if (IonB && child.name == "IonB") TakeIon();
+            else Debug.Log("No in IonBlue collider");
         }
         else if (collision.gameObject.tag == "PoisonFish")
         {
@@ -161,12 +163,9 @@ public class Player : MonoBehaviour
     {
         if (child != null)
         {
-            if (child.name == "IonR" || child.name == "IonB")
-            {
-                Vector3 direction = player.position - child.position;
-                direction.Normalize();
-                child.position += direction * 40f * Time.deltaTime;
-            }
+            Vector3 direction = player.position - child.position;
+            direction.Normalize();
+            child.position += direction * 30f * Time.deltaTime;
         }
     }
 
@@ -174,7 +173,7 @@ public class Player : MonoBehaviour
     {
         if (child != null)
         {
-            Destroy(child.gameObject);
+            child.gameObject.SetActive(false);
         }
     }
 
