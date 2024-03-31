@@ -19,4 +19,12 @@ public class NT_Forward : MonoBehaviour
         transform.position = position;
 
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.CompareTag("NT_Destroy"))
+        {
+            GameManager.instance.pool.ReturnToPool(0, gameObject);
+        }
+    }
 }
