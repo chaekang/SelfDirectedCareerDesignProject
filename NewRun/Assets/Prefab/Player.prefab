@@ -107,7 +107,8 @@ MonoBehaviour:
   IonB: 0
   speedBarScript: {fileID: 0}
   synapseBar: {fileID: 0}
-  isSynapse: 0
+  onSynapse: 0
+  isStart: 0
 --- !u!70 &7401027766447499843
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -169,4 +170,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7

@@ -16,6 +16,7 @@ TagManager:
   - Wall
   - StopPoint
   - NT_Destroy
+  - NT
   layers:
   - Default
   - TransparentFX
