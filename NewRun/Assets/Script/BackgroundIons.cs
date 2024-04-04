@@ -1,45 +1,54 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class BackgroundIons : MonoBehaviour
 {
     public GameObject backgroundIon;
 
-    public GameObject ionSpace;
-    public Vector3[] ionSpace_verfics;
+    public Tilemap ionSpace;
+    private List<Vector3> ion_Positions = new List<Vector3>();
 
     public int numOfIon;
 
 
     void Start()
     {
-        ionSpace_verfics = GetVertics_IonSpace(ionSpace);
+        GetVertics_IonSpace();
         for (int i = 0; i < numOfIon; i++)
         {
-            Vector3 randomSpawnPosition = GetRandomPosition_Ion(ionSpace_verfics[0], ionSpace_verfics[1], ionSpace_verfics[2], ionSpace_verfics[3]);
+            Vector3 randomSpawnPosition = GetRandomPosition();
             Instantiate(backgroundIon, randomSpawnPosition, Quaternion.identity);
         }
     }
 
-    Vector3 GetRandomPosition_Ion(Vector3 v1, Vector3 v2, Vector3 v3, Vector3 v4)
+    void GetVertics_IonSpace()
     {
-        float randomX = Random.Range(Mathf.Min(v1.x, v2.x, v3.x, v4.x), Mathf.Max(v1.x, v2.x, v3.x, v4.x));
-        float randomY = Random.Range(Mathf.Min(v1.y, v2.y, v3.y, v4.y), Mathf.Max(v1.y, v2.y, v3.y, v4.y));
-        return new Vector3(randomX, randomY, 0);
+        BoundsInt bounds = ionSpace.cellBounds;
+
+        for (int x = bounds.min.x; x < bounds.max.x; x++)
+        {
+            for (int y = bounds.min.y; y < bounds.max.y; y++)
+            {
+                Vector3Int cellPosition = new Vector3Int(x, y, 0);
+                if (ionSpace.HasTile(cellPosition))
+                {
+                    ion_Positions.Add(ionSpace.GetCellCenterWorld(cellPosition));
+                }
+            }
+        }
     }
 
-    Vector3[] GetVertics_IonSpace(GameObject ionspace)
+    Vector3 GetRandomPosition()
     {
-        Bounds bounds = ionspace.GetComponent<Renderer>().bounds;
+        if (ion_Positions.Count == 0)
+        {
+            return Vector3.zero;
+        }
 
-        Vector3[] vertices = new Vector3[4];
-        vertices[0] = new Vector3(bounds.min.x, bounds.min.y, bounds.center.z); 
-        vertices[1] = new Vector3(bounds.min.x, bounds.max.y, bounds.center.z); 
-        vertices[2] = new Vector3(bounds.max.x, bounds.max.y, bounds.center.z); 
-        vertices[3] = new Vector3(bounds.max.x, bounds.min.y, bounds.center.z);
-
-        return vertices;
+        int randomIndex = Random.Range(0, ion_Positions.Count);
+        return ion_Positions[randomIndex];
     }
 
     // Update is called once per frame

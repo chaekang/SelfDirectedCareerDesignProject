@@ -68,15 +68,14 @@ public class Ion : MonoBehaviour
 
             rb.AddForce(forceDirection.normalized * 0.35f, ForceMode2D.Impulse);
         }
-        else if(collision.gameObject.tag == "BackgroundIon_Space")
+        else if(collision.tag == "BackgroundIon_Space")
         {
-            Debug.Log(collision.gameObject.tag);
             isInArea = false;
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "IonItemSpace" || collision.gameObject.tag == "BackgroundIon_Space")
+        if (collision.gameObject.tag == "IonItemSpace" || collision.tag == "BackgroundIon_Space")
         {
             isInArea = true;
             timeOutside = 0f;   
