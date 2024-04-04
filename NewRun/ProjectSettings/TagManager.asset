@@ -17,6 +17,8 @@ TagManager:
   - StopPoint
   - NT_Destroy
   - NT
+  - BackgroundIon_Space
+  - Axon
   layers:
   - Default
   - TransparentFX
