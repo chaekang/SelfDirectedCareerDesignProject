@@ -59,4 +59,9 @@ public class SpeedBar : MonoBehaviour
     {
         curSpeed += 1f;
     }
+
+    public void OutAxon()
+    {
+        curSpeed = 0f;
+    }
 }

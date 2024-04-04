@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 using UnityEngine.UI;
 
 public enum PlayerState { run, turn_up, turn_down, turn_right }; // 플레이어 상태 변수
@@ -27,6 +28,7 @@ public class Player : MonoBehaviour
     public GameObject synapseBar;
     public bool onSynapse = false;    // NT 분출
     public bool isStart = false;      // 시냅스 기믹 시작
+
 
     void Start()
     {
@@ -102,6 +104,11 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.tag == "IonRed" || collision.gameObject.tag == "IonBlue") SetChild(collision);
         else if (collision.gameObject.tag == "PoisonFish" || collision.gameObject.tag == "PoisonSnake") SetChild(collision);
+        else if (collision.tag == "BackgroundIon_Space")
+        {
+            transform.position = initialPosition;
+            speedBarScript.OutAxon();
+        }
 
         if (collision.gameObject.tag == "IonR" || collision.gameObject.tag == "IonB")
         {
