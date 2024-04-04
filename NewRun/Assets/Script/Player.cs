@@ -7,6 +7,7 @@ public enum PlayerState { run, turn_up, turn_down, turn_right }; // 플레이어 상�
 public class Player : MonoBehaviour
 {
     public GameObject PlayerObject;
+    private Vector3 initialPosition;
 
     public float playerSpeed; // 플레이어 속도
 
@@ -29,6 +30,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        initialPosition = transform.position;
         speedBarScript = FindObjectOfType<SpeedBar>();
         state = PlayerState.run;
     }
