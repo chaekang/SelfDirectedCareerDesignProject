@@ -66,24 +66,13 @@ public class Player : MonoBehaviour
                 GameManager.instance.SynapseBar.gameObject.SetActive(false);
                 appear = true;
                 disappear = false;
+                Debug.Log(appear);
             }
             time += Time.deltaTime;
-            Debug.Log(Dendrite.transform.localScale);
-
         }
         if (appear)
         {
             Dendrite.gameObject.SetActive(true);
-            
-            Dendrite.transform.localScale = new Vector3(0.01f, 0.01f, 1f) * (1 + time);
-            time += Time.deltaTime;
-            Debug.Log(Dendrite.transform.localScale);
-
-            if (time > 5f)
-            {
-                Dendrite.transform.localScale = new Vector3(0.25f, 0.25f, 1f);
-                appear = false;
-            }
         }
     }
 
