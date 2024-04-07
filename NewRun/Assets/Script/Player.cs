@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.UI;
@@ -8,6 +9,7 @@ public enum PlayerState { run, turn_up, turn_down, turn_right }; // 플레이어 상�
 public class Player : MonoBehaviour
 {
     public GameObject PlayerObject;
+    public GameObject Dendrite;
     private Vector3 initialPosition;
 
     public float playerSpeed; // 플레이어 속도
@@ -29,6 +31,10 @@ public class Player : MonoBehaviour
     public bool onSynapse = false;    // NT 분출
     public bool isStart = false;      // 시냅스 기믹 시작
 
+    float time; // 작아지는 시간 변수
+    public bool disappear = false;
+    public bool appear = false;
+
 
     void Start()
     {
@@ -45,6 +51,40 @@ public class Player : MonoBehaviour
 
         // 시냅스에서 머리 위로 게이지바 띄우기
         synapseBar.transform.position = Camera.main.WorldToScreenPoint(transform.position + new Vector3(0, 1.5f, 0));
+
+        if (disappear)
+        {
+            if (time >= 2f)
+            {
+                transform.localScale = new Vector3(0.35f, 0.35f, 1) * (3 - time);
+            }
+
+            if (time > 3f)
+            {
+                time = 0;
+                gameObject.SetActive(false);
+                GameManager.instance.SynapseBar.gameObject.SetActive(false);
+                appear = true;
+                disappear = false;
+            }
+            time += Time.deltaTime;
+            Debug.Log(Dendrite.transform.localScale);
+
+        }
+        if (appear)
+        {
+            Dendrite.gameObject.SetActive(true);
+            
+            Dendrite.transform.localScale = new Vector3(0.01f, 0.01f, 1f) * (1 + time);
+            time += Time.deltaTime;
+            Debug.Log(Dendrite.transform.localScale);
+
+            if (time > 5f)
+            {
+                Dendrite.transform.localScale = new Vector3(0.25f, 0.25f, 1f);
+                appear = false;
+            }
+        }
     }
 
     // 플레이어 이동
