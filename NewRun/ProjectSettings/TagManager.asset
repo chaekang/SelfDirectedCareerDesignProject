@@ -20,6 +20,7 @@ TagManager:
   - BackgroundIon_Space
   - Axon
   - Dendrite
+  - Soma
   layers:
   - Default
   - TransparentFX
