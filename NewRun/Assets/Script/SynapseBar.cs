@@ -38,6 +38,7 @@ public class SynapseBar : MonoBehaviour
                 Debug.Log("스테이지 클리어!");
                 curPoint = 100;
                 player.isStart = false;
+                GameManager.instance.player.disappear = true;
             }
         }
 

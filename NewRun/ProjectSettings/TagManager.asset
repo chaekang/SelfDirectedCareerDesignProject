@@ -19,6 +19,7 @@ TagManager:
   - NT
   - BackgroundIon_Space
   - Axon
+  - Dendrite
   layers:
   - Default
   - TransparentFX
