@@ -3678,7 +3678,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1794242932516345106, guid: 554b8b894249ab0429a73911e87b9ac3, type: 3}
       propertyPath: m_Color.a
-      value: 0
+      value: 0.39607844
       objectReference: {fileID: 0}
     - target: {fileID: 1794242932516345106, guid: 554b8b894249ab0429a73911e87b9ac3, type: 3}
       propertyPath: m_TileColorArray.Array.size
