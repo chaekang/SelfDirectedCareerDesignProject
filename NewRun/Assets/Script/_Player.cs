@@ -6,7 +6,7 @@ using UnityEngine.Tilemaps;
 using UnityEngine.UI;
 
 public enum PlayerState { run, turn_up, turn_down, turn_right }; // 플레이어 상태 변수
-public class Player : MonoBehaviour
+public class _Player : MonoBehaviour
 {
     public GameObject PlayerObject;
     public GameObject Dendrite;

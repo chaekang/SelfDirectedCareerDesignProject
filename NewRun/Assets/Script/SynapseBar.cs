@@ -7,7 +7,7 @@ public class SynapseBar : MonoBehaviour
 {
     public Slider passBar;
 
-    public Player player;
+    public _Player player;
 
     public float maxPoint = 100;
     public float curPoint = 0;
