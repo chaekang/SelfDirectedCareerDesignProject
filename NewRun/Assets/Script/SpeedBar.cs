@@ -11,11 +11,11 @@ public class SpeedBar : MonoBehaviour
 
     public Slider speedBar;
 
-    private Player playerScript;
+    private _Player playerScript;
     // Start is called before the first frame update
     void Start()
     {
-        playerScript = FindObjectOfType<Player>();
+        playerScript = FindObjectOfType<_Player>();
         maxSpeed = playerScript.playerSpeed;
         speedBar.maxValue = maxSpeed;
         SetSpeedBar(maxSpeed);

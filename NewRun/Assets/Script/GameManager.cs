@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public Player player;
+    public _Player player;
     public PoolManager pool;
     public SynapseBar SynapseBar;
     public Spawner spawner;
