@@ -5,26 +5,33 @@ using UnityEngine;
 public class DendriteManager : MonoBehaviour
 {
     public List<GameObject> dendrites;
-    private int currentIndex = 0;
+    public GameObject ActionPotential;
+    public bool isOverlap = false;  // 5개가 다 모였는지 확인
+    public bool isDisappear =false;
 
-    void Start()
+    private void Start()
     {
-        ActivateDendrite(currentIndex);
+        ActivateDendrite(0);
     }
 
-    void Update()
+    private void Update()
     {
-        if (!dendrites[currentIndex].gameObject.activeSelf)
+        for (int i = 0; i < dendrites.Count - 1; i++)
         {
-            currentIndex++;
-            if (currentIndex < dendrites.Count)
-                ActivateDendrite(currentIndex);
-            if (currentIndex == dendrites.Count)
+            // SomaDendrites 스크립트의 isActivated 변수를 사용하여 조건 확인
+            SomaDendrite dendriteScript = dendrites[i].GetComponent<SomaDendrite>();
+            if (dendriteScript != null && dendriteScript.onSoma)
             {
-                currentIndex = dendrites.Count - 1;
+                ActivateDendrite(i + 1);
             }
         }
+
+        if (dendrites[dendrites.Count - 1].transform.position.x >= 148.95)
+        {
+            isOverlap = true;
+        }
     }
+
 
     void ActivateDendrite(int index)
     {
