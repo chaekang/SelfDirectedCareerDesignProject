@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Soma : MonoBehaviour
 {
     public Material SomaMaterial;
+    private bool isIncreasingTransparency = false;
 
     private void Start()
     {
@@ -17,21 +17,32 @@ public class Soma : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void Update()
     {
-        if (collision.transform.CompareTag("Dendrite"))
+        // isDisappear가 true일 때 투명도를 서서히 증가시킴
+        if (GameManager.instance.dendriteManager.isDisappear && !isIncreasingTransparency)
         {
-            IncreaseTransparency(20);
+            StartCoroutine(IncreaseTransparencyOverTime(1.5f));
         }
     }
 
-    void IncreaseTransparency(float increaseAmount)
+    IEnumerator IncreaseTransparencyOverTime(float duration)
     {
-        if (SomaMaterial != null)
+        isIncreasingTransparency = true;
+        float startTime = Time.time;
+        float elapsedTime = 0f;
+        Color startColor = SomaMaterial.color;
+        Color targetColor = new Color(startColor.r, startColor.g, startColor.b, 1f);
+
+        while (elapsedTime < duration)
         {
-            Color color = SomaMaterial.color;
-            color.a = Mathf.Clamp01(color.a + increaseAmount / 255f);
-            SomaMaterial.color = color;
+            float t = elapsedTime / duration;
+            SomaMaterial.color = Color.Lerp(startColor, targetColor, t);
+            elapsedTime = Time.time - startTime;
+            yield return null;
         }
+
+        SomaMaterial.color = targetColor;
+        isIncreasingTransparency = false;
     }
 }
