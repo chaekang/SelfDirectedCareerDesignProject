@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Soma : MonoBehaviour
 {
+    public DendriteManager dendriteManager;
     public Material SomaMaterial;
     private bool isIncreasingTransparency = false;
-
+    public bool isFinish = false;
     private void Start()
     {
         if (SomaMaterial != null)
@@ -20,7 +21,7 @@ public class Soma : MonoBehaviour
     private void Update()
     {
         // isDisappear가 true일 때 투명도를 서서히 증가시킴
-        if (GameManager.instance.dendriteManager.isDisappear && !isIncreasingTransparency)
+        if (dendriteManager.isDisappear && !isIncreasingTransparency)
         {
             StartCoroutine(IncreaseTransparencyOverTime(1.5f));
         }
@@ -44,5 +45,6 @@ public class Soma : MonoBehaviour
 
         SomaMaterial.color = targetColor;
         isIncreasingTransparency = false;
+        isFinish = true;
     }
 }
