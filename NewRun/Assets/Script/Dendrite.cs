@@ -10,6 +10,7 @@ public class Dendrite : MonoBehaviour
     public GameObject targetPosition;
     float currentSpeed = 0f;
     float acceleration = 2;
+    public bool isFinish = false;
 
     void Update()
     {
@@ -35,6 +36,7 @@ public class Dendrite : MonoBehaviour
             if (Vector3.Distance(transform.position, targetPosition.transform.position) < 0.1f)
             {
                 gameObject.SetActive(false);
+                isFinish = true;
             }
         }
     }
