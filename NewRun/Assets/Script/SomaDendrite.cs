@@ -6,6 +6,7 @@ using UnityEngine;
 public class SomaDendrite : MonoBehaviour
 {
     public GameObject targetPosition;
+    public DendriteManager dendriteManager;
     public float speed;
     public bool onSoma = false;  // 소마 위에 올라갔는지 확인(다음 소마 킬 때 필요)
 
@@ -15,7 +16,7 @@ public class SomaDendrite : MonoBehaviour
     {
         transform.position = Vector3.SmoothDamp(transform.position, targetPosition.transform.position, ref velo, speed);
 
-        if (GameManager.instance.dendriteManager.isOverlap)
+        if (dendriteManager.isOverlap)
         {
             // 1초 동안 크기를 줄임
             StartCoroutine(ShrinkOverTime(1f));
@@ -36,7 +37,7 @@ public class SomaDendrite : MonoBehaviour
         }
 
         transform.localScale = targetScale;
-        GameManager.instance.dendriteManager.isDisappear = true;
+        dendriteManager.isDisappear = true;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
