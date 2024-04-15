@@ -7,7 +7,8 @@ public class DendriteManager : MonoBehaviour
     public List<GameObject> dendrites;
     public GameObject ActionPotential;
     public bool isOverlap = false;  // 5개가 다 모였는지 확인
-    public bool isDisappear =false;
+    public bool isDisappear =false; // 전기신호가 사라졌는지 확인
+    public bool SomaPlayer = false; // 액션포텐셜이 사라졌는지 확인
 
     private void Start()
     {

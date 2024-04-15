@@ -34,6 +34,7 @@ public class SomaPlayer : MonoBehaviour
             if (Vector3.Distance(transform.position, targetPosition.transform.position) < 0.1f)
             {
                 gameObject.SetActive(false);
+                GameManager.instance.dendriteManager.SomaPlayer = true;
             }
         }
     }
