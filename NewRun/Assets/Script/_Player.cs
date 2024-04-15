@@ -45,7 +45,7 @@ public class _Player : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("Player State: " + state);
+        //Debug.Log("Player State: " + state);
         PlayerchangeDirection();
         PlayerMove();
 
