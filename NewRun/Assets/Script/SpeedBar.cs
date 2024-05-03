@@ -40,7 +40,6 @@ public class SpeedBar : MonoBehaviour
         if (curSpeed < 0f)
         {
             curSpeed = 0f;
-            Debug.Log("==== 게임오버 ====");
         }
         else if (curSpeed > maxSpeed)
         {
