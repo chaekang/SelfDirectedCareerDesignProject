@@ -1,9 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Tilemaps;
-using UnityEngine.UI;
 
 public enum PlayerState { run, turn_up, turn_down, turn_right }; // 플레이어 상태 변수
 public class _Player : MonoBehaviour
@@ -24,6 +21,7 @@ public class _Player : MonoBehaviour
     public SpeedBar speedBarScript;
 
     private Transform child;
+    private SpriteRenderer childRenderer;
     private Transform ionItemspace;
     private Transform player;
 
@@ -35,6 +33,13 @@ public class _Player : MonoBehaviour
     public bool disappear = false;
     public bool appear = false;
 
+    public SpriteRenderer electronicSpace;
+    public Sprite electricWhite;
+    public Sprite electricRed;
+
+    private SpriteRenderer channel;
+    public Sprite channelK_fin;
+    public Sprite channelNa_fin;
 
     void Start()
     {
@@ -131,19 +136,22 @@ public class _Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "IonRed" || collision.gameObject.tag == "IonBlue") SetChild(collision);
+        if (collision.gameObject.tag == "IonRed") 
+        {
+            IonR = true;
+            SetChild(collision); 
+        }
+        else if (collision.gameObject.tag == "IonBlue")
+        {
+            Debug.Log("B Trigger Enter");
+            IonB = true;
+            SetChild(collision);
+        }
         else if (collision.gameObject.tag == "PoisonFish" || collision.gameObject.tag == "PoisonSnake") SetChild(collision);
         else if (collision.tag == "BackgroundIon_Space")
         {
             transform.position = initialPosition;
             speedBarScript.OutAxon();
-        }
-
-        if (collision.gameObject.tag == "IonR" || collision.gameObject.tag == "IonB")
-        {
-            Debug.Log("플레이어 이온 흡입");
-            Destroy(collision.gameObject);
-            speedBarScript.IncreaseSpeedByIon();
         }
     }
 
@@ -152,6 +160,10 @@ public class _Player : MonoBehaviour
         if (collision.gameObject.tag == "IonRed" || collision.gameObject.tag == "IonBlue") ionItemspace = collision.transform.GetChild(2);
 
         child = collision.transform.GetChild(0);
+        childRenderer = child.GetComponent<SpriteRenderer>();
+        
+        channel = collision.transform.GetChild(1).GetComponent<SpriteRenderer>();
+
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
@@ -161,21 +173,24 @@ public class _Player : MonoBehaviour
         {
             if (Input.GetKeyUp(KeyCode.A))
             {
-                ionItemspace.gameObject.SetActive(false);
-                IonR = true;
+                if (IonR && child.name == "IonR")
+                {
+                    ionItemspace.gameObject.SetActive(false);
+                    TakeIon();
+                }
             }
-            if (IonR && child.name == "IonR") TakeIon();
-            else Debug.Log("No in IonRed collider");
         }
         else if (collision.gameObject.tag == "IonBlue")
         {
             if (Input.GetKeyUp(KeyCode.S))
             {
-                ionItemspace.gameObject.SetActive(false);
-                IonB = true;
+                if (IonB && child.name == "IonB")
+                {
+                    Debug.Log("IN K Space, " + IonB);
+                    ionItemspace.gameObject.SetActive(false);
+                    TakeIon();
+                }
             }
-            if (IonB && child.name == "IonB") TakeIon();
-            else Debug.Log("No in IonBlue collider");
         }
         else if (collision.gameObject.tag == "PoisonFish")
         {
@@ -199,12 +214,60 @@ public class _Player : MonoBehaviour
 
     private void TakeIon()
     {
-        if (child != null)
+        Vector3 playerPosition = player.transform.position;
+        Vector3 direction = playerPosition - child.position;
+        if (child.name == "IonB")
         {
-            Vector3 direction = player.position - child.position;
-            direction.Normalize();
-            child.position += direction * 30f * Time.deltaTime;
+            child.position -= direction.normalized * 4f;
+            speedBarScript.IncreaseSpeedByIon();
+            IonB = false;
+
+            channel.sprite = channelK_fin;
+
+            SpriteRenderer KSpriteRenderer = childRenderer;
+            StartCoroutine(IonFadeOut(KSpriteRenderer));
+            StartCoroutine(Elec());
         }
+        else if (child.name == "IonR")
+        {
+            child.position += direction.normalized * 4f;
+            speedBarScript.IncreaseSpeedByIon();
+            IonR = false;
+
+            channel.sprite = channelNa_fin;
+
+            SpriteRenderer NaSpriteRenderer = childRenderer;
+            StartCoroutine(IonFadeOut(NaSpriteRenderer));
+            StartCoroutine(Elec());
+
+
+        }
+    }
+
+    // 전기신호 받음
+    private IEnumerator Elec()
+    {   
+        electronicSpace.sprite = electricRed;
+        yield return new WaitForSeconds(0.3f);
+        electronicSpace.sprite = electricWhite;
+    }
+
+    // 이온 획득 후 fadeout
+    IEnumerator IonFadeOut(SpriteRenderer childRenderer)
+    {
+        float cAlpha = childRenderer.color.a;
+        while(cAlpha > 0)
+        {
+            //Debug.Log(childRenderer + " " + cAlpha);
+            cAlpha -= Time.deltaTime * 1.2f;
+
+            Color childColor = childRenderer.color;
+            childColor.a = cAlpha;
+            childRenderer.color = childColor;
+
+            yield return new WaitForSeconds(0.02f);
+        }
+        child.gameObject.SetActive(false);
     }
 
     private void DeletePoison()

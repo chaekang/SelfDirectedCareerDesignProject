@@ -66,7 +66,7 @@ public class Ion : MonoBehaviour
 
             forceDirection = colliderCenter - currentPosition;
 
-            rb.AddForce(forceDirection.normalized * 0.35f, ForceMode2D.Impulse);
+            rb.AddForce(forceDirection.normalized * 0.3f, ForceMode2D.Impulse);
         }
         else if(collision.tag == "BackgroundIon_Space")
         {

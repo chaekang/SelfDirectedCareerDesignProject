@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 4336201244186666621}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.06, y: -3.47, z: 0}
-  m_LocalScale: {x: 0.23, y: 0.23, z: 1}
+  m_LocalPosition: {x: -5.4, y: -3.75, z: 0}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 521373447131321072}
@@ -102,7 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerObject: {fileID: 4336201244186666621}
   Dendrite: {fileID: 0}
-  playerSpeed: 6
+  playerSpeed: 5
   poisonS: 1
   poisonF: 1
   IonR: 0
@@ -113,6 +113,11 @@ MonoBehaviour:
   isStart: 0
   disappear: 0
   appear: 0
+  electronicSpace: {fileID: 104108837233250303}
+  electricWhite: {fileID: 21300000, guid: a8bd531ee3a9fb5409ba095553064d62, type: 3}
+  electricRed: {fileID: 21300000, guid: 0b91134f1d5eaed4d8305bcc8a6676ea, type: 3}
+  channelK_fin: {fileID: 21300000, guid: 60c8948247b21f14cad49923bc321459, type: 3}
+  channelNa_fin: {fileID: 21300000, guid: b405b62114631b84b85f4a53ede35aea, type: 3}
 --- !u!70 &1710941928056707546
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -142,11 +147,11 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.17121874, y: 0}
-  m_Size: {x: 9.256568, y: 9.256568}
+  m_Size: {x: 6, y: 6}
   m_Direction: 0
 --- !u!50 &2118006173547878037
 Rigidbody2D:
@@ -201,8 +206,8 @@ Transform:
   m_GameObject: {fileID: 4994630850540028046}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.07, y: -0.74, z: 0}
-  m_LocalScale: {x: 17, y: 17, z: 1}
+  m_LocalPosition: {x: 0.01, y: -0.2, z: 0}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8051621916040589126}
@@ -248,8 +253,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.16470589}
+  m_Sprite: {fileID: 21300000, guid: a8bd531ee3a9fb5409ba095553064d62, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.3529412}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
