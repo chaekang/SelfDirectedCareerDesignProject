@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    public BoxCollider2D[] area;
+    BoxCollider2D area;
 
     private float timer;
 
+    private void Awake()
+    {
+        area = GetComponent<BoxCollider2D>();
+    }
 
     private void Update()
     {
@@ -15,7 +19,9 @@ public class Spawner : MonoBehaviour
         {
             timer += Time.deltaTime;
 
-            if (timer > 0.2f)
+            float randomTime = Random.Range(0.3f, 0.6f);
+
+            if (timer > randomTime)
             {
                 Spawn();
                 timer = 0;
@@ -29,8 +35,8 @@ public class Spawner : MonoBehaviour
         Vector2 size = area.size;                   //box colider2d, ¡Ô ∏ ¿« ≈©±‚ ∫§≈Õ
 
         //x, y√‡ ∑£¥˝ ¡¬«• æÚ±‚
-        float posX = basePosition.x + Random.Range(-size.x * 3, size.x * 3);
-        float posY = basePosition.y + Random.Range(-size.y * 3, size.y * 3);
+        float posX = basePosition.x + Random.Range(-size.x, size.x);
+        float posY = basePosition.y + Random.Range(-size.y, size.y);
 
         Vector2 spawnPos = new Vector2(posX, posY);
 
@@ -40,17 +46,9 @@ public class Spawner : MonoBehaviour
     void Spawn()
     {
         float curPoint = GameManager.instance.SynapseBar.curPoint;
-        Vector2 spawnPosition = GetRandomPosition(area[0]);
+        Vector2 spawnPosition = GetRandomPosition(area);
 
         GameObject spawnedPrefab = GameManager.instance.pool.Get(GenerateRandomNumber(curPoint));
-        spawnedPrefab.transform.position = spawnPosition;
-    }
-
-    void SpawnAfterCollide()
-    {
-        Vector2 spawnPosition = GetRandomPosition(area[1]);
-
-        GameObject spawnedPrefab = GameManager.instance.pool.Get(GenerateRandomAfterCollide());
         spawnedPrefab.transform.position = spawnPosition;
     }
 
@@ -83,11 +81,5 @@ public class Spawner : MonoBehaviour
         }
 
         return returnNum;
-    }
-
-    int GenerateRandomAfterCollide()
-    {
-        int randomNumber = Random.Range(0, 2);
-        return randomNumber + 2;
     }
 }

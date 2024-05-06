@@ -25,7 +25,7 @@ public class _Camera : MonoBehaviour
         Vector3 moveVector = new Vector3((direction.x + 5) * cameraSpeed * Time.deltaTime, (direction.y + 1) * cameraSpeed * Time.deltaTime, 0.0f);
         this.transform.Translate(moveVector);
 
-        if (playerScript.onSynapse)
+        if (playerScript.camMove)
         {
             playerCamera.fieldOfView = 103;
             playerScript.playerSpeed = 0f;

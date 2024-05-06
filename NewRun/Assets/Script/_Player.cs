@@ -26,8 +26,8 @@ public class _Player : MonoBehaviour
     private Transform player;
 
     public GameObject synapseBar;
-    public bool onSynapse = false;    // NT 분출
-    public bool isStart = false;      // 시냅스 기믹 시작
+    public bool onSynapse = false;
+    public bool camMove = false;
 
     float time; // 작아지는 시간 변수
     public bool disappear = false;
@@ -130,7 +130,7 @@ public class _Player : MonoBehaviour
             playerSpeed = 0f;
             synapseBar.SetActive(true);
             onSynapse = true;
-            isStart = true;
+            camMove = true;
         }
     }
 
