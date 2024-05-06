@@ -56,8 +56,8 @@ public class NT_Up : MonoBehaviour
 
         if (routeToGo > routes.Length - 1)
         {
-            routeToGo = 0;
             GameManager.instance.pool.ReturnToPool(1, gameObject);
+            routeToGo = 0;
         }
         coroutineAllowed = true;
     }
