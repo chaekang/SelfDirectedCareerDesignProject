@@ -55,7 +55,7 @@ public class _Player : MonoBehaviour
         PlayerMove();
 
         // 시냅스에서 머리 위로 게이지바 띄우기
-        synapseBar.transform.position = Camera.main.WorldToScreenPoint(transform.position + new Vector3(0, 1.5f, 0));
+        synapseBar.transform.position = Camera.main.WorldToScreenPoint(transform.position + new Vector3(0, 2f, 0));
 
         if (disappear)
         {

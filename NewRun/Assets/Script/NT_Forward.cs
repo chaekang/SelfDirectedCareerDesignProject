@@ -5,7 +5,7 @@ using UnityEngine.UIElements;
 
 public class NT_Forward : MonoBehaviour
 {
-    public float speed;
+    float speed;
     private void Start()
     {
         speed = Random.Range(25f, 35f);
@@ -24,7 +24,15 @@ public class NT_Forward : MonoBehaviour
     {
         if (collision.transform.CompareTag("NT_Destroy"))
         {
-            GameManager.instance.pool.ReturnToPool(0, gameObject);
+            speed = 0;
+            Invoke("ReturnToPoolWithDelay", 0.1f);
         }
     }
+
+    private void ReturnToPoolWithDelay()
+    {
+        GameManager.instance.pool.ReturnToPool(0, gameObject);
+        speed = Random.Range(25f, 35f);
+    }
+
 }

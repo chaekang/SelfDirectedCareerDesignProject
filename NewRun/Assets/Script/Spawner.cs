@@ -19,7 +19,7 @@ public class Spawner : MonoBehaviour
         {
             timer += Time.deltaTime;
 
-            float randomTime = Random.Range(0.3f, 0.6f);
+            float randomTime = Random.Range(0.5f, 0.8f);
 
             if (timer > randomTime)
             {
@@ -35,8 +35,8 @@ public class Spawner : MonoBehaviour
         Vector2 size = area.size;                   //box colider2d, ¡Ô ∏ ¿« ≈©±‚ ∫§≈Õ
 
         //x, y√‡ ∑£¥˝ ¡¬«• æÚ±‚
-        float posX = basePosition.x + Random.Range(-size.x, size.x);
-        float posY = basePosition.y + Random.Range(-size.y, size.y);
+        float posX = basePosition.x;
+        float posY = basePosition.y;
 
         Vector2 spawnPos = new Vector2(posX, posY);
 
