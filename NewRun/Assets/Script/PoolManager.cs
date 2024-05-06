@@ -7,12 +7,10 @@ public class PoolManager : MonoBehaviour
 {
     public GameObject[] prefabs;         // 프리팹들을 보관할 변수
     Queue<GameObject>[] pools;           // 풀 담당을 하는 리스트들
-    List<bool> synCol;                   // 부딪힌 여부를 저장할 리스트
 
     private void Awake()
     {
         pools = new Queue<GameObject>[prefabs.Length];
-        synCol = new List<bool>();
 
         for (int index = 0;index < pools.Length; index++)
         {

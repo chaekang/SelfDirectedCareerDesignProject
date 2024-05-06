@@ -14,7 +14,7 @@ public class Astrocyte : MonoBehaviour
 
     private void Update()
     {
-        if (GameManager.instance.player.isStart)
+        if (GameManager.instance.player.onSynapse)
         {
             anim.SetTrigger("isApproach");
         }

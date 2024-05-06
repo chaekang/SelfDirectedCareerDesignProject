@@ -7,8 +7,6 @@ public class SynapseBar : MonoBehaviour
 {
     public Slider passBar;
 
-    public _Player player;
-
     public float maxPoint = 100;
     public float curPoint = 0;
 
@@ -22,7 +20,7 @@ public class SynapseBar : MonoBehaviour
     private void Update()
     {
 
-        if (player.isStart)
+        if (GameManager.instance.player.onSynapse)
         {
             curPoint -= decreaseRate * Time.deltaTime;
         }
@@ -37,8 +35,8 @@ public class SynapseBar : MonoBehaviour
             {
                 Debug.Log("스테이지 클리어!");
                 curPoint = 100;
-                player.isStart = false;
                 GameManager.instance.player.disappear = true;
+                GameManager.instance.player.onSynapse = false;
             }
         }
 
