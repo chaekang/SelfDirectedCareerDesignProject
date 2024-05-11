@@ -61,6 +61,7 @@ public class SpeedBar : MonoBehaviour
 
     public void OutAxon()
     {
+        Debug.Log("000");
         curSpeed = 0f;
     }
 }
