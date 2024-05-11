@@ -9,10 +9,6 @@ TagManager:
   - PoisonS
   - PoisonSnake
   - IonItemSpace
-  - IonB
-  - IonBlue
-  - IonR
-  - IonRed
   - Wall
   - StopPoint
   - NT_Destroy
@@ -21,6 +17,12 @@ TagManager:
   - Axon
   - Dendrite
   - Soma
+  - Channel_K
+  - Channel_Na
+  - IonRed
+  - IonR
+  - IonBlue
+  - IonB
   layers:
   - Default
   - TransparentFX

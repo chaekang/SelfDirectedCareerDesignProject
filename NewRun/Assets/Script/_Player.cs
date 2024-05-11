@@ -15,14 +15,14 @@ public class _Player : MonoBehaviour
 
     public bool poisonS = true;
     public bool poisonF = true;
-    public bool IonR = false;
-    public bool IonB = false;
+    public bool channel_Na = false;
+    public bool channel_K = false;
 
     public SpeedBar speedBarScript;
 
-    private Transform child;
-    private SpriteRenderer childRenderer;
-    private Transform ionItemspace;
+    private Transform init_channel;
+    private Transform channel_anim;
+
     private Transform player;
 
     public GameObject synapseBar;
@@ -36,10 +36,6 @@ public class _Player : MonoBehaviour
     public SpriteRenderer electronicSpace;
     public Sprite electricWhite;
     public Sprite electricRed;
-
-    private SpriteRenderer channel;
-    public Sprite channelK_fin;
-    public Sprite channelNa_fin;
 
     void Start()
     {
@@ -136,58 +132,53 @@ public class _Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "IonRed") 
+        if (collision.gameObject.tag == "Channel_Na") 
         {
-            IonR = true;
+            channel_Na = true;
             SetChild(collision); 
         }
-        else if (collision.gameObject.tag == "IonBlue")
+        else if (collision.gameObject.tag == "Channel_K")
         {
-            Debug.Log("B Trigger Enter");
-            IonB = true;
+            channel_K = true;
             SetChild(collision);
         }
         else if (collision.gameObject.tag == "PoisonFish" || collision.gameObject.tag == "PoisonSnake") SetChild(collision);
         else if (collision.tag == "BackgroundIon_Space")
         {
             transform.position = initialPosition;
+            Debug.Log("OUT");
             speedBarScript.OutAxon();
         }
     }
 
     private void SetChild(Collider2D collision)
     {
-        if (collision.gameObject.tag == "IonRed" || collision.gameObject.tag == "IonBlue") ionItemspace = collision.transform.GetChild(2);
-
-        child = collision.transform.GetChild(0);
-        childRenderer = child.GetComponent<SpriteRenderer>();
-        
-        channel = collision.transform.GetChild(1).GetComponent<SpriteRenderer>();
-
+        if (collision.gameObject.tag == "Channel_Na" || collision.gameObject.tag == "Channel_K")
+        {
+            init_channel = collision.transform.GetChild(0);
+            channel_anim = collision.transform.GetChild(1);
+        }
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "IonRed")
+        if (collision.gameObject.tag == "Channel_Na")
         {
             if (Input.GetKeyUp(KeyCode.A))
             {
-                if (IonR && child.name == "IonR")
+                if (channel_Na)
                 {
-                    ionItemspace.gameObject.SetActive(false);
                     TakeIon();
                 }
             }
         }
-        else if (collision.gameObject.tag == "IonBlue")
+        else if (collision.gameObject.tag == "Channel_K")
         {
             if (Input.GetKeyUp(KeyCode.S))
             {
-                if (IonB && child.name == "IonB")
+                if (channel_K)
                 {
-                    Debug.Log("IN K Space, " + IonB);
-                    ionItemspace.gameObject.SetActive(false);
                     TakeIon();
                 }
             }
@@ -198,7 +189,7 @@ public class _Player : MonoBehaviour
             if (Input.GetKeyUp(KeyCode.D))
             {
                 poisonF = false;
-                DeletePoison();
+                //DeletePoison();
             }
         }
         else if (collision.gameObject.tag == "PoisonSnake")
@@ -207,41 +198,17 @@ public class _Player : MonoBehaviour
             if (Input.GetKeyUp(KeyCode.F))
             {
                 poisonS = false;
-                DeletePoison();
+                //DeletePoison();
             }
         }
     }
 
     private void TakeIon()
     {
-        Vector3 playerPosition = player.transform.position;
-        Vector3 direction = playerPosition - child.position;
-        if (child.name == "IonB")
-        {
-            child.position -= direction.normalized * 4f;
-            speedBarScript.IncreaseSpeedByIon();
-            IonB = false;
-
-            channel.sprite = channelK_fin;
-
-            SpriteRenderer KSpriteRenderer = childRenderer;
-            StartCoroutine(IonFadeOut(KSpriteRenderer));
-            StartCoroutine(Elec());
-        }
-        else if (child.name == "IonR")
-        {
-            child.position += direction.normalized * 4f;
-            speedBarScript.IncreaseSpeedByIon();
-            IonR = false;
-
-            channel.sprite = channelNa_fin;
-
-            SpriteRenderer NaSpriteRenderer = childRenderer;
-            StartCoroutine(IonFadeOut(NaSpriteRenderer));
-            StartCoroutine(Elec());
-
-
-        }
+        init_channel.gameObject.SetActive(false);
+        channel_anim.gameObject.SetActive(true);
+        StartCoroutine(Elec());
+        speedBarScript.IncreaseSpeedByIon();
     }
 
     // 전기신호 받음
@@ -253,7 +220,7 @@ public class _Player : MonoBehaviour
     }
 
     // 이온 획득 후 fadeout
-    IEnumerator IonFadeOut(SpriteRenderer childRenderer)
+    /*IEnumerator IonFadeOut(SpriteRenderer childRenderer)
     {
         float cAlpha = childRenderer.color.a;
         while(cAlpha > 0)
@@ -268,25 +235,25 @@ public class _Player : MonoBehaviour
             yield return new WaitForSeconds(0.02f);
         }
         child.gameObject.SetActive(false);
-    }
+    }*/
 
-    private void DeletePoison()
+    /*private void DeletePoison()
     {
         if (child != null)
         {
             child.gameObject.SetActive(false);
         }
-    }
+    }*/
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "IonRed")
+        if (collision.gameObject.tag == "Channel_Na")
         {
-            IonR = false;
+            channel_Na = false;
         }
-        else if (collision.gameObject.tag == "IonBlue")
+        else if (collision.gameObject.tag == "Channel_K")
         {
-            IonB = false;
+            channel_K = false;
         }
         else if (collision.gameObject.tag == "PoisonFish")
         {
