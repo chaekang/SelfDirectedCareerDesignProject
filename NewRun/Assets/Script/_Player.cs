@@ -33,6 +33,8 @@ public class _Player : MonoBehaviour
     public bool disappear = false;
     public bool appear = false;
 
+    public bool wall = false;
+
     public SpriteRenderer electronicSpace;
     public Sprite electricWhite;
     public Sprite electricRed;
@@ -119,6 +121,7 @@ public class _Player : MonoBehaviour
         if (collision.gameObject.tag == "Wall")
         {
             Debug.Log("Wall Ãæµ¹");
+            wall = true;
         }
         // ½Ã³À½º ³¡¿¡ µµÂø
         else if (collision.gameObject.tag == "StopPoint")
