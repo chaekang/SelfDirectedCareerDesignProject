@@ -50,6 +50,7 @@ public class TutorialManager : MonoBehaviour
 
         if (order == 6)
         {
+            Debug.Log("6");
             TurnPanel(0);
 
             if (GameManager.instance.player.wall)

@@ -15,8 +15,10 @@ public class Spawner : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log("onSynapse");
         if (GameManager.instance.player.onSynapse)
         {
+            
             timer += Time.deltaTime;
 
             float randomTime = Random.Range(0.5f, 0.8f);
@@ -32,7 +34,6 @@ public class Spawner : MonoBehaviour
     private Vector2 GetRandomPosition(BoxCollider2D area)
     {
         Vector2 basePosition = transform.position;  //오브젝트의 위치
-        Vector2 size = area.size;                   //box colider2d, 즉 맵의 크기 벡터
 
         //x, y축 랜덤 좌표 얻기
         float posX = basePosition.x;
