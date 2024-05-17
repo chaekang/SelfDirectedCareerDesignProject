@@ -15,7 +15,7 @@ public class Spawner : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("onSynapse");
+        //Debug.Log("onSynapse");
         if (GameManager.instance.player.onSynapse)
         {
             

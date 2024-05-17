@@ -11,6 +11,9 @@ public class SpeedBar : MonoBehaviour
 
     public Slider speedBar;
 
+    public float decressSpeed;
+    public float increaseSpeed;
+
     private _Player playerScript;
     // Start is called before the first frame update
     void Start()
@@ -51,12 +54,12 @@ public class SpeedBar : MonoBehaviour
 
     public void DecreaseSpeedByPoison()
     {
-        curSpeed -= 1f;
+        curSpeed -= decressSpeed;
     }
 
     public void IncreaseSpeedByIon()
     {
-        curSpeed += 1f;
+        curSpeed += increaseSpeed;
     }
 
     public void OutAxon()
