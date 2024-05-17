@@ -17,7 +17,9 @@ public class ChangeScene : MonoBehaviour
         }
     }
 
-    // GameStart : 0, SomaScene : 1, GameScene 1 : 2, GameScene 2 : 3
+    // 0.(GameStart)    1.(SomaScene)     2.(GameScene1)    3.(GameScene2), 4.(GameScene3)
+    // 5.(PoisonStart), 6.(PosionStage1), 7.(PosionStage2), 8.(PosionStage3)
+    // 9.(GameOver),   10.(GameEnd),     11.(Tutorial)
     public void BtnChangeScenefunc()
     {
         Debug.Log("BtnChangeScenefunc()");
@@ -37,6 +39,14 @@ public class ChangeScene : MonoBehaviour
 
                 case "NextStageBtn":
                     GoToNextScene();
+                    break;
+
+                case "ChangeToPoisonMode":
+                    SceneManager.LoadScene(5);
+                    break;
+
+                case "ChangeToBasicMode":
+                    SceneManager.LoadScene(0);
                     break;
             }
         }

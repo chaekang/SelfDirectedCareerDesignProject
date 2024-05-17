@@ -39,6 +39,11 @@ public class _Player : MonoBehaviour
     public Sprite electricWhite;
     public Sprite electricRed;
 
+    public SpriteRenderer playerGarphic;
+    public Sprite up;
+    public Sprite down;
+    public Sprite right;
+
     void Start()
     {
         initialPosition = transform.position;
@@ -84,14 +89,17 @@ public class _Player : MonoBehaviour
     {
         if (state == PlayerState.run || state == PlayerState.turn_right)
         {
+            playerGarphic.sprite = right;
             transform.Translate(1 * playerSpeed * Time.deltaTime, 0, 0);
         }
         else if (state == PlayerState.turn_up)
         {
+            playerGarphic.sprite = up;
             transform.Translate(0, 1 * playerSpeed * Time.deltaTime, 0);
         }
         else if (state == PlayerState.turn_down)
         {
+            playerGarphic.sprite = down;
             transform.Translate(0, -1 * playerSpeed * Time.deltaTime, 0);
 
         }
@@ -216,7 +224,7 @@ public class _Player : MonoBehaviour
 
     // 전기신호 받음
     private IEnumerator Elec()
-    {   
+    {
         electronicSpace.sprite = electricRed;
         yield return new WaitForSeconds(0.3f);
         electronicSpace.sprite = electricWhite;

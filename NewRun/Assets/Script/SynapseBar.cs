@@ -13,6 +13,8 @@ public class SynapseBar : MonoBehaviour
 
     public float decreaseRate = 0.1f;
 
+    public GameObject velocityBar;
+
     private void Start()
     {
         passBar.value = 0;
@@ -23,6 +25,7 @@ public class SynapseBar : MonoBehaviour
 
         if (GameManager.instance.player.onSynapse)
         {
+            velocityBar.SetActive(false);
             curPoint -= decreaseRate * Time.deltaTime;
 
             // NT 이미지 활성화

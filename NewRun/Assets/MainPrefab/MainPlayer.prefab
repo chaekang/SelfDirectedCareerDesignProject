@@ -105,19 +105,22 @@ MonoBehaviour:
   playerSpeed: 5
   poisonS: 1
   poisonF: 1
-  IonR: 0
-  IonB: 0
+  channel_Na: 0
+  channel_K: 0
   speedBarScript: {fileID: 0}
   synapseBar: {fileID: 0}
   onSynapse: 0
-  isStart: 0
+  camMove: 0
   disappear: 0
   appear: 0
+  wall: 0
   electronicSpace: {fileID: 104108837233250303}
   electricWhite: {fileID: 21300000, guid: a8bd531ee3a9fb5409ba095553064d62, type: 3}
   electricRed: {fileID: 21300000, guid: 0b91134f1d5eaed4d8305bcc8a6676ea, type: 3}
-  channelK_fin: {fileID: 21300000, guid: 60c8948247b21f14cad49923bc321459, type: 3}
-  channelNa_fin: {fileID: 21300000, guid: b405b62114631b84b85f4a53ede35aea, type: 3}
+  playerGarphic: {fileID: 9034853188132067140}
+  up: {fileID: 21300000, guid: e42415cdfb2c0924694c8d247ec01efd, type: 3}
+  down: {fileID: 21300000, guid: 0a279da316033ec4ebc5b262c3700df9, type: 3}
+  right: {fileID: 21300000, guid: 6384a36448ade07459d94c993fb56c80, type: 3}
 --- !u!70 &1710941928056707546
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
