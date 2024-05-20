@@ -33,8 +33,6 @@ public class _Player : MonoBehaviour
     public bool disappear = false;
     public bool appear = false;
 
-    public bool wall = false;
-
     public SpriteRenderer electronicSpace;
     public Sprite electricWhite;
     public Sprite electricRed;
@@ -43,6 +41,12 @@ public class _Player : MonoBehaviour
     public Sprite up;
     public Sprite down;
     public Sprite right;
+
+    // 튜토리얼에 필요
+    public bool wall = false;
+    public bool finish = false;
+    public bool Na = false;
+    public bool K = false;
 
     void Start()
     {
@@ -160,6 +164,12 @@ public class _Player : MonoBehaviour
             Debug.Log("OUT");
             speedBarScript.OutAxon();
         }
+
+        // 튜토리얼
+        if (collision.gameObject.tag == "Finish")
+        {
+            finish = true;
+        }
     }
 
     private void SetChild(Collider2D collision)
@@ -180,6 +190,7 @@ public class _Player : MonoBehaviour
             {
                 if (channel_Na)
                 {
+                    Na = true;
                     TakeIon();
                 }
             }
@@ -190,6 +201,7 @@ public class _Player : MonoBehaviour
             {
                 if (channel_K)
                 {
+                    K = true;
                     TakeIon();
                 }
             }

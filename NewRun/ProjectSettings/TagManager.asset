@@ -23,6 +23,7 @@ TagManager:
   - IonR
   - IonBlue
   - IonB
+  - CheckPoint
   layers:
   - Default
   - TransparentFX
