@@ -15,24 +15,15 @@ public class TutorialCamera : MonoBehaviour
     {
         playerScript = FindObjectOfType<_Player>();
         playerCamera = GetComponent<Camera>();
-
-        cameraSpeed = playerScript.playerSpeed;
     }
 
     private void Update()
     {
-        Vector3 direction = player.transform.position - this.transform.position;
-        Vector3 moveVector = new Vector3((direction.x + 8) * cameraSpeed * Time.deltaTime, (direction.y - 1.5f) * cameraSpeed * Time.deltaTime, 0.0f);
-        this.transform.Translate(moveVector);
-
         if (playerScript.camMove)
         {
+            transform.parent = null;
             playerCamera.fieldOfView = 103;
             playerScript.playerSpeed = 0f;
-        }
-        else
-        {
-            playerCamera.fieldOfView = 60;
         }
     }
 }
