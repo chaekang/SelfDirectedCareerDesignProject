@@ -19,7 +19,7 @@ public class ChangeScene : MonoBehaviour
 
     // 0.(GameStart)    1.(SomaScene)     2.(GameScene1)    3.(GameScene2), 4.(GameScene3)
     // 5.(PoisonStart), 6.(PosionStage1), 7.(PosionStage2), 8.(PosionStage3)
-    // 9.(GameOver),   10.(GameEnd),     11.(Tutorial)
+    // 9.(Over_Axon),  10.(Over_Vel0),   11.(GameEnd),     12.(Tutorial)
     public void BtnChangeScenefunc()
     {
         Debug.Log("BtnChangeScenefunc()");
@@ -35,6 +35,10 @@ public class ChangeScene : MonoBehaviour
 
                 case "HomeBtn":
                     SceneManager.LoadScene(0);
+                    break;
+
+                case "RestartBtn":
+                    SceneManager.LoadScene(2);
                     break;
 
                 case "NextStageBtn":
@@ -88,5 +92,11 @@ public class ChangeScene : MonoBehaviour
         // 스크립트가 파괴될 때 이벤트 리스너 제거
         SceneManager.sceneLoaded -= OnSceneLoaded;
         isListenerRegistered = false;
+    }
+
+    public void DeadPalayer(string exp)
+    {
+        if (exp == "Axon") SceneManager.LoadScene(9);
+        else if (exp == "Vel") SceneManager.LoadScene(10);
     }
 }

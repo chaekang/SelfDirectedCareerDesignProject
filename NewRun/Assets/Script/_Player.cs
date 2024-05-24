@@ -22,6 +22,7 @@ public class _Player : MonoBehaviour
 
     private Transform init_channel;
     private Transform channel_anim;
+    private Transform poison;
 
     private Transform player;
 
@@ -157,11 +158,19 @@ public class _Player : MonoBehaviour
             channel_K = true;
             SetChild(collision);
         }
-        else if (collision.gameObject.tag == "PoisonFish" || collision.gameObject.tag == "PoisonSnake") SetChild(collision);
-        else if (collision.tag == "BackgroundIon_Space")
+        else if (collision.gameObject.tag == "Channel_Na_Poison")
         {
-            transform.position = initialPosition;
-            Debug.Log("OUT");
+            poisonF = true;
+            SetChild(collision);
+        }
+        else if (collision.gameObject.tag == "Channel_K_Poison")
+        {
+            poisonS = true;
+            SetChild(collision);
+        }
+        else if (collision.gameObject.tag == "PoisonFish" || collision.gameObject.tag == "PoisonSnake") SetChild(collision);
+        else if (collision.tag == "BackgroundIon_Space") // Axon 이탈
+        {
             speedBarScript.OutAxon();
         }
 
@@ -172,6 +181,7 @@ public class _Player : MonoBehaviour
         }
     }
 
+    // 체널의 애니메이션 활성화 오브젝트, 독 할당
     private void SetChild(Collider2D collision)
     {
         if (collision.gameObject.tag == "Channel_Na" || collision.gameObject.tag == "Channel_K")
@@ -179,9 +189,14 @@ public class _Player : MonoBehaviour
             init_channel = collision.transform.GetChild(0);
             channel_anim = collision.transform.GetChild(1);
         }
+        else if (collision.gameObject.tag == "Channel_Na_Poison" || collision.gameObject.tag == "Channel_K_Poison")
+        {
+            poison = collision.transform.GetChild(1);
+        }
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
+    // 체널 콜라이더 안으로 들어올 경우
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Channel_Na")
@@ -206,28 +221,31 @@ public class _Player : MonoBehaviour
                 }
             }
         }
-        else if (collision.gameObject.tag == "PoisonFish")
+        else if (collision.gameObject.tag == "Channel_Na_Poison")
         {
             Debug.Log("PoisonFish 공간");
             if (Input.GetKeyUp(KeyCode.D))
             {
                 poisonF = false;
-                //DeletePoison();
+                DeletePoison();
             }
         }
-        else if (collision.gameObject.tag == "PoisonSnake")
+        else if (collision.gameObject.tag == "Channel_K_Poison")
         {
             Debug.Log("PoisonSnake 공간");
             if (Input.GetKeyUp(KeyCode.F))
             {
                 poisonS = false;
-                //DeletePoison();
+                DeletePoison();
             }
         }
     }
 
+    // 이온 획득 
     private void TakeIon()
     {
+        channel_K = false;  
+        channel_Na = false;
         init_channel.gameObject.SetActive(false);
         channel_anim.gameObject.SetActive(true);
         StartCoroutine(Elec());
@@ -240,6 +258,11 @@ public class _Player : MonoBehaviour
         electronicSpace.sprite = electricRed;
         yield return new WaitForSeconds(0.3f);
         electronicSpace.sprite = electricWhite;
+    }
+
+    private void DeletePoison()
+    {
+        poison.gameObject.SetActive(false);
     }
 
     // 이온 획득 후 fadeout
@@ -268,6 +291,7 @@ public class _Player : MonoBehaviour
         }
     }*/
 
+    // 체널 콜라이더 공간 이탈
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Channel_Na")
@@ -278,7 +302,7 @@ public class _Player : MonoBehaviour
         {
             channel_K = false;
         }
-        else if (collision.gameObject.tag == "PoisonFish")
+        else if (collision.gameObject.tag == "Channel_Na_Poison")
         {
             if (poisonF)
             {
@@ -287,11 +311,10 @@ public class _Player : MonoBehaviour
             }
             else
             {
-                poisonF = true;
                 Debug.Log("PoisonFish 삭제됨");
             }
         }
-        else if (collision.gameObject.tag == "PoisonSnake")
+        else if (collision.gameObject.tag == "Channel_K_Poison")
         {
             if (poisonS)
             {
@@ -300,7 +323,6 @@ public class _Player : MonoBehaviour
             }
             else
             {
-                poisonS = true;
                 Debug.Log("PoisonSnake 삭제됨");
             }
 
