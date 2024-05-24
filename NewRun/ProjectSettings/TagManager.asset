@@ -19,11 +19,11 @@ TagManager:
   - Soma
   - Channel_K
   - Channel_Na
-  - IonRed
-  - IonR
-  - IonBlue
-  - IonB
   - CheckPoint
+  - poison_snake
+  - poison_fish
+  - Channel_K_Poison
+  - Channel_Na_Poison
   layers:
   - Default
   - TransparentFX
@@ -32,7 +32,7 @@ TagManager:
   - Water
   - UI
   - 
-  - 
+  - channel
   - 
   - 
   - 
@@ -60,4 +60,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: poison
+    uniqueID: 2893205651
+    locked: 0
+  - name: channel
+    uniqueID: 4123353335
     locked: 0

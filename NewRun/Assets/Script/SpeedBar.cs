@@ -15,10 +15,13 @@ public class SpeedBar : MonoBehaviour
     public float increaseSpeed;
 
     private _Player playerScript;
+    private ChangeScene changeScene;
     // Start is called before the first frame update
     void Start()
     {
         playerScript = FindObjectOfType<_Player>();
+        changeScene = FindObjectOfType<ChangeScene>();
+
         maxSpeed = playerScript.playerSpeed;
         speedBar.maxValue = maxSpeed;
         SetSpeedBar(maxSpeed);
@@ -43,6 +46,7 @@ public class SpeedBar : MonoBehaviour
         if (curSpeed < 0f)
         {
             curSpeed = 0f;
+            changeScene.DeadPalayer("Vel");
         }
         else if (curSpeed > maxSpeed)
         {
@@ -64,7 +68,7 @@ public class SpeedBar : MonoBehaviour
 
     public void OutAxon()
     {
-        Debug.Log("000");
-        curSpeed = 0f;
+        changeScene.DeadPalayer("Axon");
+        curSpeed = 0f;   
     }
 }
