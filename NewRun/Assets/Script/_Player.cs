@@ -139,6 +139,7 @@ public class _Player : MonoBehaviour
         // ½Ã³À½º ³¡¿¡ µµÂø
         else if (collision.gameObject.tag == "StopPoint")
         {
+            GameManager.instance.SynapseBar.curPoint = 0;
             playerSpeed = 0f;
             synapseBar.SetActive(true);
             onSynapse = true;

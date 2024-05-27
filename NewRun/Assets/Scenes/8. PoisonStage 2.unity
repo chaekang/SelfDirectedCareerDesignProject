@@ -33249,6 +33249,7 @@ MonoBehaviour:
   pool: {fileID: 1183604543}
   SynapseBar: {fileID: 756217455}
   dendriteManager: {fileID: 0}
+  changeScene: {fileID: 2084833216}
 --- !u!4 &1336894091
 Transform:
   m_ObjectHideFlags: 0
@@ -36408,8 +36409,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.0051498413, y: -0.009049416, z: 0}
-    m_Extent: {x: 20.49675, y: 20.499851, z: 0}
+    m_Center: {x: -0.0015001297, y: -0.00744915, z: 0}
+    m_Extent: {x: 20.4968, y: 20.50035, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0

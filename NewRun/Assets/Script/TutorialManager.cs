@@ -78,6 +78,8 @@ public class TutorialManager : MonoBehaviour
 
             if (order == 16)
             {
+                SpeedBar.SetActive(true);
+
                 if (!GameManager.instance.player.Na)
                 {
                     GameManager.instance.player.transform.position = respawnPos[4].transform.position;

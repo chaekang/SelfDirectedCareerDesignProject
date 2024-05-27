@@ -38299,6 +38299,7 @@ MonoBehaviour:
   pool: {fileID: 1897237332}
   SynapseBar: {fileID: 895958016}
   dendriteManager: {fileID: 0}
+  changeScene: {fileID: 82438148}
 --- !u!4 &2055940543
 Transform:
   m_ObjectHideFlags: 0

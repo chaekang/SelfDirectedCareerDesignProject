@@ -15,6 +15,9 @@ public class SynapseBar : MonoBehaviour
 
     public GameObject velocityBar;
 
+    public bool GameOver = false;
+    float time = 0;
+
     private void Start()
     {
         passBar.value = 0;
@@ -22,14 +25,23 @@ public class SynapseBar : MonoBehaviour
 
     private void Update()
     {
-
         if (GameManager.instance.player.onSynapse)
         {
+            time += Time.deltaTime;
             velocityBar.SetActive(false);
             curPoint -= decreaseRate * Time.deltaTime;
 
             // NT 이미지 활성화
             NT.SetActive(true);
+
+            if(curPoint < 100 && time >= 20f)
+            {
+                GameManager.instance.changeScene.DeadPalayer("Syn");
+            }
+            if(curPoint < -100)
+            {
+                GameManager.instance.changeScene.DeadPalayer("Syn");
+            }
         }
 
         if(!GameManager.instance.player.onSynapse)
@@ -45,7 +57,6 @@ public class SynapseBar : MonoBehaviour
             }
             else
             {
-                Debug.Log("스테이지 클리어!");
                 curPoint = 100;
                 GameManager.instance.player.disappear = true;
                 GameManager.instance.player.onSynapse = false;
