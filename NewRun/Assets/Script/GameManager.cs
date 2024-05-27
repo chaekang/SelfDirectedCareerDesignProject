@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public PoolManager pool;
     public SynapseBar SynapseBar;
     public DendriteManager dendriteManager;
+    public ChangeScene changeScene;
 
     private void Awake()
     {

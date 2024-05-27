@@ -24,6 +24,7 @@ TagManager:
   - poison_fish
   - Channel_K_Poison
   - Channel_Na_Poison
+  - EndPoint
   layers:
   - Default
   - TransparentFX

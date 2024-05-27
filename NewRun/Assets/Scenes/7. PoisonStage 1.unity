@@ -1347,17 +1347,12 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6930001756829103039, guid: 793ebbaa6338b584cb2afc1f3a95f376, type: 3}
   m_PrefabInstance: {fileID: 149762211}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 860329844}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e0eb802ebeb4c8048b7d726f3fb447eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &149762214 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3215731906812418828, guid: 793ebbaa6338b584cb2afc1f3a95f376, type: 3}
-  m_PrefabInstance: {fileID: 149762211}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &151679954 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6478363374845001533, guid: c8b0fa60fa72558489e6058adc745143, type: 3}
@@ -22104,8 +22099,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0023002625, y: 0.0010499954, z: 0}
-    m_Extent: {x: 20.4948, y: 20.494652, z: 0}
+    m_Center: {x: -0.001999855, y: 0.0018501282, z: 0}
+    m_Extent: {x: 20.5009, y: 20.49935, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -23747,6 +23742,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &860329844 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 994629478536110451, guid: 793ebbaa6338b584cb2afc1f3a95f376, type: 3}
+  m_PrefabInstance: {fileID: 149762211}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &862783706
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29666,6 +29666,10 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1710941928056707546, guid: 819938070e28943428a6e384b5356d94, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1984787140684811787, guid: 819938070e28943428a6e384b5356d94, type: 3}
       propertyPath: poisonS
       value: 0
@@ -29673,7 +29677,7 @@ PrefabInstance:
     - target: {fileID: 1984787140684811787, guid: 819938070e28943428a6e384b5356d94, type: 3}
       propertyPath: Dendrite
       value: 
-      objectReference: {fileID: 149762214}
+      objectReference: {fileID: 860329844}
     - target: {fileID: 1984787140684811787, guid: 819938070e28943428a6e384b5356d94, type: 3}
       propertyPath: synapseBar
       value: 
@@ -29700,11 +29704,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051621916040589126, guid: 819938070e28943428a6e384b5356d94, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.4
+      value: 128.3
       objectReference: {fileID: 0}
     - target: {fileID: 8051621916040589126, guid: 819938070e28943428a6e384b5356d94, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.75
+      value: 76.6
       objectReference: {fileID: 0}
     - target: {fileID: 8051621916040589126, guid: 819938070e28943428a6e384b5356d94, type: 3}
       propertyPath: m_LocalPosition.z
@@ -32095,6 +32099,7 @@ MonoBehaviour:
   pool: {fileID: 1543774879}
   SynapseBar: {fileID: 1265818013}
   dendriteManager: {fileID: 0}
+  changeScene: {fileID: 1347535010}
 --- !u!4 &1872749971
 Transform:
   m_ObjectHideFlags: 0
