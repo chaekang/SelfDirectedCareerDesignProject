@@ -68,7 +68,6 @@ public class SpeedBar : MonoBehaviour
 
     public void OutAxon()
     {
-        changeScene.DeadPalayer("Axon");
-        curSpeed = 0f;   
+        changeScene.DeadPalayer("Axon");   
     }
 }
