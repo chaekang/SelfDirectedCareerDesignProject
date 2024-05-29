@@ -209,6 +209,10 @@ public class _Player : MonoBehaviour
                     Na = true;
                     TakeIon();
                 }
+            } 
+            else if (Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.F))
+            {
+                speedBarScript.PushWrong();
             }
         }
         else if (collision.gameObject.tag == "Channel_K")
@@ -221,6 +225,10 @@ public class _Player : MonoBehaviour
                     TakeIon();
                 }
             }
+            else if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.F))
+            {
+                speedBarScript.PushWrong();
+            }
         }
         else if (collision.gameObject.tag == "Channel_Na_Poison")
         {
@@ -230,6 +238,11 @@ public class _Player : MonoBehaviour
                 poisonF = false;
                 DeletePoison();
             }
+            else if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.F))
+            {
+                speedBarScript.PushWrong();
+            }
+
         }
         else if (collision.gameObject.tag == "Channel_K_Poison")
         {
@@ -239,6 +252,11 @@ public class _Player : MonoBehaviour
                 poisonS = false;
                 DeletePoison();
             }
+            else if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.S))
+            {
+                speedBarScript.PushWrong();
+            }
+
         }
     }
 

@@ -70,4 +70,10 @@ public class SpeedBar : MonoBehaviour
     {
         changeScene.DeadPalayer("Axon");   
     }
+
+    public void PushWrong()
+    {
+        Debug.Log("Push Wrong Key");
+        curSpeed -= 0.02f;
+    }
 }
