@@ -28,6 +28,7 @@ public class ChangeScene : MonoBehaviour
     // 0.(GameStart)    1.(SomaScene)     2.(GameScene1)    3.(GameScene2), 4.(GameScene3)
     // 5.(PoisonStart), 6.(PoisonStage1), 7.(PoisonStage2), 8.(PoisonStage3)
     // 9.(Over_Axon),  10.(Over_Vel0),   11.(Over_Syn)     12.(GameEnd),   13.(Tutorial)
+    // 14.(Intro Anim) 15.(Soma Intro)
     public void BtnChangeScenefunc()
     {
         GameObject clickedObject = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject;
@@ -36,7 +37,7 @@ public class ChangeScene : MonoBehaviour
             switch (clickedObject.name)
             {
                 case "StartBtn":
-                    SceneManager.LoadScene(2);
+                    SceneManager.LoadScene(15);
                     break;
 
                 case "HomeBtn":
@@ -44,7 +45,7 @@ public class ChangeScene : MonoBehaviour
                     break;
 
                 case "RestartBtn":
-                    SceneManager.LoadScene(2);
+                    SceneManager.LoadScene(15);
                     break;
 
                 case "NextStageBtn":
