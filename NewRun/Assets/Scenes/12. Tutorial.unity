@@ -655,7 +655,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC774\uC81C \uCC44\uB110\uC5D0 \uB300\uD574 \uC54C\uC544\uBCFC\uAED8\uC694.\n"
+  m_text: "\uC774\uC81C \uCC44\uB110\uC5D0 \uB300\uD574 \uC54C\uC544\uBCFC\uAC8C\uC694.\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 451b61a272013cc44b5d1dd2fbdbabb2, type: 2}
   m_sharedMaterial: {fileID: 5514174549130421187, guid: 451b61a272013cc44b5d1dd2fbdbabb2, type: 2}
@@ -866,7 +866,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC18C\uB4D0 \uC774\uC628\uC744 A\uD0A4\uB97C \uD1B5\uD574 \uC6C0\uC9C1\uC5EC\uBCFC\uAE4C\uC694?\n\uC774\uC628\uACFC
+  m_text: "Na+ \uC774\uC628\uC744 A\uD0A4\uB97C \uD1B5\uD574 \uC6C0\uC9C1\uC5EC\uBCFC\uAE4C\uC694?\n\uC774\uC628\uACFC
     \uC791\uC6A9\uD558\uBA74 \uC18D\uB3C4\uAC00 \uC62C\uB77C\uAC00\uAC8C \uB3FC\uC694."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 451b61a272013cc44b5d1dd2fbdbabb2, type: 2}
@@ -1006,7 +1006,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4520058819368806411, guid: c99ab947c9775f445a939e2e824c50f6, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4703705517972838956, guid: c99ab947c9775f445a939e2e824c50f6, type: 3}
       propertyPath: field of view
@@ -1471,16 +1471,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Synapse(\uC2DC\uB0C5\uC2A4)\n\n\uC2DC\uB0C5\uC2A4\uB294 \uB450 \uB274\uB7F0
-    \uC0AC\uC774\uC758 \uC811\uD569\uBD80\uB85C, \n\uC774\uACF3\uC5D0\uC11C axon
-    potential\uC740 neurotransmitter\uC758 \uD654\uD559\uC791\uC6A9\uC73C\uB85C \n\uBCC0\uD658\uB418\uC5B4
-    \uB2E4\uC74C \uB274\uB7F0\uC5D0 \uC2E0\uD638\uB97C \n\uC804\uB2EC\uD574\uC694.
-    \uC774 \uACFC\uC815\uC774 \uC798 \uC774\uB8E8\uC5B4\uC838\uC57C \n\uC2E0\uD638\uAC00
-    \uB2E4\uC74C \uB274\uB7F0\uC73C\uB85C \uC548\uC804\uD558\uAC8C \n\uB118\uC5B4\uAC08
-    \uC218 \uC788\uC5B4\uC694. \uADF8\uB7EC\uBBC0\uB85C \uB2F9\uC2E0\uC774 \uB2E4\uC74C
-    \uB2E8\uACC4\uB85C \uB118\uC5B4\uAC00\uAE30 \uC704\uD574\uC11C\uB294 glia\uC778
-    astrocyte\uC758 \uCCAD\uC18C \uD65C\uB3D9\uBCF4\uB2E4 \uBE60\uB974\uAC8C neurotransmitter\uB97C
-    \uBCF4\uB0B4\uC57C \uD569\uB2C8\uB2E4!"
+  m_text: "Synapse(\uC2DC\uB0C5\uC2A4)\n\n<color=#FF0000>Synapse</color>\uB294 \uC2E0\uACBD\uC138\uD3EC
+    \uAC04 \uC811\uD569\uBD80\uC785\uB2C8\uB2E4. \uC774\uACF3\uC5D0\uC11C action
+    potential\uC740 \n\uC2E0\uACBD\uC804\uB2EC\uBB3C\uC9C8\uC744 \uD1B5\uD574 \uB2E4\uC74C
+    \uC2E0\uACBD\uC138\uD3EC\uC5D0 \n\uC2E0\uD638\uB97C \uD654\uD559\uC801\uC73C\uB85C
+    \uC804\uB2EC\uD569\uB2C8\uB2E4.\n\n\uB2F9\uC2E0\uC774 \uB2E4\uC74C \uB2E8\uACC4\uB85C
+    \uB118\uC5B4\uAC00\uAE30 \uC704\uD574\uC11C\uB294 \uC544\uC2A4\uD2B8\uB85C(astrocyte)\uBCF4\uB2E4
+    \uBE60\uB974\uAC8C \n\uC2E0\uACBD\uC804\uB2EC\uBB3C\uC9C8\uC744 \uBCF4\uB0B4\uC57C
+    \uD569\uB2C8\uB2E4!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 451b61a272013cc44b5d1dd2fbdbabb2, type: 2}
   m_sharedMaterial: {fileID: 5514174549130421187, guid: 451b61a272013cc44b5d1dd2fbdbabb2, type: 2}
@@ -1543,7 +1541,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -82.62195, w: 0}
+  m_margin: {x: -9.13031, y: 0, z: -82.62195, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2349,7 +2347,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 336, y: 0}
+  m_AnchoredPosition: {x: 336, y: 156}
   m_SizeDelta: {x: 500, y: 780}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &650002250
@@ -2372,7 +2370,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uD3EC\uD0C0\uC298 \uB3C5 \uCC44\uB110(Channel)\n"
+  m_text: "Dendrotoxin (\uBC40\uB3C5)\n\n\uC804\uC555\uC5D0 \uC758\uD574 \uAC1C\uD3D0\uD558\uB294
+    \nK+ \uCC44\uB110\uC744 \uB9C9\uB294 \uB3C5.\n\uB450\uD1B5, \uC124\uC0AC \uB4F1\uC758
+    \uC99D\uC0C1\uC774 \uC788\uC2B5\uB2C8\uB2E4.\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 451b61a272013cc44b5d1dd2fbdbabb2, type: 2}
   m_sharedMaterial: {fileID: 5514174549130421187, guid: 451b61a272013cc44b5d1dd2fbdbabb2, type: 2}
@@ -2435,7 +2435,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -67.396484, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2483,7 +2483,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 340, y: 0}
+  m_AnchoredPosition: {x: 119, y: -303}
   m_SizeDelta: {x: 500, y: 780}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &664131694
@@ -2506,13 +2506,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Axon(\uCD95\uC0AD\uB3CC\uAE30)\n\n\uC774\uC81C \uC561\uC158\uD3EC\uD150\uC15C\uC774
-    \uC774\uB3D9\uD558\uB294 \uACBD\uB85C\uC778 axon\uC744 \n\uC124\uBA85\uD560\uAC8C\uC694.
-    axon\uC740 \n\uB274\uB7F0\uC758 \uAE34 \uC12C\uC720\uB85C, \uC2E0\uD638\uAC00
-    \uB2E4\uC74C \uC138\uD3EC\uB85C \uC804\uB2EC\uB418\uAE30 \uC704\uD574 \uBC18\uB4DC\uC2DC
-    \uAC70\uCCD0\uC57C \uD558\uB294 \uAE38\uC774\uC5D0\uC694. \uB2F9\uC2E0\uC740
-    \uC774 \uCD95\uC0AD\uC744 \uB530\uB77C \uB2EC\uB9AC\uBA70 \uC2E0\uD638\uB97C
-    \uC804\uB2EC\uD574\uC57C \uD574\uC694. "
+  m_text: "Axon(\uCD95\uC0AD)\n\naxon\uC740 \uC2E0\uACBD\uC138\uD3EC\uC758 \uAE34
+    \uC12C\uC720\uB85C, action potential\uC744 \uD1B5\uD574 \uC790\uADF9\uC2E0\uD638\uB97C
+    \uB2E4\uC74C \uC2E0\uACBD\uC138\uD3EC\uB85C \uC804\uB2EC\uD569\uB2C8\uB2E4."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 451b61a272013cc44b5d1dd2fbdbabb2, type: 2}
   m_sharedMaterial: {fileID: 5514174549130421187, guid: 451b61a272013cc44b5d1dd2fbdbabb2, type: 2}
@@ -2575,7 +2571,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -155.3075, y: 0, z: -27.17871, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -3162,7 +3158,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uBA3C\uC800 \uC18C\uB4D0 \uCC44\uB110\uC774\uC5D0\uC694."
+  m_text: "\uBA3C\uC800 Na+ \uCC44\uB110(\uC18C\uB514\uC6C0 \uCC44\uB110)\uC774\uC5D0\uC694."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 451b61a272013cc44b5d1dd2fbdbabb2, type: 2}
   m_sharedMaterial: {fileID: 5514174549130421187, guid: 451b61a272013cc44b5d1dd2fbdbabb2, type: 2}
@@ -3807,7 +3803,7 @@ GameObject:
   - component: {fileID: 1052858543}
   - component: {fileID: 1052858542}
   m_Layer: 5
-  m_Name: Purpose (1)
+  m_Name: Purpose (1)x
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3964,8 +3960,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 358, y: 0}
-  m_SizeDelta: {x: 650, y: 780}
+  m_AnchoredPosition: {x: 358, y: 135}
+  m_SizeDelta: {x: 650, y: 750}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1071830181
 MonoBehaviour:
@@ -3987,16 +3983,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Action Potential(\uD65C\uB3D9\uC804\uC704)\n\n\uC774 \uADC0\uC5EC\uC6B4
-    \uCE90\uB9AD\uD130\uC758 \uC774\uB984\uC740 action potential\uC774\uC5D0\uC694.
-    \uC561\uC158 \uD3EC\uD150\uC15C\uC740 \n\uB274\uB7F0\uC774 \uC2E0\uD638\uB97C
-    \uC804\uB2EC\uD558\uB294 \uB370 \uC0AC\uC6A9\uD558\uB294 \uC804\uAE30\uC801 \uC2E0\uD638\uB97C
-    \uB9D0\uD574\uC694. \uC774 \uC2E0\uD638\uB294 \n\uC138\uD3EC\uB9C9\uC758 \uC804\uC704
-    \uBCC0\uD654\uC5D0 \uC758\uD574 \uC0DD\uC131\uB418\uBA70, neuron\uC758 axon\uC744
-    \uB530\uB77C \uBE60\uB974\uAC8C \n\uC774\uB3D9\uD574\uC694. \uB2F9\uC2E0\uC758
-    \uBAA9\uD45C\uB294 \uC774 \uC804\uAE30\uC801 \uC2E0\uD638\uAC00 \uB04A\uAE30\uC9C0
-    \uC54A\uACE0 \uB05D\uAE4C\uC9C0 \n\uC804\uB2EC\uB418\uB3C4\uB85D \uB3D5\uB294
-    \uAC70\uC5D0\uC694."
+  m_text: "Action potential(\uD65C\uB3D9\uC804\uC704)\n\naction potential\uC740 \n\uB274\uB7F0\uC774
+    \uC2E0\uD638\uB97C \uC804\uB2EC\uD558\uB294 \uB370 \uC0AC\uC6A9\uD558\uB294 \uC804\uAE30\uC801
+    \uC2E0\uD638\uB97C \uB9D0\uD574\uC694. \uC774 \uC2E0\uD638\uB294 \n\uC138\uD3EC\uB9C9\uC758
+    \uC804\uC704 \uBCC0\uD654\uC5D0 \uC758\uD574 \uC0DD\uC131\uB418\uBA70, neuron\uC758
+    axon\uC744 \uB530\uB77C \uC774\uB3D9\uD574\uC694."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 451b61a272013cc44b5d1dd2fbdbabb2, type: 2}
   m_sharedMaterial: {fileID: 5514174549130421187, guid: 451b61a272013cc44b5d1dd2fbdbabb2, type: 2}
@@ -4266,8 +4257,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "\uC9C0\uAE08\uBD80\uD130 \uBCF8\uACA9\uC801\uC73C\uB85C  action potential\uC774
-    \uB418\uC5B4 \n\uC0DD\uAC01\uACFC \uBA85\uB839\uC744 \uC804\uB2EC\uD558\uB294
-    \uB1CC \uC18D \uC5EC\uC815\uC744 \uC644\uC218\uD574\uBCF4\uC138\uC694."
+    \uB418\uC5B4 \uB1CC \uC18D \uC5EC\uC815\uC744 \uC644\uC218\uD574\uBCF4\uC138\uC694."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 451b61a272013cc44b5d1dd2fbdbabb2, type: 2}
   m_sharedMaterial: {fileID: 5514174549130421187, guid: 451b61a272013cc44b5d1dd2fbdbabb2, type: 2}
@@ -4668,7 +4658,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uB2E4\uC74C\uC740 \uD3EC\uD0C0\uC298 \uCC44\uB110\uC774\uC5D0\uC694."
+  m_text: "\uB2E4\uC74C\uC740 K+ \uCC44\uB110(\uD3EC\uD0C0\uC298 \uCC44\uB110)\uC774\uC5D0\uC694."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 451b61a272013cc44b5d1dd2fbdbabb2, type: 2}
   m_sharedMaterial: {fileID: 5514174549130421187, guid: 451b61a272013cc44b5d1dd2fbdbabb2, type: 2}
@@ -4914,7 +4904,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 292, y: 0}
+  m_AnchoredPosition: {x: 292, y: 119}
   m_SizeDelta: {x: 500, y: 780}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1214366638
@@ -4937,7 +4927,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC18C\uB4D0 \uCC44\uB110(Channel)\n"
+  m_text: "Na+ \uCC44\uB110(Na+ Channel)\n\n\uC804\uC555 \uBCC0\uD654\uB85C Na+(\uC18C\uB514\uC6C0)
+    \uC774\uC628\uC744 \uC2E0\uACBD\uC138\uD3EC \uBC16\uC5D0\uC11C \uC548\uC73C\uB85C
+    \uB04C\uC5B4\uB4E4\uC774\uB294 \uCC44\uB110\uC785\uB2C8\uB2E4."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 451b61a272013cc44b5d1dd2fbdbabb2, type: 2}
   m_sharedMaterial: {fileID: 5514174549130421187, guid: 451b61a272013cc44b5d1dd2fbdbabb2, type: 2}
@@ -5666,7 +5658,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 314, y: 0}
+  m_AnchoredPosition: {x: 314, y: 161}
   m_SizeDelta: {x: 500, y: 780}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1256539546
@@ -5689,7 +5681,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC18C\uB4D0 \uB3C5 \uCC44\uB110(Channel)\n"
+  m_text: "Tetrodotoxin (\uBCF5\uC5B4 \uB3C5)\n\n\uC804\uC555\uC5D0 \uC758\uD574
+    \uAC1C\uD3D0\uD558\uB294 \nNa+ \uCC44\uB110\uC744 \uB9C9\uB294 \uB3C5.\n\uADFC\uC721\uC774
+    \uB9C8\uBE44\uB418\uB294 \uC99D\uC0C1\uC774 \uC788\uC2B5\uB2C8\uB2E4."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 451b61a272013cc44b5d1dd2fbdbabb2, type: 2}
   m_sharedMaterial: {fileID: 5514174549130421187, guid: 451b61a272013cc44b5d1dd2fbdbabb2, type: 2}
@@ -5752,7 +5746,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -83.88916, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -6537,8 +6531,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "\uB2F9\uC2E0\uC740 \uC9C0\uAE08\uBD80\uD130 \uC2E0\uACBD\uC138\uD3EC \uC18D
-    \uC0DD\uAC01 \uC2E0\uD638\uAC00 \uB418\uC5B4 \n\uC555\uC815\uC5D0 \uCC14\uB9B0
-    \uBC1C\uC744 \uAD6C\uD558\uAE30 \uC704\uD574 \uB2EC\uB824\uC57C \uD569\uB2C8\uB2E4!"
+    \uC2E0\uD638\uAC00 \uB418\uC5B4 \n\uC555\uC815\uC5D0 \uCC14\uB9B0 \uBC1C\uC744
+    \uAD6C\uD558\uAE30 \uC704\uD574 \uB2EC\uB824\uC57C \uD569\uB2C8\uB2E4!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 451b61a272013cc44b5d1dd2fbdbabb2, type: 2}
   m_sharedMaterial: {fileID: 5514174549130421187, guid: 451b61a272013cc44b5d1dd2fbdbabb2, type: 2}
@@ -6913,9 +6907,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uD3EC\uD0C0\uC298 \uCC44\uB110\uC740 S\uD0A4\uB97C \uD1B5\uD574 \uB04C\uC5B4\uC62C
-    \uC218 \uC788\uC5B4\uC694.\n\uB9C8\uCC2C\uAC00\uC9C0\uB85C \uC774\uC628\uACFC
-    \uC791\uC6A9\uD558\uBA74 \uC18D\uB3C4\uAC00 \uC62C\uB77C\uAC00\uAC8C \uB3FC\uC694."
+  m_text: "K+ \uCC44\uB110\uC740 S\uD0A4\uB97C \uD1B5\uD574 \uB04C\uC5B4\uC62C \uC218
+    \uC788\uC5B4\uC694.\n\uB9C8\uCC2C\uAC00\uC9C0\uB85C \uC774\uC628\uACFC \uC791\uC6A9\uD558\uBA74
+    \uC18D\uB3C4\uAC00 \uC62C\uB77C\uAC00\uAC8C \uB3FC\uC694."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 451b61a272013cc44b5d1dd2fbdbabb2, type: 2}
   m_sharedMaterial: {fileID: 5514174549130421187, guid: 451b61a272013cc44b5d1dd2fbdbabb2, type: 2}
@@ -7049,8 +7043,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uB2E4\uC74C\uC740 \uC18C\uB4D0 \uCC44\uB110\uC5D0 \uB3C5\uC774 \uB4E4\uC5B4\uAC04
-    \uBC84\uC804\uC774\uC5D0\uC694.\n\uC774\uAC74 Poison Mode\uC5D0\uB9CC \uB098\uC635\uB2C8\uB2E4."
+  m_text: "\uB2E4\uC74C\uC740 \uB3C5\uC774 \uC791\uC6A9\uD558\uB294 Na+ \uCC44\uB110\uC774\uC5D0\uC694.\n\uC774\uAC74
+    Poison Mode\uC5D0\uB9CC \uB098\uC635\uB2C8\uB2E4."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 451b61a272013cc44b5d1dd2fbdbabb2, type: 2}
   m_sharedMaterial: {fileID: 5514174549130421187, guid: 451b61a272013cc44b5d1dd2fbdbabb2, type: 2}
@@ -7184,9 +7178,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uB2E4\uC74C\uC740 \uD3EC\uD0C0\uC298 \uCC44\uB110\uC5D0 \uB3C5\uC774
-    \uB4E4\uC5B4\uAC04 \uBC84\uC804\uC774\uC5D0\uC694.\n\uC774\uAC83\uB3C4 Poison
-    Mode\uC5D0\uB9CC \uB098\uC635\uB2C8\uB2E4."
+  m_text: "\uB2E4\uC74C\uC740 \uB3C5\uC774 \uC791\uC6A9\uD558\uB294 K+ \uCC44\uB110\uC774\uC5D0\uC694.\n\uC774\uAC83\uB3C4
+    Poison Mode\uC5D0\uB9CC \uB098\uC635\uB2C8\uB2E4."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 451b61a272013cc44b5d1dd2fbdbabb2, type: 2}
   m_sharedMaterial: {fileID: 5514174549130421187, guid: 451b61a272013cc44b5d1dd2fbdbabb2, type: 2}
@@ -7519,8 +7512,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC548\uB155\uD558\uC138\uC694!\n\uB274\uB7F0\uC758 \uC138\uACC4\uC5D0
-    \uC624\uC2E0 \uAC78 \uD658\uC601\uD569\uB2C8\uB2E4!"
+  m_text: "\uC548\uB155\uD558\uC138\uC694!\nNew Run\uC758 \uC138\uACC4\uC5D0 \uC624\uC2E0
+    \uAC78 \uD658\uC601\uD569\uB2C8\uB2E4!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 451b61a272013cc44b5d1dd2fbdbabb2, type: 2}
   m_sharedMaterial: {fileID: 5514174549130421187, guid: 451b61a272013cc44b5d1dd2fbdbabb2, type: 2}
@@ -7614,7 +7607,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &1699165975
 Animator:
   serializedVersion: 5
@@ -7988,7 +7981,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 9.74, y: 9.74, z: 0}
   m_MaxChunkCount: 16
@@ -16866,10 +16859,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uD3EC\uD0C0\uC298 \uB3C5 \uCC44\uB110\uC740 F\uD0A4\uB97C \uD1B5\uD574
-    \uB04C\uC5B4\uC62C \uC218 \uC788\uC5B4\uC694.\n\uB9C8\uCC2C\uAC00\uC9C0\uB85C
-    \uC774\uC628\uACFC \uC791\uC6A9\uD558\uBA74 \uC18D\uB3C4\uAC00 \uC62C\uB77C\uAC00\uAC8C
-    \uB3FC\uC694."
+  m_text: "K+ \uCC44\uB110\uC758 \uB3C5\uC740 F\uD0A4\uB97C \uD1B5\uD574 \uC81C\uAC70\uD560
+    \uC218 \uC788\uC5B4\uC694.\n\uB9C8\uCC2C\uAC00\uC9C0\uB85C \uC774\uC628\uACFC
+    \uC791\uC6A9\uD558\uBA74 \uC18D\uB3C4\uAC00 \uC62C\uB77C\uAC00\uAC8C \uB3FC\uC694."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 451b61a272013cc44b5d1dd2fbdbabb2, type: 2}
   m_sharedMaterial: {fileID: 5514174549130421187, guid: 451b61a272013cc44b5d1dd2fbdbabb2, type: 2}
@@ -17502,7 +17494,7 @@ GameObject:
   - component: {fileID: 1951257651}
   - component: {fileID: 1951257650}
   m_Layer: 5
-  m_Name: Purpose
+  m_Name: Purposex
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17885,7 +17877,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uADF8\uB9AC\uACE0 \uB9F5\uC5D0 \uB300\uD574 \uC54C\uC544\uBCFC\uAED8\uC694!"
+  m_text: "\uADF8\uB9AC\uACE0 \uB9F5\uC5D0 \uB300\uD574 \uC54C\uC544\uBCFC\uAC8C\uC694!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 451b61a272013cc44b5d1dd2fbdbabb2, type: 2}
   m_sharedMaterial: {fileID: 5514174549130421187, guid: 451b61a272013cc44b5d1dd2fbdbabb2, type: 2}
@@ -18371,7 +18363,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC18C\uB4D0 \uB3C5 \uCC44\uB110\uC740 D\uD0A4\uB97C \uD1B5\uD574 \uB04C\uC5B4\uC62C
+  m_text: "Na+ \uCC44\uB110\uC758 \uB3C5\uC740 D\uD0A4\uB97C \uD1B5\uD574 \uC81C\uAC70\uD560
     \uC218 \uC788\uC5B4\uC694.\n\uB9C8\uCC2C\uAC00\uC9C0\uB85C \uC774\uC628\uACFC
     \uC791\uC6A9\uD558\uBA74 \uC18D\uB3C4\uAC00 \uC62C\uB77C\uAC00\uAC8C \uB3FC\uC694."
   m_isRightToLeft: 0
@@ -18620,7 +18612,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 327, y: 0}
+  m_AnchoredPosition: {x: 327, y: 120}
   m_SizeDelta: {x: 500, y: 780}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2146330987
@@ -18643,7 +18635,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uD3EC\uD0C0\uC298 \uCC44\uB110(Channel)\n"
+  m_text: "K+ \uCC44\uB110(K+ Channel)\n\n\uC804\uC555 \uBCC0\uD654\uB85C K+(\uCE7C\uB968)
+    \uC774\uC628\uC774 \uC2E0\uACBD\uC138\uD3EC \uC548\uC5D0\uC11C \uBC16\uC73C\uB85C
+    \uB098\uAC00\uAC8C \uD558\uB294 \uC774\uC628\uCC44\uB110\uC785\uB2C8\uB2E4."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 451b61a272013cc44b5d1dd2fbdbabb2, type: 2}
   m_sharedMaterial: {fileID: 5514174549130421187, guid: 451b61a272013cc44b5d1dd2fbdbabb2, type: 2}
@@ -19085,7 +19079,7 @@ Transform:
   m_GameObject: {fileID: 4336201243894370982}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.07, y: -5.42, z: 0}
+  m_LocalPosition: {x: -2.66, y: -5.56, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
