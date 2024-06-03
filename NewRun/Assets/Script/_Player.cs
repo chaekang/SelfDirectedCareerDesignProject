@@ -1,6 +1,8 @@
 using System.Collections;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum PlayerState { run, turn_up, turn_down, turn_right }; // 플레이어 상태 변수
 public class _Player : MonoBehaviour
@@ -50,6 +52,16 @@ public class _Player : MonoBehaviour
     public bool K = false;
     public bool NaPoison = false;
     public bool KPoison = false;
+
+    // 체널 개수
+    public TextMeshProUGUI Na_num;
+    public TextMeshProUGUI K_num;
+    public TextMeshProUGUI NaToxic_num;
+    public TextMeshProUGUI KToxic_num;
+    public int NaNum;
+    public int KNum;
+    public int NaToxicNum;
+    public int KToxicNum;
 
     void Start()
     {
@@ -212,6 +224,8 @@ public class _Player : MonoBehaviour
                 if (channel_Na)
                 {
                     Na = true;
+                    NaNum--;
+                    Na_num.text = NaNum.ToString();
                     TakeIon();
                 }
             } 
@@ -226,6 +240,8 @@ public class _Player : MonoBehaviour
             {
                 if (channel_K)
                 {
+                    KNum--;
+                    K_num.text = KNum.ToString();
                     K = true;
                     TakeIon();
                 }
@@ -242,6 +258,8 @@ public class _Player : MonoBehaviour
             {
                 poisonF = false;
                 NaPoison = true;
+                NaToxicNum--;
+                NaToxic_num.text = NaToxicNum.ToString();
                 DeletePoison();
             }
             else if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.F))
@@ -257,6 +275,8 @@ public class _Player : MonoBehaviour
             {
                 poisonS = false;
                 KPoison = true;
+                KToxicNum--;
+                KToxic_num.text = KToxicNum.ToString();
                 DeletePoison();
             }
             else if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.S))

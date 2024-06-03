@@ -38,7 +38,7 @@ public class ChangeScene : MonoBehaviour
             switch (clickedObject.name)
             {
                 case "StartBtn":
-                    SceneManager.LoadScene(15);
+                    SceneManager.LoadScene(2);
                     break;
 
                 case "HomeBtn":
@@ -46,7 +46,7 @@ public class ChangeScene : MonoBehaviour
                     break;
 
                 case "RestartBtn":
-                    SceneManager.LoadScene(15);
+                    SceneManager.LoadScene(2);
                     break;
 
                 case "NextStageBtn":
