@@ -334,8 +334,12 @@ public class _Player : MonoBehaviour
         {
             if (poisonF)
             {
-                Debug.Log("PoisonFish 삭제가 되지 않음");
-                speedBarScript.DecreaseSpeedByPoison();
+                if (!GameManager.instance.changeScene.isTutorial)
+                {
+                    Debug.Log("PoisonFish 삭제가 되지 않음");
+                    speedBarScript.DecreaseSpeedByPoison();
+
+                }
             }
             else
             {
