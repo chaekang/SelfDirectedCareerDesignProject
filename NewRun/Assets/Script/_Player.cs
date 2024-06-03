@@ -48,6 +48,8 @@ public class _Player : MonoBehaviour
     public bool finish = false;
     public bool Na = false;
     public bool K = false;
+    public bool NaPoison = false;
+    public bool KPoison = false;
 
     void Start()
     {
@@ -142,8 +144,11 @@ public class _Player : MonoBehaviour
             GameManager.instance.SynapseBar.curPoint = 0;
             playerSpeed = 0f;
             synapseBar.SetActive(true);
-            onSynapse = true;
             camMove = true;
+            if (!GameManager.instance.changeScene.isTutorial)
+            {
+                onSynapse = true;
+            }
         }
     }
 
@@ -236,6 +241,7 @@ public class _Player : MonoBehaviour
             if (Input.GetKeyUp(KeyCode.D))
             {
                 poisonF = false;
+                NaPoison = true;
                 DeletePoison();
             }
             else if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.F))
@@ -250,6 +256,7 @@ public class _Player : MonoBehaviour
             if (Input.GetKeyUp(KeyCode.F))
             {
                 poisonS = false;
+                KPoison = true;
                 DeletePoison();
             }
             else if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.S))
@@ -268,7 +275,9 @@ public class _Player : MonoBehaviour
         init_channel.gameObject.SetActive(false);
         channel_anim.gameObject.SetActive(true);
         StartCoroutine(Elec());
-        speedBarScript.IncreaseSpeedByIon();
+        if (!GameManager.instance.changeScene.isTutorial) {
+            speedBarScript.IncreaseSpeedByIon();
+        }
     }
 
     // 전기신호 받음
@@ -337,8 +346,11 @@ public class _Player : MonoBehaviour
         {
             if (poisonS)
             {
-                Debug.Log("PoisonFPoisonSnakeish 삭제가 되지 않음");
-                speedBarScript.DecreaseSpeedByPoison();
+                if (!GameManager.instance.changeScene.isTutorial)
+                {
+                    Debug.Log("PoisonFPoisonSnakeish 삭제가 되지 않음");
+                    speedBarScript.DecreaseSpeedByPoison();
+                }
             }
             else
             {

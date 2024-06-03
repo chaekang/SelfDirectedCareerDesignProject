@@ -28,7 +28,10 @@ public class SynapseBar : MonoBehaviour
         if (GameManager.instance.player.onSynapse)
         {
             time += Time.deltaTime;
-            velocityBar.SetActive(false);
+            if (!GameManager.instance.changeScene.isTutorial)
+            {
+                velocityBar.SetActive(false);
+            }
             curPoint -= decreaseRate * Time.deltaTime;
 
             // NT 이미지 활성화
