@@ -360,7 +360,6 @@ MonoBehaviour:
   targetPosition: {fileID: 2030866674}
   dendriteManager: {fileID: 1036793929}
   speed: 1
-  onSoma: 0
 --- !u!1 &223741597
 GameObject:
   m_ObjectHideFlags: 0
@@ -494,6 +493,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soma: {fileID: 1179212997}
+  dendriteManager: {fileID: 1036793929}
   infoPanel: {fileID: 1319045175}
   continuePanel: {fileID: 257494735}
 --- !u!4 &236887637
@@ -589,6 +589,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 257494735}
   m_CullTransparentMesh: 1
+--- !u!1 &288986576
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 288986578}
+  - component: {fileID: 288986577}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &288986577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288986576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e62a2b7f059ef41478f7bdbdb50a7fb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  pool: {fileID: 0}
+  SynapseBar: {fileID: 0}
+  dendriteManager: {fileID: 1036793929}
+  changeScene: {fileID: 1168953248}
+--- !u!4 &288986578
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288986576}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9.919423, y: 4.4006176, z: -9.909281}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &381311987
 GameObject:
   m_ObjectHideFlags: 0
@@ -607,7 +656,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &381311988
 Transform:
   m_ObjectHideFlags: 0
@@ -617,7 +666,7 @@ Transform:
   m_GameObject: {fileID: 381311987}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.72, y: -28.85, z: 0.21292537}
+  m_LocalPosition: {x: 20.2, y: -37, z: 0.21292537}
   m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -725,7 +774,6 @@ MonoBehaviour:
   targetPosition: {fileID: 2030866674}
   dendriteManager: {fileID: 1036793929}
   speed: 1
-  onSoma: 0
 --- !u!1 &383256922
 GameObject:
   m_ObjectHideFlags: 0
@@ -842,7 +890,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &416333819
 Transform:
   m_ObjectHideFlags: 0
@@ -852,7 +900,7 @@ Transform:
   m_GameObject: {fileID: 416333818}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.8, y: 14.3, z: 0.21292537}
+  m_LocalPosition: {x: 19.7, y: 23.5, z: 0.21292537}
   m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -960,7 +1008,6 @@ MonoBehaviour:
   targetPosition: {fileID: 2030866674}
   dendriteManager: {fileID: 1036793929}
   speed: 1
-  onSoma: 0
 --- !u!1 &441148548
 GameObject:
   m_ObjectHideFlags: 0
@@ -979,7 +1026,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &441148549
 Transform:
   m_ObjectHideFlags: 0
@@ -989,7 +1036,7 @@ Transform:
   m_GameObject: {fileID: 441148548}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.6, y: -27.4, z: 0.21292537}
+  m_LocalPosition: {x: -10.7, y: -33.9, z: 0.21292537}
   m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1097,7 +1144,6 @@ MonoBehaviour:
   targetPosition: {fileID: 2030866674}
   dendriteManager: {fileID: 1036793929}
   speed: 1
-  onSoma: 0
 --- !u!1 &494469271
 GameObject:
   m_ObjectHideFlags: 0
@@ -1569,10 +1615,10 @@ MonoBehaviour:
   - {fileID: 416333818}
   - {fileID: 381311987}
   - {fileID: 441148548}
-  ActionPotential: {fileID: 383256922}
   isOverlap: 0
   isDisappear: 0
   SomaPlayer: 0
+  nextStagebtn: 0
 --- !u!4 &1036793930
 Transform:
   m_ObjectHideFlags: 0
@@ -1633,6 +1679,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dendrite: {fileID: 0}
+  isTutorial: 0
 --- !u!1 &1179212992
 GameObject:
   m_ObjectHideFlags: 0
@@ -1796,6 +1843,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dendriteManager: {fileID: 1036793929}
   SomaMaterial: {fileID: 2100000, guid: f813075bbb9d3954c8588d30126f8bd3, type: 2}
+  somaPlayer: {fileID: 383256922}
   isFinish: 0
 --- !u!1 &1249162030
 GameObject:
@@ -1948,7 +1996,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1287074999
 Transform:
   m_ObjectHideFlags: 0
@@ -1958,7 +2006,7 @@ Transform:
   m_GameObject: {fileID: 1287074998}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.5, y: 13.4, z: 0.21292537}
+  m_LocalPosition: {x: -9.4, y: 22.5, z: 0.21292537}
   m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2066,7 +2114,6 @@ MonoBehaviour:
   targetPosition: {fileID: 2030866674}
   dendriteManager: {fileID: 1036793929}
   speed: 1
-  onSoma: 0
 --- !u!1 &1319045175
 GameObject:
   m_ObjectHideFlags: 0
@@ -3416,3 +3463,4 @@ SceneRoots:
   - {fileID: 1689479216}
   - {fileID: 236887637}
   - {fileID: 1168953247}
+  - {fileID: 288986578}

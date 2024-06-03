@@ -10,6 +10,7 @@ public class ChangeScene : MonoBehaviour
     static int poisonSomaScene = 1;
     bool isListenerRegistered = false;
     static bool isPoison = false;
+    public bool isTutorial = false;
 
     private void Start()
     {
@@ -49,7 +50,7 @@ public class ChangeScene : MonoBehaviour
                     break;
 
                 case "NextStageBtn":
-                    GoToNextScene();
+                    GameManager.instance.dendriteManager.nextStagebtn = true;
                     break;
 
                 case "ChangeToPoisonMode":
@@ -58,6 +59,9 @@ public class ChangeScene : MonoBehaviour
 
                 case "ChangeToBasicMode":
                     SceneManager.LoadScene(0);
+                    break;
+                case "GameExpBtn":
+                    SceneManager.LoadScene(13);
                     break;
             }
         }
@@ -86,6 +90,10 @@ public class ChangeScene : MonoBehaviour
             Debug.Log("poison");
             isPoison = true;
         }
+        else if (scene.name == "12. Tutorial")
+        {
+            isTutorial = true;
+        }
     }
 
     private void Update()
@@ -100,6 +108,14 @@ public class ChangeScene : MonoBehaviour
         {
             SceneManager.LoadScene(1);
         }
+        if (GameManager.instance.dendriteManager != null)
+        {
+            if (GameManager.instance.dendriteManager.SomaPlayer)
+            {
+                GoToNextScene();
+            }
+        }
+
     }
 
     public void GoToNextScene()

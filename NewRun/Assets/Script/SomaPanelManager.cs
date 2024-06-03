@@ -5,6 +5,7 @@ using UnityEngine;
 public class SomaPanelManager : MonoBehaviour
 {
     public Soma soma;
+    public DendriteManager dendriteManager;
     public GameObject infoPanel;
     public GameObject continuePanel;
 
@@ -12,10 +13,15 @@ public class SomaPanelManager : MonoBehaviour
 
     private void Update()
     {
-        if (soma.isFinish && !panelsActivated)
+        if (dendriteManager.isOverlap && !panelsActivated)
         {
             StartCoroutine(ActivateInfoPanel());
             panelsActivated = true; 
+        }
+
+        if (GameManager.instance.dendriteManager.nextStagebtn)
+        {
+            continuePanel.SetActive(false);
         }
     }
 

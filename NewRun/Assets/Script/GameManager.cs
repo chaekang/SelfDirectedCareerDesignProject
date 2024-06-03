@@ -19,25 +19,4 @@ public class GameManager : MonoBehaviour
             instance = this;
         }
     }
-
-    public enum E_STATE
-    {
-        INTRO,
-        START,
-        HOWTOPLAY,
-        INFO,
-        PLAY,
-        GAMEOVER,
-        GAMEWINNING,
-        END,
-        RESTART
-    }
-
-    E_STATE gamestate;
-
-    private void Update()
-    {
-    
-    }
-
 }

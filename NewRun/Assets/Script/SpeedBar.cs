@@ -1,3 +1,5 @@
+
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,7 +18,8 @@ public class SpeedBar : MonoBehaviour
 
     private _Player playerScript;
     private ChangeScene changeScene;
-    // Start is called before the first frame update
+
+
     void Start()
     {
         playerScript = FindObjectOfType<_Player>();
@@ -36,44 +39,62 @@ public class SpeedBar : MonoBehaviour
 
     void SetSpeedBar(float num)
     {
-        maxSpeed = num;
-        curSpeed = maxSpeed;
+        if (!GameManager.instance.changeScene.isTutorial)
+        {
+            maxSpeed = num;
+            curSpeed = maxSpeed;
+        }
     }
 
     void CheckSpeed()
     {
-        curSpeed -= slowSpeedRate * Time.deltaTime;
-        if (curSpeed < 0f)
+        if (!GameManager.instance.changeScene.isTutorial)
         {
-            curSpeed = 0f;
-            changeScene.DeadPalayer("Vel");
+            curSpeed -= slowSpeedRate * Time.deltaTime;
+            if (curSpeed < 0f)
+            {
+                curSpeed = 0f;
+                changeScene.DeadPalayer("Vel");
+            }
+            else if (curSpeed > maxSpeed)
+            {
+                curSpeed = maxSpeed;
+            }
+            speedBar.value = curSpeed;
+            playerScript.playerSpeed = curSpeed;
         }
-        else if (curSpeed > maxSpeed)
-        {
-            curSpeed = maxSpeed;
-        }
-        speedBar.value = curSpeed;
-        playerScript.playerSpeed = curSpeed;
     }
 
     public void DecreaseSpeedByPoison()
     {
-        curSpeed -= decressSpeed;
+        if (!GameManager.instance.changeScene.isTutorial)
+        {
+            curSpeed -= decressSpeed;
+        }
     }
 
     public void IncreaseSpeedByIon()
     {
-        curSpeed += increaseSpeed;
+        if (!GameManager.instance.changeScene.isTutorial)
+        {
+            curSpeed += increaseSpeed;
+        }
     }
 
     public void OutAxon()
     {
-        changeScene.DeadPalayer("Axon");   
+        if (!GameManager.instance.changeScene.isTutorial)
+        {
+            changeScene.DeadPalayer("Axon");
+        }
     }
 
     public void PushWrong()
     {
-        Debug.Log("Push Wrong Key");
-        curSpeed -= 0.02f;
+        if (!GameManager.instance.changeScene.isTutorial)
+        {
+            Debug.Log("Push Wrong Key");
+            curSpeed -= 0.02f;
+        }
     }
 }

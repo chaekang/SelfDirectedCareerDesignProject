@@ -6,8 +6,10 @@ public class Soma : MonoBehaviour
 {
     public DendriteManager dendriteManager;
     public Material SomaMaterial;
+    public GameObject somaPlayer;
     private bool isIncreasingTransparency = false;
     public bool isFinish = false;
+
     private void Start()
     {
         if (SomaMaterial != null)
@@ -24,6 +26,11 @@ public class Soma : MonoBehaviour
         if (dendriteManager.isDisappear && !isIncreasingTransparency)
         {
             StartCoroutine(IncreaseTransparencyOverTime(1.5f));
+        }
+
+        if (isFinish)
+        {
+            somaPlayer.SetActive(true);
         }
     }
 

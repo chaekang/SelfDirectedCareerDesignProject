@@ -5,7 +5,7 @@ using UnityEngine;
 public class SomaPlayer : MonoBehaviour
 {
     public GameObject targetPosition;
-    float acceleration = 2;
+    float acceleration = 5;
     bool appear = false;
     float time = 0;
 
