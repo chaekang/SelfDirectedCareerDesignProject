@@ -15,10 +15,8 @@ public class Spawner : MonoBehaviour
 
     private void Update()
     {
-        //Debug.Log("onSynapse");
         if (GameManager.instance.player.onSynapse)
         {
-            
             timer += Time.deltaTime;
 
             float randomTime = Random.Range(0.5f, 0.8f);

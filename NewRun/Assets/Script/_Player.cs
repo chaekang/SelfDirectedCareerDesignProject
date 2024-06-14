@@ -52,6 +52,7 @@ public class _Player : MonoBehaviour
     public bool K = false;
     public bool NaPoison = false;
     public bool KPoison = false;
+    public bool canChangeDirection = true;
 
     // 체널 개수
     public TextMeshProUGUI Na_num;
@@ -127,17 +128,20 @@ public class _Player : MonoBehaviour
     // 플레이어 방향 전환 상태 저장
     void PlayerchangeDirection()
     {
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (canChangeDirection)
         {
-            state = PlayerState.turn_right;
-        }
-        else if (Input.GetKey(KeyCode.UpArrow))
-        {
-            state = PlayerState.turn_up;
-        }
-        else if (Input.GetKey(KeyCode.DownArrow))
-        {
-            state = PlayerState.turn_down;
+            if (Input.GetKey(KeyCode.RightArrow))
+            {
+                state = PlayerState.turn_right;
+            }
+            else if (Input.GetKey(KeyCode.UpArrow))
+            {
+                state = PlayerState.turn_up;
+            }
+            else if (Input.GetKey(KeyCode.DownArrow))
+            {
+                state = PlayerState.turn_down;
+            }
         }
     }
 
@@ -223,15 +227,19 @@ public class _Player : MonoBehaviour
             {
                 if (channel_Na)
                 {
+                    if (!GameManager.instance.changeScene.isTutorial)
+                    {
+                        NaNum--;
+                        Na_num.text = NaNum.ToString();
+                    }
                     Na = true;
-                    NaNum--;
-                    Na_num.text = NaNum.ToString();
                     TakeIon();
                 }
             } 
             else if (Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.F))
             {
-                speedBarScript.PushWrong();
+                if (!GameManager.instance.changeScene.isTutorial)
+                    speedBarScript.PushWrong();
             }
         }
         else if (collision.gameObject.tag == "Channel_K")
@@ -240,15 +248,19 @@ public class _Player : MonoBehaviour
             {
                 if (channel_K)
                 {
-                    KNum--;
-                    K_num.text = KNum.ToString();
+                    if (!GameManager.instance.changeScene.isTutorial)
+                    {
+                        KNum--;
+                        K_num.text = KNum.ToString();
+                    }
                     K = true;
                     TakeIon();
                 }
             }
             else if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.F))
             {
-                speedBarScript.PushWrong();
+                if (!GameManager.instance.changeScene.isTutorial)
+                    speedBarScript.PushWrong();
             }
         }
         else if (collision.gameObject.tag == "Channel_Na_Poison")
@@ -258,13 +270,17 @@ public class _Player : MonoBehaviour
             {
                 poisonF = false;
                 NaPoison = true;
-                NaToxicNum--;
-                NaToxic_num.text = NaToxicNum.ToString();
+                if (!GameManager.instance.changeScene.isTutorial)
+                {
+                    NaToxicNum--;
+                    NaToxic_num.text = NaToxicNum.ToString();
+                }
                 DeletePoison();
             }
             else if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.F))
             {
-                speedBarScript.PushWrong();
+                if (!GameManager.instance.changeScene.isTutorial)
+                    speedBarScript.PushWrong();
             }
 
         }
@@ -275,13 +291,17 @@ public class _Player : MonoBehaviour
             {
                 poisonS = false;
                 KPoison = true;
-                KToxicNum--;
-                KToxic_num.text = KToxicNum.ToString();
+                if (!GameManager.instance.changeScene.isTutorial)
+                {
+                    KToxicNum--;
+                    KToxic_num.text = KToxicNum.ToString();
+                }
                 DeletePoison();
             }
             else if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.S))
             {
-                speedBarScript.PushWrong();
+                if (!GameManager.instance.changeScene.isTutorial)
+                    speedBarScript.PushWrong();
             }
 
         }

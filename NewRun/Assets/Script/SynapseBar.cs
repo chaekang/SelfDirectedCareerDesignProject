@@ -18,6 +18,8 @@ public class SynapseBar : MonoBehaviour
     public bool GameOver = false;
     float time = 0;
 
+    bool getKeyboard = true;
+
     private void Start()
     {
         passBar.value = 0;
@@ -25,6 +27,18 @@ public class SynapseBar : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.instance.changeScene.isTutorial)
+        {
+            if (GameManager.instance.tutorialManager.order == 33)
+            {
+                getKeyboard = true;
+            }
+            else
+            {
+                getKeyboard = false;
+            }
+        }
+
         if (GameManager.instance.player.onSynapse)
         {
             time += Time.deltaTime;
@@ -54,15 +68,18 @@ public class SynapseBar : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (curPoint < maxPoint)
+            if (getKeyboard)
             {
-                curPoint += 5;
-            }
-            else
-            {
-                curPoint = 100;
-                GameManager.instance.player.disappear = true;
-                GameManager.instance.player.onSynapse = false;
+                if (curPoint < maxPoint)
+                {
+                    curPoint += 5;
+                }
+                else
+                {
+                    curPoint = 100;
+                    GameManager.instance.player.disappear = true;
+                    GameManager.instance.player.onSynapse = false;
+                }
             }
         }
 

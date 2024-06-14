@@ -15,6 +15,10 @@ public class ChangeScene : MonoBehaviour
     private void Start()
     {
         RegisterSceneLoadedListener();
+        if (GameManager.instance.changeScene.isTutorial)
+        {
+            somaSceneCount = 0;
+        }
     }
 
     private void RegisterSceneLoadedListener()
@@ -63,6 +67,9 @@ public class ChangeScene : MonoBehaviour
                 case "GameExpBtn":
                     SceneManager.LoadScene(13);
                     break;
+                case "StartBtn_Poison":
+                    SceneManager.LoadScene(6);
+                    break;
             }
         }
     }
@@ -90,9 +97,15 @@ public class ChangeScene : MonoBehaviour
             Debug.Log("poison");
             isPoison = true;
         }
-        else if (scene.name == "12. Tutorial")
+
+        if (scene.name == "12. Tutorial")
         {
             isTutorial = true;
+            GameManager.instance.player.canChangeDirection = false;
+        }
+        else
+        {
+            isTutorial = false;
         }
     }
 
@@ -104,10 +117,12 @@ public class ChangeScene : MonoBehaviour
             SceneManager.LoadScene(11);
 
         }
+        // 소마씬으로 이동
         if (dendrite != null && dendrite.isFinish && !dendrite.isEnd)
         {
             SceneManager.LoadScene(1);
         }
+        // 소마에서 다음 스테이지로 이동
         if (GameManager.instance.dendriteManager != null)
         {
             if (GameManager.instance.dendriteManager.SomaPlayer)
@@ -120,6 +135,7 @@ public class ChangeScene : MonoBehaviour
 
     public void GoToNextScene()
     {
+        // 일반모드 씬전환
         if (!isPoison && somaSceneCount <= 3)
         {
             int nextSceneIndex = somaSceneCount + 1; // 현재 씬의 다음 인덱스 계산
@@ -129,6 +145,7 @@ public class ChangeScene : MonoBehaviour
                 SceneManager.LoadScene(nextSceneIndex); // 다음 씬으로 이동
             }
         }
+        // 독모드 씬전환
         if (isPoison && poisonSomaScene <= 3)
         {
             int nextPoisonScene = poisonSomaScene + 5;

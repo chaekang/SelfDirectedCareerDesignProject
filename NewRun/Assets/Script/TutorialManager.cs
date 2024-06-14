@@ -28,7 +28,7 @@ public class TutorialManager : MonoBehaviour
     // 13: 채널+소듐멘트, 14: 소듐, 15: a키, 16: 소듐 실행, 17: 포타슘멘트, 18: 포타슘 19: s키, 20: 포타슘 실행
     // 21: 소듐독 멘트, 22: 소듐독, 23: d키, 24: 소듐독 실행, 25: 포타슘 독 멘트, 26: 포타슘독, 27: f키, 28: 포타슘 독 실행
     // 29: 경고+속도바, 30: 시냅스 멘트, 31: 시냅스, 32: 마지막 멘트, 33: 시냅스 실행
-    int order = 0;
+    public int order = 0;
 
     Coroutine runningCoroutine; // 현재 실행 중인 코루틴을 저장하기 위한 변수
 
@@ -79,7 +79,7 @@ public class TutorialManager : MonoBehaviour
         // Finish
         if (GameManager.instance.player.finish)
         {
-            if (order == 12)
+            if (order == 6 || order == 8 || order == 10 || order == 12)
             {
                 isTurn = false;
             }
@@ -100,6 +100,7 @@ public class TutorialManager : MonoBehaviour
                 else
                 {
                     order++;
+                    Debug.Log("1");
                     if (runningCoroutine != null)
                     {
                         StopCoroutine(runningCoroutine);
@@ -125,6 +126,7 @@ public class TutorialManager : MonoBehaviour
                 else
                 {
                     order++;
+                    Debug.Log("2");
                     if (runningCoroutine != null)
                     {
                         StopCoroutine(runningCoroutine);
@@ -150,6 +152,7 @@ public class TutorialManager : MonoBehaviour
                 else
                 {
                     order++;
+                    Debug.Log("3");
                     if (runningCoroutine != null)
                     {
                         StopCoroutine(runningCoroutine);
@@ -175,6 +178,7 @@ public class TutorialManager : MonoBehaviour
                 else
                 {
                     order++;
+                    Debug.Log("4");
                     if (runningCoroutine != null)
                     {
                         StopCoroutine(runningCoroutine);
@@ -187,6 +191,7 @@ public class TutorialManager : MonoBehaviour
             else
             {
                 order++;
+                Debug.Log("5");
                 Debug.Log("Order: " + order);
                 GameManager.instance.player.finish = false;
                 if (runningCoroutine != null)
@@ -218,6 +223,7 @@ public class TutorialManager : MonoBehaviour
             }
             runningCoroutine = StartCoroutine(ShowTexts());
         }
+        // 실행
         else if (!isStop && isTurn && runningCoroutine == null)
         {
             if (order == 6)
@@ -249,7 +255,7 @@ public class TutorialManager : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         turnPanel.SetActive(false);
         turnTexts[i].SetActive(false);
-        isTurn = false;
+        GameManager.instance.player.canChangeDirection = true;
         yield return null;
     }
 
@@ -269,7 +275,7 @@ public class TutorialManager : MonoBehaviour
         if (order == 0)
         {
             GameManager.instance.player.playerSpeed = 0;
-            while (talkIndex < 5)
+            while (talkIndex < 3)
             {
                 talkPanel.SetActive(true);
                 talkTexts[talkIndex].SetActive(true);
@@ -304,7 +310,7 @@ public class TutorialManager : MonoBehaviour
         }
         else if (order == 5)
         {
-            while (talkIndex < 9)
+            while (talkIndex < 7)
             {
                 talkPanel.SetActive(true);
                 talkTexts[talkIndex].SetActive(true);
@@ -317,10 +323,11 @@ public class TutorialManager : MonoBehaviour
         }
         else if (order == 7 || order == 9)
         {
+            GameManager.instance.player.canChangeDirection = false;
             talkPanel.SetActive(true);
-            talkTexts[11].SetActive(true);
+            talkTexts[9].SetActive(true);
             yield return new WaitForSeconds(2f);
-            talkTexts[11].SetActive(false);
+            talkTexts[9].SetActive(false);
             talkTexts[talkIndex].SetActive(true);
             yield return new WaitForSeconds(3f);
             talkTexts[talkIndex].SetActive(false);
@@ -330,25 +337,28 @@ public class TutorialManager : MonoBehaviour
         }
         else if (order == 11)
         {
-            talkIndex = 12;
+            GameManager.instance.player.canChangeDirection = false;
+            talkIndex = 10;
             talkPanel.SetActive(true);
-            talkTexts[11].SetActive(true);
+            talkTexts[9].SetActive(true);
             yield return new WaitForSeconds(2f);
-            talkTexts[11].SetActive(false);
+            talkTexts[9].SetActive(false);
             talkTexts[talkIndex].SetActive(true);
             yield return new WaitForSeconds(3f);
             talkPanel.SetActive(false);
             talkTexts[talkIndex].SetActive(false);
             talkIndex++;
+            GameManager.instance.player.canChangeDirection = true;
             isTurn = true;
         }
         else if (order == 13)
         {
+            GameManager.instance.player.canChangeDirection = false;
             talkPanel.SetActive(true);
-            talkTexts[11].SetActive(true);
+            talkTexts[9].SetActive(true);
             yield return new WaitForSeconds(2f);
-            talkTexts[11].SetActive(false);
-            while (talkIndex < 15)
+            talkTexts[9].SetActive(false);
+            while (talkIndex < 13)
             {
                 talkTexts[talkIndex].SetActive(true);
                 yield return new WaitForSeconds(3f);
@@ -369,9 +379,9 @@ public class TutorialManager : MonoBehaviour
         else if (order == 17 || order == 21 || order == 25)
         {
             talkPanel.SetActive(true);
-            talkTexts[11].SetActive(true);
+            talkTexts[9].SetActive(true);
             yield return new WaitForSeconds(2f);
-            talkTexts[11].SetActive(false);
+            talkTexts[9].SetActive(false);
             talkTexts[talkIndex].SetActive(true);
             yield return new WaitForSeconds(3f);
             talkTexts[talkIndex].SetActive(false);
@@ -381,15 +391,15 @@ public class TutorialManager : MonoBehaviour
         else if (order == 29)
         {
             talkPanel.SetActive(true);
-            talkTexts[11].SetActive(true);
+            talkTexts[9].SetActive(true);
             yield return new WaitForSeconds(2f);
-            talkTexts[11].SetActive(false);
+            talkTexts[9].SetActive(false);
             talkTexts[talkIndex].SetActive(true);
             yield return new WaitForSeconds(3f);
             talkTexts[talkIndex].SetActive(false);
             talkIndex++;
             SpeedBar.SetActive(true);
-            while (talkIndex < 25)
+            while (talkIndex < 23)
             {
                 talkTexts[talkIndex].SetActive(true);
                 yield return new WaitForSeconds(3f);
@@ -411,7 +421,7 @@ public class TutorialManager : MonoBehaviour
         else if (order == 32)
         {
             talkPanel.SetActive(true);
-            while (talkIndex < 31)
+            while (talkIndex < 30)
             {
                 talkTexts[talkIndex].SetActive(true);
                 yield return new WaitForSeconds(3f);
@@ -423,7 +433,7 @@ public class TutorialManager : MonoBehaviour
         }
         talkPanel.SetActive(false);
         order++;
-
+        Debug.Log("6");
         Debug.Log("Order: " + order);
         runningCoroutine = null;
     }
@@ -448,10 +458,6 @@ public class TutorialManager : MonoBehaviour
             else
                 renderer.sortingOrder = 5;
         }
-        else
-        {
-            Debug.LogError(infoObj[infoIndex].name + "에서 Renderer를 찾을 수 없습니다. 이 오브젝트는 Renderer가 있어야 합니다.");
-        }
 
         yield return new WaitForSeconds(5f);
         blackPanel.SetActive(false);
@@ -466,6 +472,7 @@ public class TutorialManager : MonoBehaviour
         }
         infoIndex++;
         order++;
+        Debug.Log("7");
         runningCoroutine = null;
         yield return null;
     }
