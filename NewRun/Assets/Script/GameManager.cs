@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public SynapseBar SynapseBar;
     public DendriteManager dendriteManager;
     public ChangeScene changeScene;
+    public TutorialManager tutorialManager;
 
     private void Awake()
     {
