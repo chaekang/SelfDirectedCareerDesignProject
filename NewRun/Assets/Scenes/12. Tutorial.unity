@@ -29680,8 +29680,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Dendrotoxin (\uBC40\uB3C5)\n\n\uC804\uC555\uC5D0 \uC758\uD574 \uAC1C\uD3D0\uD558\uB294
-    \nK+ \uCC44\uB110\uC744 \uB9C9\uB294 \uB3C5.\n\uB450\uD1B5, \uC124\uC0AC \uB4F1\uC758
-    \uC99D\uC0C1\uC774 \uC788\uC2B5\uB2C8\uB2E4.\n"
+    \nK+ \uCC44\uB110\uC744 \uB9C9\uB294 \uB3C5.\n\uBC1C\uC791 \uB4F1\uC758 \uC99D\uC0C1\uC774
+    \uC788\uC2B5\uB2C8\uB2E4.\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 451b61a272013cc44b5d1dd2fbdbabb2, type: 2}
   m_sharedMaterial: {fileID: 5514174549130421187, guid: 451b61a272013cc44b5d1dd2fbdbabb2, type: 2}
@@ -40900,6 +40900,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dendrite: {fileID: 1531594078}
   isTutorial: 0
+  endStage: 0
 --- !u!4 &1639746091
 Transform:
   m_ObjectHideFlags: 0
