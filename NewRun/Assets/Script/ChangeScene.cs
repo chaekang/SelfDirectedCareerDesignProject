@@ -9,7 +9,7 @@ public class ChangeScene : MonoBehaviour
     static int somaSceneCount = 1;
     static int poisonSomaScene = 1;
     bool isListenerRegistered = false;
-    static bool isPoison = false;
+    public static bool isPoison = false;
     public bool isTutorial = false;
 
     private void Start()
@@ -33,7 +33,7 @@ public class ChangeScene : MonoBehaviour
     // 0.(GameStart)    1.(SomaScene)     2.(GameScene1)    3.(GameScene2), 4.(GameScene3)
     // 5.(PoisonStart), 6.(PoisonStage1), 7.(PoisonStage2), 8.(PoisonStage3)
     // 9.(Over_Axon),  10.(Over_Vel0),   11.(Over_Syn)     12.(GameEnd),   13.(Tutorial)
-    // 14.(Intro Anim) 15.(Soma Intro)
+    // 14.(Intro Anim) 15.(Poison Soma)
     public void BtnChangeScenefunc()
     {
         GameObject clickedObject = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject;
@@ -42,15 +42,15 @@ public class ChangeScene : MonoBehaviour
             switch (clickedObject.name)
             {
                 case "StartBtn":
-                    SceneManager.LoadScene(2);
+                    start();
                     break;
 
                 case "HomeBtn":
-                    SceneManager.LoadScene(0);
+                    goHome();
                     break;
 
                 case "RestartBtn":
-                    SceneManager.LoadScene(2);
+                    start();
                     break;
 
                 case "NextStageBtn":
@@ -64,6 +64,7 @@ public class ChangeScene : MonoBehaviour
                 case "ChangeToBasicMode":
                     SceneManager.LoadScene(0);
                     break;
+
                 case "GameExpBtn":
                     SceneManager.LoadScene(13);
                     break;
@@ -81,7 +82,7 @@ public class ChangeScene : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name == "2. Soma Scene")
+        if (scene.name == "2. Soma Scene" || scene.name == "14. Poison Soma Scene")
         {
             if (!isPoison)
             {
@@ -92,10 +93,15 @@ public class ChangeScene : MonoBehaviour
                 poisonSomaScene++;
             }
         }
-        else if (scene.name == "7. PoisonStage 1")
+        else if (scene.name == "6. PoisonStart")
         {
             Debug.Log("poison");
             isPoison = true;
+        }
+        else if (scene.name == "1. GameStart")
+        {
+            Debug.Log("basic");
+            isPoison = false;
         }
 
         if (scene.name == "12. Tutorial")
@@ -118,9 +124,13 @@ public class ChangeScene : MonoBehaviour
 
         }
         // 소마씬으로 이동
-        if (dendrite != null && dendrite.isFinish && !dendrite.isEnd)
+        if (!isPoison && dendrite != null && dendrite.isFinish && !dendrite.isEnd)
         {
             SceneManager.LoadScene(1);
+        }
+        else if (isPoison && dendrite != null && dendrite.isFinish && !dendrite.isEnd)
+        {
+            SceneManager.LoadScene(15);
         }
         // 소마에서 다음 스테이지로 이동
         if (GameManager.instance.dendriteManager != null)
@@ -171,5 +181,20 @@ public class ChangeScene : MonoBehaviour
             SceneManager.LoadScene(10);
         else if (exp == "Syn")
             SceneManager.LoadScene(11);
+    }
+
+    public void start()
+    {
+        if (!isPoison)
+            SceneManager.LoadScene(2);
+        else if (isPoison)
+            SceneManager.LoadScene(6);
+    }
+    public void goHome()
+    {
+        if (!isPoison)
+            SceneManager.LoadScene(0);
+        else if (isPoison)
+            SceneManager.LoadScene(5);
     }
 }

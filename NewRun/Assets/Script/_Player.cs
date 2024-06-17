@@ -224,11 +224,6 @@ public class _Player : MonoBehaviour
             {
                 if (channel_Na)
                 {
-                    if (!GameManager.instance.changeScene.isTutorial)
-                    {
-                        NaNum--;
-                        Na_num.text = NaNum.ToString();
-                    }
                     Na = true;
                     TakeIon();
                 }
@@ -245,11 +240,6 @@ public class _Player : MonoBehaviour
             {
                 if (channel_K)
                 {
-                    if (!GameManager.instance.changeScene.isTutorial)
-                    {
-                        KNum--;
-                        K_num.text = KNum.ToString();
-                    }
                     K = true;
                     TakeIon();
                 }
@@ -265,13 +255,13 @@ public class _Player : MonoBehaviour
             Debug.Log("PoisonFish °ø°£");
             if (Input.GetKeyUp(KeyCode.D))
             {
-                poisonF = false;
                 NaPoison = true;
-                if (!GameManager.instance.changeScene.isTutorial)
+                if (poisonF && !GameManager.instance.changeScene.isTutorial)
                 {
                     NaToxicNum--;
                     NaToxic_num.text = NaToxicNum.ToString();
                 }
+                poisonF = false;
                 DeletePoison();
             }
             else if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.F))
@@ -286,13 +276,14 @@ public class _Player : MonoBehaviour
             Debug.Log("PoisonSnake °ø°£");
             if (Input.GetKeyUp(KeyCode.F))
             {
-                poisonS = false;
                 KPoison = true;
-                if (!GameManager.instance.changeScene.isTutorial)
+                if (poisonS && !GameManager.instance.changeScene.isTutorial)
                 {
                     KToxicNum--;
                     KToxic_num.text = KToxicNum.ToString();
                 }
+
+                poisonS = false;
                 DeletePoison();
             }
             else if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.S))
@@ -307,8 +298,18 @@ public class _Player : MonoBehaviour
     // ÀÌ¿Â È¹µæ 
     private void TakeIon()
     {
-        channel_K = false;  
-        channel_Na = false;
+        if (!GameManager.instance.changeScene.isTutorial && channel_Na)
+        {
+            channel_Na = false;
+            NaNum--;
+            Na_num.text = NaNum.ToString();
+        } 
+        else if (!GameManager.instance.changeScene.isTutorial && channel_K)
+        {
+            channel_K = false;
+            KNum--;
+            K_num.text = KNum.ToString();
+        }
         init_channel.gameObject.SetActive(false);
         channel_anim.gameObject.SetActive(true);
         StartCoroutine(Elec());

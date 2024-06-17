@@ -48,9 +48,9 @@ EditorBuildSettings:
     path: Assets/Scenes/12. Tutorial.unity
     guid: a04e1880a8e5c864ca9d8bff1cc8513d
   - enabled: 1
-    path: Assets/Scenes/13. Intro Animation.unity
-    guid: eb0dda7ba5283ce49b6b1cf5e59c92f9
+    path: Assets/Scenes/13. Intro Anim.unity
+    guid: 14f29216b2555e745aa72479c14e21de
   - enabled: 1
-    path: Assets/Scenes/14. Soma_Intro.unity
-    guid: 5f2cd45af3ef05f46a8dc51b0473a532
+    path: Assets/Scenes/14. Poison Soma Scene.unity
+    guid: eaa99874efb95094c9bb2220f26c921a
   m_configObjects: {}
