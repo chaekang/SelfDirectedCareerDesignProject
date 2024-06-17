@@ -792,6 +792,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 76270957}
     - target: {fileID: 1984787140684811787, guid: 819938070e28943428a6e384b5356d94, type: 3}
+      propertyPath: synapsePlayer
+      value: 
+      objectReference: {fileID: 1600481686}
+    - target: {fileID: 1984787140684811787, guid: 819938070e28943428a6e384b5356d94, type: 3}
       propertyPath: speedBarScript
       value: 
       objectReference: {fileID: 1116723932}
@@ -12605,6 +12609,7 @@ MonoBehaviour:
   player: {fileID: 1025515492}
   pool: {fileID: 227415486}
   SynapseBar: {fileID: 185957235}
+  synapsePlayer: {fileID: 1600481690}
   dendriteManager: {fileID: 0}
   changeScene: {fileID: 1226840619}
   tutorialManager: {fileID: 0}
@@ -14517,13 +14522,14 @@ GameObject:
   - component: {fileID: 1600481689}
   - component: {fileID: 1600481688}
   - component: {fileID: 1600481687}
+  - component: {fileID: 1600481690}
   m_Layer: 0
   m_Name: SynapsePlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &1600481687
 Animator:
   serializedVersion: 5
@@ -14612,6 +14618,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1600481690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600481686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe247b395f890174c87236b31abe0c85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  synapseBar: {fileID: 1105977556}
 --- !u!1 &1602981476
 GameObject:
   m_ObjectHideFlags: 0

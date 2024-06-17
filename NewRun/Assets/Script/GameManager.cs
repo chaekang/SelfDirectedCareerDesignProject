@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public _Player player;
     public PoolManager pool;
     public SynapseBar SynapseBar;
+    public SynapsePlayer synapsePlayer;
     public DendriteManager dendriteManager;
     public ChangeScene changeScene;
     public TutorialManager tutorialManager;
