@@ -33660,6 +33660,7 @@ MonoBehaviour:
   SynapseBar: {fileID: 756217455}
   dendriteManager: {fileID: 0}
   changeScene: {fileID: 2084833216}
+  tutorialManager: {fileID: 0}
 --- !u!4 &1336894091
 Transform:
   m_ObjectHideFlags: 0
@@ -37139,8 +37140,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.00080013275, y: -0.0071992874, z: 0}
-    m_Extent: {x: 20.497398, y: 20.4971, z: 0}
+    m_Center: {x: 0.0004005432, y: -0.0035495758, z: 0}
+    m_Extent: {x: 20.4972, y: 20.49675, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -38828,11 +38829,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051621916040589126, guid: 819938070e28943428a6e384b5356d94, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 128.4
+      value: 0.77
       objectReference: {fileID: 0}
     - target: {fileID: 8051621916040589126, guid: 819938070e28943428a6e384b5356d94, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.8
+      value: -0.6
       objectReference: {fileID: 0}
     - target: {fileID: 8051621916040589126, guid: 819938070e28943428a6e384b5356d94, type: 3}
       propertyPath: m_LocalPosition.z
@@ -40251,6 +40252,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dendrite: {fileID: 1529307970}
   isTutorial: 0
+  currentMode: basic
 --- !u!4 &2084833217
 Transform:
   m_ObjectHideFlags: 0
@@ -40764,8 +40766,8 @@ SceneRoots:
   - {fileID: 1775137976}
   - {fileID: 1140495110}
   - {fileID: 1814794703}
-  - {fileID: 1869308266}
   - {fileID: 255187235}
+  - {fileID: 1869308266}
   - {fileID: 1529307967}
   - {fileID: 756217454}
   - {fileID: 309559485}
