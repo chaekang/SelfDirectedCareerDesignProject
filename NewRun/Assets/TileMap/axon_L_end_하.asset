@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: "axon_L_end_\uD558"
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 21300000, guid: 90f8095628e59294395f555bd6536377, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2fbafd6c3c8773a459b38bdcf0b9397a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
