@@ -53,4 +53,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/14. Poison Soma Scene.unity
     guid: eaa99874efb95094c9bb2220f26c921a
+  - enabled: 1
+    path: Assets/Scenes/Fade_Practice.unity
+    guid: 5740c0338c30315478183263ce592b74
   m_configObjects: {}
