@@ -28,11 +28,9 @@ public class _Player : MonoBehaviour
 
     private Transform player;
 
-    public GameObject synapseBar;
     public bool onSynapse = false;
     public bool camMove = false;
-
-    float time; // 작아지는 시간 변수
+    float time = 0;
     public bool disappear = false;
     public bool appear = false;
 
@@ -44,6 +42,8 @@ public class _Player : MonoBehaviour
     public Sprite up;
     public Sprite down;
     public Sprite right;
+
+    public GameObject synapsePlayer;
 
     // 튜토리얼에 필요
     public bool wall = false;
@@ -69,16 +69,13 @@ public class _Player : MonoBehaviour
         initialPosition = transform.position;
         speedBarScript = FindObjectOfType<SpeedBar>();
         state = PlayerState.run;
+        synapsePlayer.SetActive(false);
     }
 
     void Update()
     {
-        //Debug.Log("Player State: " + state);
         PlayerchangeDirection();
         PlayerMove();
-
-        // 시냅스에서 머리 위로 게이지바 띄우기
-        synapseBar.transform.position = Camera.main.WorldToScreenPoint(transform.position + new Vector3(0, 2f, 0));
 
         if (disappear)
         {
@@ -91,7 +88,6 @@ public class _Player : MonoBehaviour
             {
                 time = 0;
                 gameObject.SetActive(false);
-                GameManager.instance.SynapseBar.gameObject.SetActive(false);
                 appear = true;
                 disappear = false;
                 Debug.Log(appear);
@@ -157,14 +153,15 @@ public class _Player : MonoBehaviour
         // 시냅스 끝에 도착
         else if (collision.gameObject.tag == "StopPoint")
         {
-            GameManager.instance.SynapseBar.curPoint = 0;
             playerSpeed = 0f;
-            synapseBar.SetActive(true);
             camMove = true;
-            if (!GameManager.instance.changeScene.isTutorial)
+            if (!GameManager.instance.changeScene.isTutorial && !disappear)
             {
                 onSynapse = true;
             }
+            gameObject.SetActive(false);
+            synapsePlayer.SetActive(true);
+            GameManager.instance.SynapseBar.curPoint = 0;
         }
     }
 
@@ -333,33 +330,6 @@ public class _Player : MonoBehaviour
         poison.gameObject.SetActive(false);
     }
 
-    // 이온 획득 후 fadeout
-    /*IEnumerator IonFadeOut(SpriteRenderer childRenderer)
-    {
-        float cAlpha = childRenderer.color.a;
-        while(cAlpha > 0)
-        {
-            //Debug.Log(childRenderer + " " + cAlpha);
-            cAlpha -= Time.deltaTime * 1.2f;
-
-            Color childColor = childRenderer.color;
-            childColor.a = cAlpha;
-            childRenderer.color = childColor;
-
-            yield return new WaitForSeconds(0.02f);
-        }
-        child.gameObject.SetActive(false);
-    }*/
-
-    /*private void DeletePoison()
-    {
-        if (child != null)
-        {
-            child.gameObject.SetActive(false);
-        }
-    }*/
-
-    // 체널 콜라이더 공간 이탈
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Channel_Na")

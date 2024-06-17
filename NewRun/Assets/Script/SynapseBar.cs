@@ -64,6 +64,7 @@ public class SynapseBar : MonoBehaviour
         if(!GameManager.instance.player.onSynapse)
         {
             NT.SetActive(false);
+            time = 0;
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -79,6 +80,7 @@ public class SynapseBar : MonoBehaviour
                     curPoint = 100;
                     GameManager.instance.player.disappear = true;
                     GameManager.instance.player.onSynapse = false;
+                    Debug.Log(GameManager.instance.player.onSynapse);
                 }
             }
         }
