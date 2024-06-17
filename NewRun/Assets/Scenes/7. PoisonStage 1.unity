@@ -22593,8 +22593,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.0076503754, y: 0.005549431, z: 0}
-    m_Extent: {x: 20.49955, y: 20.49805, z: 0}
+    m_Center: {x: -0.00045013428, y: 0.0013494492, z: 0}
+    m_Extent: {x: 20.50725, y: 20.49805, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -28387,6 +28387,10 @@ PrefabInstance:
       propertyPath: velocityBar
       value: 
       objectReference: {fileID: 862783708}
+    - target: {fileID: 4340164405305459952, guid: 93e5c5261fbbe6b478e945594bca7585, type: 3}
+      propertyPath: NT.Array.data[0]
+      value: 
+      objectReference: {fileID: 149762212}
     - target: {fileID: 5001293114470209403, guid: 93e5c5261fbbe6b478e945594bca7585, type: 3}
       propertyPath: m_Name
       value: SynapseBar
@@ -29405,6 +29409,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dendrite: {fileID: 149762213}
   isTutorial: 0
+  endStage: 0
 --- !u!4 &1347535011
 Transform:
   m_ObjectHideFlags: 0
@@ -29939,6 +29944,67 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1462021101
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3093773358462560291, guid: 6248d76f8283cc942afe3c5bda2a06d7, type: 3}
+      propertyPath: m_Name
+      value: SynapsePlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 4053236956162318007, guid: 6248d76f8283cc942afe3c5bda2a06d7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 133.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 4053236956162318007, guid: 6248d76f8283cc942afe3c5bda2a06d7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 76.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4053236956162318007, guid: 6248d76f8283cc942afe3c5bda2a06d7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4053236956162318007, guid: 6248d76f8283cc942afe3c5bda2a06d7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4053236956162318007, guid: 6248d76f8283cc942afe3c5bda2a06d7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4053236956162318007, guid: 6248d76f8283cc942afe3c5bda2a06d7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4053236956162318007, guid: 6248d76f8283cc942afe3c5bda2a06d7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4053236956162318007, guid: 6248d76f8283cc942afe3c5bda2a06d7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4053236956162318007, guid: 6248d76f8283cc942afe3c5bda2a06d7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4053236956162318007, guid: 6248d76f8283cc942afe3c5bda2a06d7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5299634902351508804, guid: 6248d76f8283cc942afe3c5bda2a06d7, type: 3}
+      propertyPath: synapseBar
+      value: 
+      objectReference: {fileID: 1265818012}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6248d76f8283cc942afe3c5bda2a06d7, type: 3}
 --- !u!1 &1463323982
 GameObject:
   m_ObjectHideFlags: 0
@@ -30494,6 +30560,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1521831083}
     - target: {fileID: 1984787140684811787, guid: 819938070e28943428a6e384b5356d94, type: 3}
+      propertyPath: synapsePlayer
+      value: 
+      objectReference: {fileID: 2005398150}
+    - target: {fileID: 1984787140684811787, guid: 819938070e28943428a6e384b5356d94, type: 3}
       propertyPath: speedBarScript
       value: 
       objectReference: {fileID: 862783707}
@@ -30507,11 +30577,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051621916040589126, guid: 819938070e28943428a6e384b5356d94, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.06
+      value: -4.08
       objectReference: {fileID: 0}
     - target: {fileID: 8051621916040589126, guid: 819938070e28943428a6e384b5356d94, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.75
+      value: -3.73
       objectReference: {fileID: 0}
     - target: {fileID: 8051621916040589126, guid: 819938070e28943428a6e384b5356d94, type: 3}
       propertyPath: m_LocalPosition.z
@@ -33351,8 +33421,10 @@ MonoBehaviour:
   player: {fileID: 1521831082}
   pool: {fileID: 1543774879}
   SynapseBar: {fileID: 1265818013}
+  synapsePlayer: {fileID: 0}
   dendriteManager: {fileID: 0}
   changeScene: {fileID: 1347535010}
+  tutorialManager: {fileID: 0}
 --- !u!4 &1872749971
 Transform:
   m_ObjectHideFlags: 0
@@ -34172,6 +34244,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2005398150 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3093773358462560291, guid: 6248d76f8283cc942afe3c5bda2a06d7, type: 3}
+  m_PrefabInstance: {fileID: 1462021101}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2015149236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35541,3 +35618,4 @@ SceneRoots:
   - {fileID: 1521230582}
   - {fileID: 1284710812}
   - {fileID: 1673461316}
+  - {fileID: 1462021101}

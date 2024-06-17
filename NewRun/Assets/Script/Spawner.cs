@@ -46,9 +46,16 @@ public class Spawner : MonoBehaviour
     {
         float curPoint = GameManager.instance.SynapseBar.curPoint;
         Vector2 spawnPosition = GetRandomPosition(area);
-
-        GameObject spawnedPrefab = GameManager.instance.pool.Get(GenerateRandomNumber(curPoint));
-        spawnedPrefab.transform.position = spawnPosition;
+        if (GameManager.instance.changeScene.endStage)
+        {
+            GameObject spawnedPrefab = GameManager.instance.pool.Get(0);
+            spawnedPrefab.transform.position = spawnPosition;
+        }
+        else
+        {
+            GameObject spawnedPrefab = GameManager.instance.pool.Get(GenerateRandomNumber(curPoint));
+            spawnedPrefab.transform.position = spawnPosition;
+        }
     }
 
     int GenerateRandomNumber(float curPoint)

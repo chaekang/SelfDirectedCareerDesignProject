@@ -11,6 +11,7 @@ public class ChangeScene : MonoBehaviour
     bool isListenerRegistered = false;
     public static bool isPoison = false;
     public bool isTutorial = false;
+    public bool endStage = false;
 
     private void Start()
     {
@@ -103,6 +104,10 @@ public class ChangeScene : MonoBehaviour
             Debug.Log("basic");
             isPoison = false;
         }
+        else if (scene.name == "5. GameScene 3" || scene.name == "9. PoisonStage 3")
+        {
+            endStage = true;
+        }
 
         if (scene.name == "12. Tutorial")
         {
@@ -117,10 +122,10 @@ public class ChangeScene : MonoBehaviour
 
     private void Update()
     {
-        if (dendrite != null && dendrite.isEnd && dendrite.isFinish)
+        if (endStage && GameManager.instance.player.appear)
         {
             Debug.Log("End");
-            SceneManager.LoadScene(11);
+            SceneManager.LoadScene(12);
 
         }
         // 소마씬으로 이동

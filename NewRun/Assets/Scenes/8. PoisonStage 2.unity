@@ -25967,6 +25967,67 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3582960942623923254, guid: 529080641d951f744967ab5069a84a84, type: 3}
   m_PrefabInstance: {fileID: 450152568}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &452312953
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3093773358462560291, guid: 6248d76f8283cc942afe3c5bda2a06d7, type: 3}
+      propertyPath: m_Name
+      value: SynapsePlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 4053236956162318007, guid: 6248d76f8283cc942afe3c5bda2a06d7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 136.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4053236956162318007, guid: 6248d76f8283cc942afe3c5bda2a06d7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 4053236956162318007, guid: 6248d76f8283cc942afe3c5bda2a06d7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4053236956162318007, guid: 6248d76f8283cc942afe3c5bda2a06d7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4053236956162318007, guid: 6248d76f8283cc942afe3c5bda2a06d7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4053236956162318007, guid: 6248d76f8283cc942afe3c5bda2a06d7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4053236956162318007, guid: 6248d76f8283cc942afe3c5bda2a06d7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4053236956162318007, guid: 6248d76f8283cc942afe3c5bda2a06d7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4053236956162318007, guid: 6248d76f8283cc942afe3c5bda2a06d7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4053236956162318007, guid: 6248d76f8283cc942afe3c5bda2a06d7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5299634902351508804, guid: 6248d76f8283cc942afe3c5bda2a06d7, type: 3}
+      propertyPath: synapseBar
+      value: 
+      objectReference: {fileID: 756217456}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6248d76f8283cc942afe3c5bda2a06d7, type: 3}
 --- !u!1 &453946207
 GameObject:
   m_ObjectHideFlags: 0
@@ -26843,6 +26904,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4716615066011772426, guid: 83f80a5b3bfb2534a86602fa4f644bc9, type: 3}
   m_PrefabInstance: {fileID: 565097072}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &569747315 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3093773358462560291, guid: 6248d76f8283cc942afe3c5bda2a06d7, type: 3}
+  m_PrefabInstance: {fileID: 452312953}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &579497547
 GameObject:
@@ -28682,6 +28748,10 @@ PrefabInstance:
       propertyPath: velocityBar
       value: 
       objectReference: {fileID: 1814794705}
+    - target: {fileID: 4340164405305459952, guid: 93e5c5261fbbe6b478e945594bca7585, type: 3}
+      propertyPath: NT.Array.data[0]
+      value: 
+      objectReference: {fileID: 1529307968}
     - target: {fileID: 5001293114470209403, guid: 93e5c5261fbbe6b478e945594bca7585, type: 3}
       propertyPath: m_Name
       value: SynapseBar
@@ -33658,6 +33728,7 @@ MonoBehaviour:
   player: {fileID: 1869308273}
   pool: {fileID: 1183604543}
   SynapseBar: {fileID: 756217455}
+  synapsePlayer: {fileID: 0}
   dendriteManager: {fileID: 0}
   changeScene: {fileID: 2084833216}
   tutorialManager: {fileID: 0}
@@ -37140,8 +37211,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.0004005432, y: -0.0035495758, z: 0}
-    m_Extent: {x: 20.4972, y: 20.49675, z: 0}
+    m_Center: {x: -0.0038499832, y: -0.0016002655, z: 0}
+    m_Extent: {x: 20.49825, y: 20.4932, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -38816,6 +38887,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1984787140684811787, guid: 819938070e28943428a6e384b5356d94, type: 3}
+      propertyPath: synapsePlayer
+      value: 
+      objectReference: {fileID: 569747315}
+    - target: {fileID: 1984787140684811787, guid: 819938070e28943428a6e384b5356d94, type: 3}
       propertyPath: speedBarScript
       value: 
       objectReference: {fileID: 1814794704}
@@ -38829,11 +38904,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051621916040589126, guid: 819938070e28943428a6e384b5356d94, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.77
+      value: 0.86
       objectReference: {fileID: 0}
     - target: {fileID: 8051621916040589126, guid: 819938070e28943428a6e384b5356d94, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.6
+      value: -0.56
       objectReference: {fileID: 0}
     - target: {fileID: 8051621916040589126, guid: 819938070e28943428a6e384b5356d94, type: 3}
       propertyPath: m_LocalPosition.z
@@ -40252,7 +40327,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dendrite: {fileID: 1529307970}
   isTutorial: 0
-  currentMode: basic
+  endStage: 0
 --- !u!4 &2084833217
 Transform:
   m_ObjectHideFlags: 0
@@ -40771,3 +40846,4 @@ SceneRoots:
   - {fileID: 1529307967}
   - {fileID: 756217454}
   - {fileID: 309559485}
+  - {fileID: 452312953}

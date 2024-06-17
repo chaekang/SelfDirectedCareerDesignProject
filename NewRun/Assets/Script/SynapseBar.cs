@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class SynapseBar : MonoBehaviour
 {
     public Slider passBar;
-    public GameObject NT;
+    public GameObject[] NT;
 
     public float maxPoint = 100;
     public float curPoint = 0;
@@ -49,9 +49,12 @@ public class SynapseBar : MonoBehaviour
             curPoint -= decreaseRate * Time.deltaTime;
 
             // NT 이미지 활성화
-            NT.SetActive(true);
+            for (int i = 0; i < NT.Length; i++)
+            {
+                NT[i].SetActive(true);
+            }
 
-            if(curPoint < 100 && time >= 20f)
+            if (curPoint < 100 && time >= 20f)
             {
                 GameManager.instance.changeScene.DeadPalayer("Syn");
             }
@@ -63,7 +66,10 @@ public class SynapseBar : MonoBehaviour
 
         if(!GameManager.instance.player.onSynapse)
         {
-            NT.SetActive(false);
+            for (int i = 0; i < NT.Length; i++)
+            {
+                NT[i].SetActive(false);
+            }
             time = 0;
         }
 
