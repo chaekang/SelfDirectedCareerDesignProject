@@ -108,12 +108,10 @@ MonoBehaviour:
   channel_Na: 0
   channel_K: 0
   speedBarScript: {fileID: 0}
-  synapseBar: {fileID: 0}
   onSynapse: 0
   camMove: 0
   disappear: 0
   appear: 0
-  wall: 0
   electronicSpace: {fileID: 104108837233250303}
   electricWhite: {fileID: 21300000, guid: a8bd531ee3a9fb5409ba095553064d62, type: 3}
   electricRed: {fileID: 21300000, guid: 0b91134f1d5eaed4d8305bcc8a6676ea, type: 3}
@@ -121,6 +119,22 @@ MonoBehaviour:
   up: {fileID: 21300000, guid: e42415cdfb2c0924694c8d247ec01efd, type: 3}
   down: {fileID: 21300000, guid: 0a279da316033ec4ebc5b262c3700df9, type: 3}
   right: {fileID: 21300000, guid: 6384a36448ade07459d94c993fb56c80, type: 3}
+  synapsePlayer: {fileID: 0}
+  wall: 0
+  finish: 0
+  Na: 0
+  K: 0
+  NaPoison: 0
+  KPoison: 0
+  canChangeDirection: 1
+  Na_num: {fileID: 0}
+  K_num: {fileID: 0}
+  NaToxic_num: {fileID: 0}
+  KToxic_num: {fileID: 0}
+  NaNum: 0
+  KNum: 0
+  NaToxicNum: 0
+  KToxicNum: 0
 --- !u!70 &1710941928056707546
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -182,7 +196,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!1 &4994630850540028046
 GameObject:
   m_ObjectHideFlags: 0
