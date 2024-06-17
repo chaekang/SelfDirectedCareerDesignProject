@@ -34,7 +34,7 @@ public class ChangeScene : MonoBehaviour
     // 0.(GameStart)    1.(SomaScene)     2.(GameScene1)    3.(GameScene2), 4.(GameScene3)
     // 5.(PoisonStart), 6.(PoisonStage1), 7.(PoisonStage2), 8.(PoisonStage3)
     // 9.(Over_Axon),  10.(Over_Vel0),   11.(Over_Syn)     12.(GameEnd),   13.(Tutorial)
-    // 14.(Intro Anim) 15.(Poison Soma)
+    // 14.(Intro Anim) 15.(Poison Soma)  16.(Over_Vel0_poi)
     public void BtnChangeScenefunc()
     {
         GameObject clickedObject = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject;
@@ -183,7 +183,8 @@ public class ChangeScene : MonoBehaviour
         if (exp == "Axon")
             SceneManager.LoadScene(9);
         else if (exp == "Vel")
-            SceneManager.LoadScene(10);
+            if(isPoison) SceneManager.LoadScene(16);
+            else if (!isPoison) SceneManager.LoadScene(10);
         else if (exp == "Syn")
             SceneManager.LoadScene(11);
     }
