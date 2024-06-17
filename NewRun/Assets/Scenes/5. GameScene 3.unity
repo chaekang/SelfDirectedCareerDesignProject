@@ -32511,6 +32511,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2617002087213364627, guid: 5b8259c06d8f06f41a010376ade2ed0e, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3751131413924308621, guid: 5b8259c06d8f06f41a010376ade2ed0e, type: 3}
       propertyPath: increaseSpeed
       value: 0.4
@@ -32529,15 +32533,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5488480398554189651, guid: 5b8259c06d8f06f41a010376ade2ed0e, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5488480398554189651, guid: 5b8259c06d8f06f41a010376ade2ed0e, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5488480398554189651, guid: 5b8259c06d8f06f41a010376ade2ed0e, type: 3}
       propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5690176608155066296, guid: 5b8259c06d8f06f41a010376ade2ed0e, type: 3}
+      propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7747918611794298866, guid: 5b8259c06d8f06f41a010376ade2ed0e, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7747918611794298866, guid: 5b8259c06d8f06f41a010376ade2ed0e, type: 3}
+      propertyPath: m_Color.g
+      value: 0.4509804
+      objectReference: {fileID: 0}
+    - target: {fileID: 7747918611794298866, guid: 5b8259c06d8f06f41a010376ade2ed0e, type: 3}
+      propertyPath: m_Color.r
+      value: 0.32156864
       objectReference: {fileID: 0}
     - target: {fileID: 8149735763866560904, guid: 5b8259c06d8f06f41a010376ade2ed0e, type: 3}
       propertyPath: m_Pivot.x
@@ -32620,7 +32640,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7236013299073589425, guid: 5b8259c06d8f06f41a010376ade2ed0e, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b8259c06d8f06f41a010376ade2ed0e, type: 3}
@@ -33935,11 +33956,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051621916040589126, guid: 819938070e28943428a6e384b5356d94, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.54
+      value: 125.3
       objectReference: {fileID: 0}
     - target: {fileID: 8051621916040589126, guid: 819938070e28943428a6e384b5356d94, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 18.72
+      value: 15.4
       objectReference: {fileID: 0}
     - target: {fileID: 8051621916040589126, guid: 819938070e28943428a6e384b5356d94, type: 3}
       propertyPath: m_LocalPosition.z
@@ -38886,7 +38907,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: db50379d9efd53342b68bf5b583bd046, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 02180e587402ebc48a0153a4c7834f2b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -39041,7 +39062,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7025365873307731363, guid: 5d1aca5d22575744bb37b49308d581e8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.19
+      value: 3.88
       objectReference: {fileID: 0}
     - target: {fileID: 7025365873307731363, guid: 5d1aca5d22575744bb37b49308d581e8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -39129,7 +39150,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 32, y: 14.406251}
+    oldSize: {x: 20.48, y: 20.48}
     newSize: {x: 32, y: 14.406251}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -40209,8 +40230,8 @@ Transform:
   m_GameObject: {fileID: 5946687775669749289}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.56, y: -5.27, z: -6.750026}
-  m_LocalScale: {x: 1.152, y: 1.152, z: 1}
+  m_LocalPosition: {x: 9.84, y: -6.02, z: -6.750026}
+  m_LocalScale: {x: 0.45, y: 0.45, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6149922098622346284}

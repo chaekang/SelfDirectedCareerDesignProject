@@ -22,13 +22,14 @@ public class Astrocyte : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.transform.CompareTag("NT"))
+        if (collision.transform.CompareTag("NT") && !isMoving)
         {
             anim.SetBool("isMoving", true);
             isMoving = true;
             StartCoroutine(ResetIsMoving());
         }
     }
+
     private IEnumerator ResetIsMoving()
     {
         yield return new WaitForSeconds(0.6f);

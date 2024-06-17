@@ -29,6 +29,7 @@ public class _Camera : MonoBehaviour
         {
             playerCamera.fieldOfView = 103;
             playerScript.playerSpeed = 0f;
+            cameraSpeed = 0f;
         }
         else
         {
