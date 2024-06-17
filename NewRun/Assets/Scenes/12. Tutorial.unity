@@ -25051,11 +25051,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &177755863 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6277671525190267242, guid: 93e5c5261fbbe6b478e945594bca7585, type: 3}
-  m_PrefabInstance: {fileID: 846174312}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &178967869
 GameObject:
   m_ObjectHideFlags: 0
@@ -31868,6 +31863,7 @@ MonoBehaviour:
   player: {fileID: 1984787140394629840}
   pool: {fileID: 1725711740}
   SynapseBar: {fileID: 846174314}
+  synapsePlayer: {fileID: 0}
   dendriteManager: {fileID: 0}
   changeScene: {fileID: 1639746090}
   tutorialManager: {fileID: 1377883816}
@@ -52684,7 +52680,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -54410,7 +54406,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.32156864, g: 0.4509804, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -54716,7 +54712,6 @@ MonoBehaviour:
   channel_Na: 0
   channel_K: 0
   speedBarScript: {fileID: 0}
-  synapseBar: {fileID: 177755863}
   onSynapse: 0
   camMove: 0
   disappear: 0
@@ -54728,6 +54723,7 @@ MonoBehaviour:
   up: {fileID: 21300000, guid: e42415cdfb2c0924694c8d247ec01efd, type: 3}
   down: {fileID: 21300000, guid: 0a279da316033ec4ebc5b262c3700df9, type: 3}
   right: {fileID: 21300000, guid: 6384a36448ade07459d94c993fb56c80, type: 3}
+  synapsePlayer: {fileID: 0}
   wall: 0
   finish: 0
   Na: 0
