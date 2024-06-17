@@ -191,7 +191,7 @@ public class ChangeScene : MonoBehaviour
     public void start()
     {
         if (!isPoison)
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(14);
         else if (isPoison)
             SceneManager.LoadScene(6);
     }
