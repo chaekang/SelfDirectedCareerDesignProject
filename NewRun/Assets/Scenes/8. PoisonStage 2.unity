@@ -17419,6 +17419,134 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1491052171301122696, guid: 1f083a8d2351b7049b9c43c4bb452979, type: 3}
   m_PrefabInstance: {fileID: 1251351193}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &208411185
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 208411187}
+  - component: {fileID: 208411186}
+  m_Layer: 0
+  m_Name: background audio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &208411186
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 208411185}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 0e0be9813f7d4b64180431bb4f7d623c, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &208411187
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 208411185}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 62.129627, y: 27.965322, z: -2.6277685}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &219399032
 GameObject:
   m_ObjectHideFlags: 0
@@ -17928,6 +18056,18 @@ PrefabInstance:
       propertyPath: far clip plane
       value: 1000
       objectReference: {fileID: 0}
+    - target: {fileID: 4703705517972838956, guid: c99ab947c9775f445a939e2e824c50f6, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0.41568628
+      objectReference: {fileID: 0}
+    - target: {fileID: 4703705517972838956, guid: c99ab947c9775f445a939e2e824c50f6, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.41568628
+      objectReference: {fileID: 0}
+    - target: {fileID: 4703705517972838956, guid: c99ab947c9775f445a939e2e824c50f6, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.41568628
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3323609466768096102, guid: c99ab947c9775f445a939e2e824c50f6, type: 3}
     m_RemovedGameObjects: []
@@ -17956,6 +18096,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1869308268}
   cameraSpeed: 0
+  sceneLight: {fileID: 0}
 --- !u!4 &263345500 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6478363374845001533, guid: c8b0fa60fa72558489e6058adc745143, type: 3}
@@ -30608,6 +30749,18 @@ PrefabInstance:
       propertyPath: far clip plane
       value: 1000
       objectReference: {fileID: 0}
+    - target: {fileID: 4703705517972838956, guid: c99ab947c9775f445a939e2e824c50f6, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0.41568628
+      objectReference: {fileID: 0}
+    - target: {fileID: 4703705517972838956, guid: c99ab947c9775f445a939e2e824c50f6, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.41568628
+      objectReference: {fileID: 0}
+    - target: {fileID: 4703705517972838956, guid: c99ab947c9775f445a939e2e824c50f6, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.41568628
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3323609466768096102, guid: c99ab947c9775f445a939e2e824c50f6, type: 3}
     m_RemovedGameObjects: []
@@ -33854,6 +34007,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1869308273}
   pool: {fileID: 1183604543}
+  spawner: {fileID: 0}
   SynapseBar: {fileID: 756217455}
   synapsePlayer: {fileID: 0}
   dendriteManager: {fileID: 0}
@@ -37338,8 +37492,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.0033502579, y: 0.0037498474, z: 0}
-    m_Extent: {x: 20.50365, y: 20.49715, z: 0}
+    m_Center: {x: 0.004799843, y: 0.0074501038, z: 0}
+    m_Extent: {x: 20.503899, y: 20.49805, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -40586,6 +40740,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dendrite: {fileID: 1529307970}
+  isPoison: 0
   isTutorial: 0
   endStage: 0
 --- !u!4 &2084833217
@@ -41186,3 +41341,4 @@ SceneRoots:
   - {fileID: 756217454}
   - {fileID: 309559485}
   - {fileID: 452312953}
+  - {fileID: 208411187}

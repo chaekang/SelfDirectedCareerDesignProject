@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class _Camera : MonoBehaviour
 {
@@ -8,12 +9,17 @@ public class _Camera : MonoBehaviour
 
     public float cameraSpeed;
 
+    public Light2D sceneLight;
+
     private _Player playerScript;
     private Camera playerCamera;
+    private ChangeScene sceneScript;
+
 
     private void Start()
     {
         playerScript = FindObjectOfType<_Player>();
+        sceneScript = FindObjectOfType<ChangeScene>();   
         playerCamera = GetComponent<Camera>();
 
         cameraSpeed = playerScript.playerSpeed;
@@ -27,6 +33,12 @@ public class _Camera : MonoBehaviour
 
         if (playerScript.camMove)
         {
+            Debug.Log(sceneScript.isPoison + " " + sceneScript.endStage);
+            if(sceneScript.isPoison == true && sceneScript.endStage == true)
+            {
+                sceneLight.shapeLightFalloffSize = 120;
+            }
+            
             playerCamera.fieldOfView = 103;
             playerScript.playerSpeed = 0f;
             cameraSpeed = 0f;
