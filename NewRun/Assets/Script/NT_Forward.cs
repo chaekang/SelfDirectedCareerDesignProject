@@ -9,7 +9,7 @@ public class NT_Forward : MonoBehaviour
     
     private void Start()
     {
-        speed = Random.Range(25f, 35f);
+        speed = Random.Range(40f, 50f);
     }
 
     private void Update()

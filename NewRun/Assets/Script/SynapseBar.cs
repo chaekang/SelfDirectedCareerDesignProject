@@ -39,13 +39,14 @@ public class SynapseBar : MonoBehaviour
             }
         }
 
-        if (GameManager.instance.player.onSynapse)
+        if (!GameManager.instance.changeScene.isTutorial && GameManager.instance.player.onSynapse)
+        {
+            velocityBar.SetActive(false);
+        }
+
+        if (GameManager.instance.spawner.ntFinish)
         {
             time += Time.deltaTime;
-            if (!GameManager.instance.changeScene.isTutorial)
-            {
-                velocityBar.SetActive(false);
-            }
             curPoint -= decreaseRate * Time.deltaTime;
 
             // NT 이미지 활성화

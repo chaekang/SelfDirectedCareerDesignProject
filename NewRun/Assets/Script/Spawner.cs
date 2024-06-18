@@ -7,6 +7,7 @@ public class Spawner : MonoBehaviour
     BoxCollider2D area;
 
     private float timer;
+    public bool ntFinish = false;
 
     private void Awake()
     {
@@ -15,7 +16,7 @@ public class Spawner : MonoBehaviour
 
     private void Update()
     {
-        if (GameManager.instance.player.onSynapse)
+        if (GameManager.instance.player.onSynapse && !ntFinish)
         {
             timer += Time.deltaTime;
 
@@ -23,7 +24,7 @@ public class Spawner : MonoBehaviour
 
             if (timer > randomTime)
             {
-                Spawn();
+                StartCoroutine(SpawnCoroutine());
                 timer = 0;
             }
         }
@@ -31,15 +32,23 @@ public class Spawner : MonoBehaviour
 
     private Vector2 GetRandomPosition(BoxCollider2D area)
     {
-        Vector2 basePosition = transform.position;  //오브젝트의 위치
+        Vector2 basePosition = transform.position;  // 오브젝트의 위치
 
-        //x, y축 랜덤 좌표 얻기
+        // x, y축 랜덤 좌표 얻기
         float posX = basePosition.x;
         float posY = basePosition.y;
 
         Vector2 spawnPos = new Vector2(posX, posY);
 
         return spawnPos;
+    }
+
+    IEnumerator SpawnCoroutine()
+    {
+        Spawn();
+        yield return new WaitForSeconds(5f);
+
+        ntFinish = true; 
     }
 
     void Spawn()
@@ -49,6 +58,5 @@ public class Spawner : MonoBehaviour
 
         GameObject spawnedPrefab = GameManager.instance.pool.Get(0);
         spawnedPrefab.transform.position = spawnPosition;
-
     }
 }

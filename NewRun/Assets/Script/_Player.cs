@@ -98,6 +98,12 @@ public class _Player : MonoBehaviour
         {
             Dendrite.gameObject.SetActive(true);
         }
+
+        if (GameManager.instance.spawner.ntFinish)
+        {
+            gameObject.SetActive(false);
+            synapsePlayer.SetActive(true);
+        }
     }
 
     // 플레이어 이동
@@ -159,8 +165,6 @@ public class _Player : MonoBehaviour
             {
                 onSynapse = true;
             }
-            gameObject.SetActive(false);
-            synapsePlayer.SetActive(true);
             GameManager.instance.SynapseBar.curPoint = 0;
         }
     }
