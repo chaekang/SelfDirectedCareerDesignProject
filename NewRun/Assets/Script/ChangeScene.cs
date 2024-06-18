@@ -9,7 +9,7 @@ public class ChangeScene : MonoBehaviour
     static int somaSceneCount = 1;
     static int poisonSomaScene = 1;
     bool isListenerRegistered = false;
-    public static bool isPoison = false;
+    public bool isPoison = false;
     public bool isTutorial = false;
     public bool endStage = false;
 
@@ -69,6 +69,7 @@ public class ChangeScene : MonoBehaviour
                 case "GameExpBtn":
                     SceneManager.LoadScene(13);
                     break;
+
                 case "StartBtn_Poison":
                     SceneManager.LoadScene(6);
                     break;
@@ -99,12 +100,17 @@ public class ChangeScene : MonoBehaviour
             Debug.Log("poison");
             isPoison = true;
         }
+        else if (scene.name == "7. PoisonStage 1" || scene.name == "8. PoisonStage 2" || scene.name == "9. PoisonStage 3")
+        {
+            Debug.Log(scene.name + "poison");
+            isPoison = true;
+        }
         else if (scene.name == "1. GameStart")
         {
             Debug.Log("basic");
             isPoison = false;
         }
-        else if (scene.name == "5. GameScene 3" || scene.name == "9. PoisonStage 3")
+        if (scene.name == "5. GameScene 3" || scene.name == "9. PoisonStage 3")
         {
             endStage = true;
         }
@@ -121,6 +127,7 @@ public class ChangeScene : MonoBehaviour
     }
 
     private void Update()
+
     {
         if (endStage && GameManager.instance.player.appear)
         {
