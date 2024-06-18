@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public _Player player;
     public PoolManager pool;
+    public Spawner spawner;
     public SynapseBar SynapseBar;
     public SynapsePlayer synapsePlayer;
     public DendriteManager dendriteManager;

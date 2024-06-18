@@ -9,7 +9,7 @@ public class SynapsePlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.instance.player.onSynapse)
+        if (GameManager.instance.spawner.ntFinish)
         {
             synapseBar.SetActive(true);
         }

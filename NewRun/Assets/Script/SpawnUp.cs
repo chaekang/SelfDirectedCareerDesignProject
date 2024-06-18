@@ -12,10 +12,9 @@ public class SpawnUp : MonoBehaviour
     {
         area = GetComponent<BoxCollider2D>();
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void Update()
     {
-        if (collision.transform.tag == "NT")
+        if (GameManager.instance.spawner.ntFinish)
         {
             Spawn();
         }

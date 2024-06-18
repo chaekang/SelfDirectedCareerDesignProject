@@ -997,11 +997,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051621916040589126, guid: 819938070e28943428a6e384b5356d94, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.5
+      value: 125.5
       objectReference: {fileID: 0}
     - target: {fileID: 8051621916040589126, guid: 819938070e28943428a6e384b5356d94, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4
+      value: 76.3
       objectReference: {fileID: 0}
     - target: {fileID: 8051621916040589126, guid: 819938070e28943428a6e384b5356d94, type: 3}
       propertyPath: m_LocalPosition.z
@@ -14138,6 +14138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1025515492}
   pool: {fileID: 227415486}
+  spawner: {fileID: 1413850640}
   SynapseBar: {fileID: 185957235}
   synapsePlayer: {fileID: 1600481690}
   dendriteManager: {fileID: 0}
@@ -14215,6 +14216,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ad7bcd79e803fe4d9459c22e70a7f24, type: 3}
+--- !u!114 &1413850640 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4381205472426640746, guid: 793ebbaa6338b584cb2afc1f3a95f376, type: 3}
+  m_PrefabInstance: {fileID: 1953989595}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08838b2ad2af5c64294c21d176029804, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1425528191 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5782236906714562820, guid: 77c360050bb298d4283c92bb9a3abe52, type: 3}
