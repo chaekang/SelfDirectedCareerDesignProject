@@ -8,6 +8,7 @@ public class Spawner : MonoBehaviour
 
     private float timer;
     public bool ntFinish = false;
+    private bool isSpawning = false;
 
     private void Awake()
     {
@@ -45,10 +46,18 @@ public class Spawner : MonoBehaviour
 
     IEnumerator SpawnCoroutine()
     {
+        isSpawning = true;
         Spawn();
         yield return new WaitForSeconds(5f);
+        GameManager.instance.SynapseBar.curPoint = 0;
+        StartCoroutine(RestCoroutine());
+        isSpawning = false;
+    }
 
-        ntFinish = true; 
+    IEnumerator RestCoroutine()
+    {
+        yield return new WaitForSeconds(2f);  // 2√  ¥Î±‚
+        ntFinish = true;
     }
 
     void Spawn()

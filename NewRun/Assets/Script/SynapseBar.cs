@@ -42,18 +42,18 @@ public class SynapseBar : MonoBehaviour
         if (!GameManager.instance.changeScene.isTutorial && GameManager.instance.player.onSynapse)
         {
             velocityBar.SetActive(false);
-        }
-
-        if (GameManager.instance.spawner.ntFinish)
-        {
-            time += Time.deltaTime;
-            curPoint -= decreaseRate * Time.deltaTime;
 
             // NT 이미지 활성화
             for (int i = 0; i < NT.Length; i++)
             {
                 NT[i].SetActive(true);
             }
+        }
+
+        if (GameManager.instance.spawner.ntFinish)
+        {
+            time += Time.deltaTime;
+            curPoint -= decreaseRate * Time.deltaTime;
 
             if (curPoint < 100 && time >= 20f)
             {
@@ -87,7 +87,6 @@ public class SynapseBar : MonoBehaviour
                     curPoint = 100;
                     GameManager.instance.player.disappear = true;
                     GameManager.instance.player.onSynapse = false;
-                    Debug.Log(GameManager.instance.player.onSynapse);
                 }
             }
         }

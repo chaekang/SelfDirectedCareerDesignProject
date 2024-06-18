@@ -89,7 +89,6 @@ public class _Player : MonoBehaviour
                 time = 0;
                 gameObject.SetActive(false);
                 appear = true;
-                disappear = false;
                 Debug.Log(appear);
             }
             time += Time.deltaTime;
@@ -99,7 +98,7 @@ public class _Player : MonoBehaviour
             Dendrite.gameObject.SetActive(true);
         }
 
-        if (GameManager.instance.spawner.ntFinish)
+        if (GameManager.instance.spawner.ntFinish && !disappear)
         {
             gameObject.SetActive(false);
             synapsePlayer.SetActive(true);
@@ -165,7 +164,6 @@ public class _Player : MonoBehaviour
             {
                 onSynapse = true;
             }
-            GameManager.instance.SynapseBar.curPoint = 0;
         }
     }
 
