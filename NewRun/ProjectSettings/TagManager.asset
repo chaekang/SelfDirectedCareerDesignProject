@@ -25,6 +25,7 @@ TagManager:
   - Channel_K_Poison
   - Channel_Na_Poison
   - EndPoint
+  - NT_UP
   layers:
   - Default
   - TransparentFX
