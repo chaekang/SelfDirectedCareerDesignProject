@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spawner : MonoBehaviour
+public class SpawnUp : MonoBehaviour
 {
     BoxCollider2D area;
 
@@ -13,19 +13,11 @@ public class Spawner : MonoBehaviour
         area = GetComponent<BoxCollider2D>();
     }
 
-    private void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (GameManager.instance.player.onSynapse)
+        if (collision.transform.tag == "NT")
         {
-            timer += Time.deltaTime;
-
-            float randomTime = Random.Range(0.5f, 0.8f);
-
-            if (timer > randomTime)
-            {
-                Spawn();
-                timer = 0;
-            }
+            Spawn();
         }
     }
 
@@ -33,7 +25,7 @@ public class Spawner : MonoBehaviour
     {
         Vector2 basePosition = transform.position;  //오브젝트의 위치
 
-        //x, y축 랜덤 좌표 얻기
+        //x, y축 좌표 얻기
         float posX = basePosition.x;
         float posY = basePosition.y;
 
@@ -47,7 +39,7 @@ public class Spawner : MonoBehaviour
         float curPoint = GameManager.instance.SynapseBar.curPoint;
         Vector2 spawnPosition = GetRandomPosition(area);
 
-        GameObject spawnedPrefab = GameManager.instance.pool.Get(0);
+        GameObject spawnedPrefab = GameManager.instance.pool.Get(1);
         spawnedPrefab.transform.position = spawnPosition;
 
     }

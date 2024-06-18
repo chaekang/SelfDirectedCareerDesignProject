@@ -6,6 +6,7 @@ using UnityEngine.UIElements;
 public class NT_Forward : MonoBehaviour
 {
     float speed;
+    
     private void Start()
     {
         speed = Random.Range(25f, 35f);
