@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public DendriteManager dendriteManager;
     public ChangeScene changeScene;
     public TutorialManager tutorialManager;
+    public AudioManager audioManager;
 
     private void Awake()
     {

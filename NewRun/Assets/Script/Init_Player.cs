@@ -21,6 +21,7 @@ public class Init_Player : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Q))
         {
+            GameManager.instance.audioManager.PlaySound("Start");
             initCamera.SetActive(false);
             initPlayer.SetActive(false);
             playerCamera.SetActive(true);

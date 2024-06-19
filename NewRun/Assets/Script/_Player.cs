@@ -134,14 +134,17 @@ public class _Player : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.RightArrow))
             {
+                GameManager.instance.audioManager.PlaySound("Direction");
                 state = PlayerState.turn_right;
             }
             else if (Input.GetKey(KeyCode.UpArrow))
             {
+                GameManager.instance.audioManager.PlaySound("Direction");
                 state = PlayerState.turn_up;
             }
             else if (Input.GetKey(KeyCode.DownArrow))
             {
+                GameManager.instance.audioManager.PlaySound("Direction");
                 state = PlayerState.turn_down;
             }
         }
@@ -231,6 +234,7 @@ public class _Player : MonoBehaviour
             {
                 if (channel_Na)
                 {
+                    GameManager.instance.audioManager.PlaySound("Channel");
                     Na = true;
                     TakeIon();
                 }
@@ -247,6 +251,7 @@ public class _Player : MonoBehaviour
             {
                 if (channel_K)
                 {
+                    GameManager.instance.audioManager.PlaySound("Channel");
                     K = true;
                     TakeIon();
                 }
@@ -262,6 +267,7 @@ public class _Player : MonoBehaviour
             if (Input.GetKeyUp(KeyCode.D))
             {
                 NaPoison = true;
+                GameManager.instance.audioManager.PlaySound("PoisonChannel");
                 if (poisonF && !GameManager.instance.changeScene.isTutorial)
                 {
                     NaToxicNum--;
@@ -281,6 +287,7 @@ public class _Player : MonoBehaviour
         {
             if (Input.GetKeyUp(KeyCode.F))
             {
+                GameManager.instance.audioManager.PlaySound("PoisonChannel");
                 KPoison = true;
                 if (poisonS && !GameManager.instance.changeScene.isTutorial)
                 {
