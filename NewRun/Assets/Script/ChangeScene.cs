@@ -43,34 +43,42 @@ public class ChangeScene : MonoBehaviour
             switch (clickedObject.name)
             {
                 case "StartBtn":
+                    GameManager.instance.audioManager.PlaySound("UIButton");
                     start();
                     break;
 
                 case "HomeBtn":
+                    GameManager.instance.audioManager.PlaySound("UIButton");
                     goHome();
                     break;
 
                 case "RestartBtn":
+                    GameManager.instance.audioManager.PlaySound("UIButton");
                     start();
                     break;
 
                 case "NextStageBtn":
+                    GameManager.instance.audioManager.PlaySound("UIButton");
                     GameManager.instance.dendriteManager.nextStagebtn = true;
                     break;
 
                 case "ChangeToPoisonMode":
+                    GameManager.instance.audioManager.PlaySound("UIButton");
                     SceneManager.LoadScene(5);
                     break;
 
                 case "ChangeToBasicMode":
+                    GameManager.instance.audioManager.PlaySound("UIButton");
                     SceneManager.LoadScene(0);
                     break;
 
                 case "GameExpBtn":
+                    GameManager.instance.audioManager.PlaySound("UIButton");
                     SceneManager.LoadScene(13);
                     break;
 
                 case "StartBtn_Poison":
+                    GameManager.instance.audioManager.PlaySound("UIButton");
                     SceneManager.LoadScene(6);
                     break;
             }

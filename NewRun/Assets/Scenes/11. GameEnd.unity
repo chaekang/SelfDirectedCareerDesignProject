@@ -710,7 +710,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dendrite: {fileID: 0}
+  isPoison: 0
   isTutorial: 0
+  endStage: 0
 --- !u!4 &1351741533
 Transform:
   m_ObjectHideFlags: 0

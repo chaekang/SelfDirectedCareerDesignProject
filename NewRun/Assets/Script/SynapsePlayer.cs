@@ -12,6 +12,7 @@ public class SynapsePlayer : MonoBehaviour
         if (GameManager.instance.spawner.ntFinish)
         {
             synapseBar.SetActive(true);
+            GameManager.instance.audioManager.PlaySound("Synapse");
         }
 
         // 시냅스에서 머리 위로 게이지바 띄우기

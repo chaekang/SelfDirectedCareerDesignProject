@@ -18458,6 +18458,57 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7918432306398957968, guid: e1f5cb5f58fad5c4f8586f2ccf8d4da8, type: 3}
   m_PrefabInstance: {fileID: 280154013}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &286169094
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 286169096}
+  - component: {fileID: 286169095}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &286169095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286169094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c09265d4eba0e7345882694105a5203c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ADChannel: {fileID: 8300000, guid: 5ea4e8644812713478bbe3e0697378e8, type: 3}
+  ADPoisonChannel: {fileID: 8300000, guid: 8ec2fa7817e421646a5192b01ad84681, type: 3}
+  ADSynapse: {fileID: 8300000, guid: b3037acc8fb4084448480d371323632b, type: 3}
+  ADStart: {fileID: 8300000, guid: fe399f3f7ff1c464196b49b6502804bd, type: 3}
+  ADDirection: {fileID: 8300000, guid: e6474bd2321a10949b65737ca036c25d, type: 3}
+  ADUIButton: {fileID: 8300000, guid: 44ecae7ba83172c40bc735d62f46029d, type: 3}
+  audioSource: {fileID: 0}
+--- !u!4 &286169096
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286169094}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.8018715, y: -0.8106345, z: -1.6515518}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &303070556 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6478363374845001533, guid: c8b0fa60fa72558489e6058adc745143, type: 3}
@@ -34013,6 +34064,7 @@ MonoBehaviour:
   dendriteManager: {fileID: 0}
   changeScene: {fileID: 2084833216}
   tutorialManager: {fileID: 0}
+  audioManager: {fileID: 286169095}
 --- !u!4 &1336894091
 Transform:
   m_ObjectHideFlags: 0
@@ -37492,8 +37544,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.004799843, y: 0.0074501038, z: 0}
-    m_Extent: {x: 20.503899, y: 20.49805, z: 0}
+    m_Center: {x: 0.0013999939, y: -0.004750252, z: 0}
+    m_Extent: {x: 20.5027, y: 20.502651, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -41342,3 +41394,4 @@ SceneRoots:
   - {fileID: 309559485}
   - {fileID: 452312953}
   - {fileID: 208411187}
+  - {fileID: 286169096}
