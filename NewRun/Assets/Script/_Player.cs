@@ -171,21 +171,25 @@ public class _Player : MonoBehaviour
     {
         if (collision.gameObject.tag == "Channel_Na") 
         {
+            Debug.Log("Na");
             channel_Na = true;
             SetChild(collision); 
         }
         else if (collision.gameObject.tag == "Channel_K")
         {
+            Debug.Log("K");
             channel_K = true;
             SetChild(collision);
         }
         else if (collision.gameObject.tag == "Channel_Na_Poison")
         {
+            Debug.Log("Na_Poison");
             poisonF = true;
             SetChild(collision);
         }
         else if (collision.gameObject.tag == "Channel_K_Poison")
         {
+            Debug.Log("K_Poison");
             poisonS = true;
             SetChild(collision);
         }
@@ -254,7 +258,6 @@ public class _Player : MonoBehaviour
         }
         else if (collision.gameObject.tag == "Channel_Na_Poison")
         {
-            Debug.Log("PoisonFish 공간");
             if (Input.GetKeyUp(KeyCode.D))
             {
                 NaPoison = true;
@@ -275,7 +278,6 @@ public class _Player : MonoBehaviour
         }
         else if (collision.gameObject.tag == "Channel_K_Poison")
         {
-            Debug.Log("PoisonSnake 공간");
             if (Input.GetKeyUp(KeyCode.F))
             {
                 KPoison = true;
