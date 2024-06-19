@@ -29,7 +29,10 @@ public class SpawnUp : MonoBehaviour
     {
         if (!GameManager.instance.player.onSynapse && GameManager.instance.player.disappear)
         {
-            ntCling.SetActive(false);
+            if (ntCling != null)
+            {
+                ntCling.SetActive(false);
+            }
         }
 
         if (GameManager.instance.spawner.ntFinish && GameManager.instance.player.onSynapse)
@@ -73,15 +76,8 @@ public class SpawnUp : MonoBehaviour
         float curPoint = GameManager.instance.SynapseBar.curPoint;
         Vector2 spawnPosition = GetRandomPosition(area);
 
-        if (GameManager.instance.changeScene.endStage)
-        {
-            GameObject spawnedPrefab = GameManager.instance.pool.Get(0);
-            spawnedPrefab.transform.position = spawnPosition;
-        }
-        else
-        {
-            GameObject spawnedPrefab = GameManager.instance.pool.Get(1);
-            spawnedPrefab.transform.position = spawnPosition;
-        }
+        GameObject spawnedPrefab = GameManager.instance.pool.Get(1);
+        spawnedPrefab.transform.position = spawnPosition;
+
     }
 }

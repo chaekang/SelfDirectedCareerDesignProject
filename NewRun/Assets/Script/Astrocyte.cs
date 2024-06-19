@@ -22,7 +22,7 @@ public class Astrocyte : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.transform.CompareTag("NT") && !isMoving)
+        if (collision.transform.CompareTag("NT_UP") && !isMoving)
         {
             anim.SetBool("isMoving", true);
             isMoving = true;
