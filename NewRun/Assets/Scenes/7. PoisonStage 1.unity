@@ -1519,6 +1519,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0eb802ebeb4c8048b7d726f3fb447eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &149762214 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4381205472426640746, guid: 793ebbaa6338b584cb2afc1f3a95f376, type: 3}
+  m_PrefabInstance: {fileID: 149762211}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08838b2ad2af5c64294c21d176029804, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &151679954 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6478363374845001533, guid: c8b0fa60fa72558489e6058adc745143, type: 3}
@@ -23118,8 +23129,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.004350662, y: -0.000049591064, z: 0}
-    m_Extent: {x: 20.50025, y: 20.49795, z: 0}
+    m_Center: {x: 0.0001001358, y: 0.0001001358, z: 0}
+    m_Extent: {x: 20.5013, y: 20.5043, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -31108,6 +31119,17 @@ PrefabInstance:
       addedObject: {fileID: 1104799494}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6248d76f8283cc942afe3c5bda2a06d7, type: 3}
+--- !u!114 &1462021102 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5299634902351508804, guid: 6248d76f8283cc942afe3c5bda2a06d7, type: 3}
+  m_PrefabInstance: {fileID: 1462021101}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2005398150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe247b395f890174c87236b31abe0c85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1463323982
 GameObject:
   m_ObjectHideFlags: 0
@@ -35142,8 +35164,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.0042505264, y: -0.0003004074, z: 0}
-    m_Extent: {x: 20.505249, y: 20.4982, z: 0}
+    m_Center: {x: 0.007949829, y: 0.0031499863, z: 0}
+    m_Extent: {x: 20.49975, y: 20.501652, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -35368,8 +35390,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1521831082}
   pool: {fileID: 1543774879}
+  spawner: {fileID: 149762214}
   SynapseBar: {fileID: 1265818013}
-  synapsePlayer: {fileID: 0}
+  synapsePlayer: {fileID: 1462021102}
   dendriteManager: {fileID: 0}
   changeScene: {fileID: 1347535010}
   tutorialManager: {fileID: 0}

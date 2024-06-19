@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spawner : MonoBehaviour
+public class EndStageSpawner : MonoBehaviour
 {
     BoxCollider2D area;
+
     private float timer;
-    public bool ntFinish = false;
 
     private void Awake()
     {
@@ -15,7 +15,7 @@ public class Spawner : MonoBehaviour
 
     private void Update()
     {
-        if (GameManager.instance.changeScene.endStage && GameManager.instance.player.onSynapse)
+        if (GameManager.instance.player.onSynapse)
         {
             timer += Time.deltaTime;
 
@@ -25,30 +25,15 @@ public class Spawner : MonoBehaviour
             {
                 Spawn();
                 timer = 0;
-                ntFinish = true;
-            }
-        }
-        if (GameManager.instance.player.onSynapse && !ntFinish)
-        {
-            timer += Time.deltaTime;
-
-            float randomTime = Random.Range(0.5f, 0.8f);
-
-            if (timer > randomTime)
-            {
-
-                StartCoroutine(SpawnCoroutine());
-
-                timer = 0;
             }
         }
     }
 
     private Vector2 GetRandomPosition(BoxCollider2D area)
     {
-        Vector2 basePosition = transform.position;  // 오브젝트의 위치
+        Vector2 basePosition = transform.position;  //오브젝트의 위치
 
-        // x, y축 랜덤 좌표 얻기
+        //x, y축 랜덤 좌표 얻기
         float posX = basePosition.x;
         float posY = basePosition.y;
 
@@ -57,18 +42,10 @@ public class Spawner : MonoBehaviour
         return spawnPos;
     }
 
-    IEnumerator SpawnCoroutine()
-    {
-        Spawn();
-        yield return new WaitForSeconds(5f);
-        GameManager.instance.SynapseBar.curPoint = 0;
-        ntFinish = true;
-    }
-
     void Spawn()
     {
+        float curPoint = GameManager.instance.SynapseBar.curPoint;
         Vector2 spawnPosition = GetRandomPosition(area);
-
         GameObject spawnedPrefab = GameManager.instance.pool.Get(0);
         spawnedPrefab.transform.position = spawnPosition;
     }

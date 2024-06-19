@@ -44,6 +44,7 @@ public class _Player : MonoBehaviour
     public Sprite right;
 
     public GameObject synapsePlayer;
+    public bool endStop = false;
 
     // 튜토리얼에 필요
     public bool wall = false;

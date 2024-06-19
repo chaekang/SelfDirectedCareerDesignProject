@@ -50,7 +50,7 @@ public class SynapseBar : MonoBehaviour
             }
         }
 
-        if (GameManager.instance.spawner.ntFinish)
+        if (GameManager.instance.spawner.ntFinish || GameManager.instance.player.endStop)
         {
             time += Time.deltaTime;
             curPoint -= decreaseRate * Time.deltaTime;
