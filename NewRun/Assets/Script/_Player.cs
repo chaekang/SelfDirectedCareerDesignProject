@@ -90,13 +90,15 @@ public class _Player : MonoBehaviour
                 time = 0;
                 gameObject.SetActive(false);
                 appear = true;
-                Debug.Log(appear);
             }
             time += Time.deltaTime;
         }
         if (appear)
         {
-            Dendrite.gameObject.SetActive(true);
+            if (Dendrite != null)
+            {
+                Dendrite.gameObject.SetActive(true);
+            }
         }
 
         if (GameManager.instance.spawner.ntFinish && !disappear)

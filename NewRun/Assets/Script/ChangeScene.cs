@@ -139,7 +139,6 @@ public class ChangeScene : MonoBehaviour
     {
         if (endStage && GameManager.instance.player.appear)
         {
-            Debug.Log("End");
             SceneManager.LoadScene(12);
 
         }
