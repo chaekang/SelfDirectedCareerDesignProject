@@ -10202,6 +10202,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SynapseBar
       objectReference: {fileID: 0}
+    - target: {fileID: 5462975948600807694, guid: 93e5c5261fbbe6b478e945594bca7585, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5462975948600807694, guid: 93e5c5261fbbe6b478e945594bca7585, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7469371575822032321, guid: 93e5c5261fbbe6b478e945594bca7585, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -11527,7 +11535,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dendrite: {fileID: 1953989596}
-  isPoison: 0
   isTutorial: 0
   endStage: 0
 --- !u!4 &1226840620
