@@ -29994,7 +29994,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 931737841}
   pool: {fileID: 446424135}
-  spawner: {fileID: 0}
+  spawner: {fileID: 6408007381332753093}
   SynapseBar: {fileID: 1474811404}
   synapsePlayer: {fileID: 39800469}
   dendriteManager: {fileID: 0}
@@ -34531,11 +34531,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051621916040589126, guid: 819938070e28943428a6e384b5356d94, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.15
+      value: 127.8
       objectReference: {fileID: 0}
     - target: {fileID: 8051621916040589126, guid: 819938070e28943428a6e384b5356d94, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 18.8
+      value: 15.89
       objectReference: {fileID: 0}
     - target: {fileID: 8051621916040589126, guid: 819938070e28943428a6e384b5356d94, type: 3}
       propertyPath: m_LocalPosition.z
