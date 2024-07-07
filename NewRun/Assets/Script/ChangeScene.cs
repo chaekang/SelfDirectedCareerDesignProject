@@ -115,7 +115,6 @@ public class ChangeScene : MonoBehaviour
         }
         else if (scene.name == "1. GameStart")
         {
-            Debug.Log("basic");
             isPoison = false;
         }
         if (scene.name == "5. GameScene 3" || scene.name == "9. PoisonStage 3")

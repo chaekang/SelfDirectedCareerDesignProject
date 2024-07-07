@@ -31484,6 +31484,10 @@ PrefabInstance:
       propertyPath: velocityBar
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4340164405305459952, guid: 93e5c5261fbbe6b478e945594bca7585, type: 3}
+      propertyPath: NT.Array.data[0]
+      value: 
+      objectReference: {fileID: 1531594076}
     - target: {fileID: 5001293114470209403, guid: 93e5c5261fbbe6b478e945594bca7585, type: 3}
       propertyPath: m_Name
       value: SynapseBar
@@ -32143,7 +32147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1984787140394629840}
   pool: {fileID: 1725711740}
-  spawner: {fileID: 0}
+  spawner: {fileID: 1252013496}
   SynapseBar: {fileID: 846174314}
   synapsePlayer: {fileID: 293576395}
   dendriteManager: {fileID: 0}
@@ -37115,6 +37119,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1252013496 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4381205472426640746, guid: 793ebbaa6338b584cb2afc1f3a95f376, type: 3}
+  m_PrefabInstance: {fileID: 1531594075}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08838b2ad2af5c64294c21d176029804, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1252028718
 GameObject:
   m_ObjectHideFlags: 0
@@ -56175,14 +56190,6 @@ MonoBehaviour:
   NaPoison: 0
   KPoison: 0
   canChangeDirection: 1
-  Na_num: {fileID: 0}
-  K_num: {fileID: 0}
-  NaToxic_num: {fileID: 0}
-  KToxic_num: {fileID: 0}
-  NaNum: 0
-  KNum: 0
-  NaToxicNum: 0
-  KToxicNum: 0
 --- !u!50 &2118006173789839950
 Rigidbody2D:
   serializedVersion: 4
