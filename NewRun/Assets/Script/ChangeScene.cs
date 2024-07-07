@@ -81,6 +81,9 @@ public class ChangeScene : MonoBehaviour
                     GameManager.instance.audioManager.PlaySound("UIButton");
                     SceneManager.LoadScene(6);
                     break;
+                case "ExitBtn":
+                    Application.Quit();
+                    break;
             }
         }
     }
