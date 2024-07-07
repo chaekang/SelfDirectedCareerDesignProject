@@ -92,6 +92,11 @@ public class ChangeScene : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        if (scene.name == "7. PoisonStage 1" || scene.name == "8. PoisonStage 2" || scene.name == "9. PoisonStage 3" || scene.name == "14. Poison Soma Scene")
+        {
+            Debug.Log(scene.name + "poison");
+            isPoison = true;
+        }
         if (scene.name == "2. Soma Scene" || scene.name == "14. Poison Soma Scene")
         {
             if (!isPoison)
@@ -106,11 +111,6 @@ public class ChangeScene : MonoBehaviour
         else if (scene.name == "6. PoisonStart")
         {
             Debug.Log("poison");
-            isPoison = true;
-        }
-        else if (scene.name == "7. PoisonStage 1" || scene.name == "8. PoisonStage 2" || scene.name == "9. PoisonStage 3")
-        {
-            Debug.Log(scene.name + "poison");
             isPoison = true;
         }
         else if (scene.name == "1. GameStart")
