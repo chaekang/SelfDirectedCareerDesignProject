@@ -35975,6 +35975,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4716615066011772426, guid: 83f80a5b3bfb2534a86602fa4f644bc9, type: 3}
   m_PrefabInstance: {fileID: 1970917895}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1978822412 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3223558725388647152, guid: 93e5c5261fbbe6b478e945594bca7585, type: 3}
+  m_PrefabInstance: {fileID: 1474811403}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1980878481
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39898,6 +39903,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08838b2ad2af5c64294c21d176029804, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  panel: {fileID: 0}
   ntFinish: 0
 --- !u!212 &3018887776852408593
 SpriteRenderer:
@@ -42070,6 +42076,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08838b2ad2af5c64294c21d176029804, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  panel: {fileID: 0}
   ntFinish: 0
 --- !u!4 &5775455960884280081
 Transform:
@@ -42549,6 +42556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08838b2ad2af5c64294c21d176029804, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  panel: {fileID: 0}
   ntFinish: 0
 --- !u!212 &6376095573064296821
 SpriteRenderer:
@@ -42659,6 +42667,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08838b2ad2af5c64294c21d176029804, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  panel: {fileID: 0}
   ntFinish: 0
 --- !u!212 &6424207146091022813
 SpriteRenderer:
@@ -42791,6 +42800,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08838b2ad2af5c64294c21d176029804, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  panel: {fileID: 0}
   ntFinish: 0
 --- !u!212 &6499135006475590012
 SpriteRenderer:
@@ -42953,6 +42963,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08838b2ad2af5c64294c21d176029804, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  panel: {fileID: 0}
   ntFinish: 0
 --- !u!1 &6676535273803675728
 GameObject:
@@ -43306,6 +43317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08838b2ad2af5c64294c21d176029804, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  panel: {fileID: 0}
   ntFinish: 0
 --- !u!1 &7137361396173633006
 GameObject:
@@ -43386,6 +43398,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08838b2ad2af5c64294c21d176029804, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  panel: {fileID: 0}
   ntFinish: 0
 --- !u!1 &7273287345222302661
 GameObject:
@@ -43448,6 +43461,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08838b2ad2af5c64294c21d176029804, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  panel: {fileID: 0}
   ntFinish: 0
 --- !u!1 &7408476294825045507
 GameObject:
@@ -43524,6 +43538,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08838b2ad2af5c64294c21d176029804, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  panel: {fileID: 0}
   ntFinish: 0
 --- !u!4 &7444157236945428057
 Transform:
@@ -43570,6 +43585,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08838b2ad2af5c64294c21d176029804, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  panel: {fileID: 0}
   ntFinish: 0
 --- !u!212 &7553070658359723896
 SpriteRenderer:
@@ -43808,6 +43824,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08838b2ad2af5c64294c21d176029804, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  panel: {fileID: 0}
   ntFinish: 0
 --- !u!212 &8198002638788762592
 SpriteRenderer:
@@ -44086,6 +44103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08838b2ad2af5c64294c21d176029804, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  panel: {fileID: 0}
   ntFinish: 0
 --- !u!212 &8616725749905297045
 SpriteRenderer:
@@ -44169,6 +44187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08838b2ad2af5c64294c21d176029804, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  panel: {fileID: 0}
   ntFinish: 0
 --- !u!1 &8649207596678491446
 GameObject:
@@ -44412,6 +44431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08838b2ad2af5c64294c21d176029804, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  panel: {fileID: 1978822412}
   ntFinish: 0
 --- !u!1 &9106679737994131711
 GameObject:
