@@ -28878,6 +28878,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6277671525190267242, guid: 93e5c5261fbbe6b478e945594bca7585, type: 3}
   m_PrefabInstance: {fileID: 756217454}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &756217457 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3223558725388647152, guid: 93e5c5261fbbe6b478e945594bca7585, type: 3}
+  m_PrefabInstance: {fileID: 756217454}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &758462930
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31561,8 +31566,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.00055122375, y: -0.0037994385, z: 0}
-    m_Extent: {x: 45.508553, y: 45.5034, z: 0}
+    m_Center: {x: -0.003200531, y: -0.0004005432, z: 0}
+    m_Extent: {x: 45.5006, y: 45.4967, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -35543,6 +35548,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1956072984694576367, guid: 793ebbaa6338b584cb2afc1f3a95f376, type: 3}
+      propertyPath: panel
+      value: 
+      objectReference: {fileID: 756217457}
+    - target: {fileID: 4381205472426640746, guid: 793ebbaa6338b584cb2afc1f3a95f376, type: 3}
+      propertyPath: panel
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6149922098977704651, guid: 793ebbaa6338b584cb2afc1f3a95f376, type: 3}
       propertyPath: m_LocalPosition.x
       value: 144.81552
@@ -37082,8 +37095,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.0012998581, y: 0.0012998581, z: 0}
-    m_Extent: {x: 20.5046, y: 20.506199, z: 0}
+    m_Center: {x: -0.0036497116, y: -0.00045013428, z: 0}
+    m_Extent: {x: 20.50415, y: 20.49525, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0

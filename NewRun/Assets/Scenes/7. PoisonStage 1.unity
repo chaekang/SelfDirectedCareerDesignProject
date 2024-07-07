@@ -1280,6 +1280,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1956072984694576367, guid: 793ebbaa6338b584cb2afc1f3a95f376, type: 3}
+      propertyPath: panel
+      value: 
+      objectReference: {fileID: 1265818014}
     - target: {fileID: 6149922098977704651, guid: 793ebbaa6338b584cb2afc1f3a95f376, type: 3}
       propertyPath: m_LocalPosition.x
       value: 141.55
@@ -22688,8 +22692,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0061998367, y: 0.0023498535, z: 0}
-    m_Extent: {x: 20.500301, y: 20.50685, z: 0}
+    m_Center: {x: 0.0048999786, y: 0.001950264, z: 0}
+    m_Extent: {x: 20.4953, y: 20.50505, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -27883,8 +27887,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0020008087, y: 0.0037002563, z: 0}
-    m_Extent: {x: 45.502, y: 45.5034, z: 0}
+    m_Center: {x: -0.00045013428, y: -0.0044498444, z: 0}
+    m_Extent: {x: 45.50855, y: 45.49685, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -28726,6 +28730,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4ba4e29873998c458182ffc0ed3ccff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1265818014 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3223558725388647152, guid: 93e5c5261fbbe6b478e945594bca7585, type: 3}
+  m_PrefabInstance: {fileID: 1265818011}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1270672844
 GameObject:
   m_ObjectHideFlags: 0
@@ -34352,8 +34361,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.004350662, y: -0.0016002655, z: 0}
-    m_Extent: {x: 20.49815, y: 20.5081, z: 0}
+    m_Center: {x: 0.004049301, y: 0.00069999695, z: 0}
+    m_Extent: {x: 20.49485, y: 20.5038, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
