@@ -41,6 +41,7 @@ public class SpawnUp : MonoBehaviour
 
             // curPoint에 따라 randomTime을 조정
             float curPoint = GameManager.instance.SynapseBar.curPoint;
+            curPoint = 0;
 
             // curPoint가 0보다 작거나 같으면 분비되는 nt가 없도록 함
             if (curPoint <= 0)
