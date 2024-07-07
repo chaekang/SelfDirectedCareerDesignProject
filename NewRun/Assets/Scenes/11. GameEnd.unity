@@ -150,11 +150,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -1723903997413706523, guid: abe152ea5da5a854bb30d1907d08a7b3, type: 2}
-  m_audioClip: {fileID: 8300000, guid: ca94daad1feea6f47ac53e5934d705c9, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 92f3673600cfa4c439b328c96974281a, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -890,7 +890,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dendrite: {fileID: 0}
-  isPoison: 0
   isTutorial: 0
   endStage: 0
 --- !u!4 &1351741533
