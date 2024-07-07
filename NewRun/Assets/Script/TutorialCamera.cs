@@ -22,7 +22,7 @@ public class TutorialCamera : MonoBehaviour
         if (playerScript.camMove)
         {
             transform.parent = null;
-            playerCamera.fieldOfView = 103;
+            playerCamera.fieldOfView = 106;
             playerScript.playerSpeed = 0f;
         }
     }
