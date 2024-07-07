@@ -1,11 +1,11 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnUp : MonoBehaviour
 {
     BoxCollider2D area;
     public GameObject ntCling;
+    public GameObject panel;
 
     private float timer;
     private bool previousNtFinish = false;
@@ -40,6 +40,9 @@ public class SpawnUp : MonoBehaviour
         if (GameManager.instance.spawner.ntFinish && !previousNtFinish)
         {
             GameManager.instance.SynapseBar.curPoint = 0;
+
+            // panel을 0.2초 동안 켜주는 코루틴 실행
+            StartCoroutine(ActivatePanelForDuration(1f));
         }
 
         // 현재 ntFinish 상태를 저장
@@ -65,6 +68,16 @@ public class SpawnUp : MonoBehaviour
                 Spawn();
                 timer = 0;
             }
+        }
+    }
+
+    private IEnumerator ActivatePanelForDuration(float duration)
+    {
+        if (panel != null)
+        {
+            panel.SetActive(true);
+            yield return new WaitForSeconds(duration);
+            panel.SetActive(false);
         }
     }
 

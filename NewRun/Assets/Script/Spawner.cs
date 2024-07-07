@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
+    public GameObject panel;
+
     BoxCollider2D area;
     private float timer;
     public bool ntFinish = false;
+    private bool panelActivated = false; // 패널이 활성화 되었는지 여부를 저장하는 플래그
 
     private void Awake()
     {
@@ -17,6 +20,12 @@ public class Spawner : MonoBehaviour
     {
         if (GameManager.instance.changeScene.endStage && GameManager.instance.player.onSynapse)
         {
+            if (!panelActivated) // 패널이 활성화되지 않은 경우에만 코루틴 호출
+            {
+                StartCoroutine(ActivatePanelForDuration(1f));
+                panelActivated = true; // 패널 활성화 플래그 설정
+            }
+
             timer += Time.deltaTime;
 
             float randomTime = Random.Range(0.5f, 0.8f);
@@ -28,7 +37,7 @@ public class Spawner : MonoBehaviour
                 ntFinish = true;
             }
         }
-        if (GameManager.instance.player.onSynapse && !ntFinish)
+        else if (GameManager.instance.player.onSynapse && !ntFinish)
         {
             timer += Time.deltaTime;
 
@@ -36,9 +45,8 @@ public class Spawner : MonoBehaviour
 
             if (timer > randomTime)
             {
-
                 StartCoroutine(SpawnCoroutine());
-
+                GameManager.instance.SynapseBar.curPoint = 0;
                 timer = 0;
             }
         }
@@ -70,5 +78,15 @@ public class Spawner : MonoBehaviour
 
         GameObject spawnedPrefab = GameManager.instance.pool.Get(0);
         spawnedPrefab.transform.position = spawnPosition;
+    }
+
+    private IEnumerator ActivatePanelForDuration(float duration)
+    {
+        if (panel != null)
+        {
+            panel.SetActive(true);
+            yield return new WaitForSeconds(duration);
+            panel.SetActive(false);
+        }
     }
 }

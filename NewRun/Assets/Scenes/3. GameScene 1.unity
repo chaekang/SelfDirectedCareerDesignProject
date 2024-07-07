@@ -1101,7 +1101,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051621916040589126, guid: 819938070e28943428a6e384b5356d94, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.75
+      value: -4.05
       objectReference: {fileID: 0}
     - target: {fileID: 8051621916040589126, guid: 819938070e28943428a6e384b5356d94, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4600,6 +4600,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &374706456 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3223558725388647152, guid: 93e5c5261fbbe6b478e945594bca7585, type: 3}
+  m_PrefabInstance: {fileID: 1105977555}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &378715044
 GameObject:
   m_ObjectHideFlags: 0
@@ -10186,14 +10191,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4340164405305459952, guid: 93e5c5261fbbe6b478e945594bca7585, type: 3}
-      propertyPath: NT
-      value: 
-      objectReference: {fileID: 1247250718}
-    - target: {fileID: 4340164405305459952, guid: 93e5c5261fbbe6b478e945594bca7585, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1025515492}
-    - target: {fileID: 4340164405305459952, guid: 93e5c5261fbbe6b478e945594bca7585, type: 3}
       propertyPath: velocityBar
       value: 
       objectReference: {fileID: 1244225723}
@@ -10204,18 +10201,6 @@ PrefabInstance:
     - target: {fileID: 5001293114470209403, guid: 93e5c5261fbbe6b478e945594bca7585, type: 3}
       propertyPath: m_Name
       value: SynapseBar
-      objectReference: {fileID: 0}
-    - target: {fileID: 5001293114470209403, guid: 93e5c5261fbbe6b478e945594bca7585, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5462975948600807694, guid: 93e5c5261fbbe6b478e945594bca7585, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5462975948600807694, guid: 93e5c5261fbbe6b478e945594bca7585, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7469371575822032321, guid: 93e5c5261fbbe6b478e945594bca7585, type: 3}
       propertyPath: m_Pivot.x
@@ -19416,6 +19401,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1956072984694576367, guid: 793ebbaa6338b584cb2afc1f3a95f376, type: 3}
+      propertyPath: panel
+      value: 
+      objectReference: {fileID: 374706456}
     - target: {fileID: 6149922098977704651, guid: 793ebbaa6338b584cb2afc1f3a95f376, type: 3}
       propertyPath: m_LocalPosition.x
       value: 141.55
