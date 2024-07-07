@@ -69,3 +69,6 @@ TagManager:
   - name: channel
     uniqueID: 4123353335
     locked: 0
+  - name: info
+    uniqueID: 1485422635
+    locked: 0
