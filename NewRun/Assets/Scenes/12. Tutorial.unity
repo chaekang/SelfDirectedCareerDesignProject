@@ -25719,6 +25719,7 @@ MonoBehaviour:
   ADDirection: {fileID: 8300000, guid: e6474bd2321a10949b65737ca036c25d, type: 3}
   ADUIButton: {fileID: 8300000, guid: 44ecae7ba83172c40bc735d62f46029d, type: 3}
   audioSource: {fileID: 0}
+  mixerGroup: {fileID: 0}
 --- !u!4 &226179276
 Transform:
   m_ObjectHideFlags: 0
@@ -26016,7 +26017,7 @@ AudioSource:
   m_GameObject: {fileID: 256007381}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -1723903997413706523, guid: abe152ea5da5a854bb30d1907d08a7b3, type: 2}
   m_audioClip: {fileID: 8300000, guid: 456de62c7b7d6364293838611a7008eb, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
