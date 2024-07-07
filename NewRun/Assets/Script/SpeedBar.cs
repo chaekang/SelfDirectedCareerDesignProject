@@ -94,7 +94,7 @@ public class SpeedBar : MonoBehaviour
         if (!GameManager.instance.changeScene.isTutorial)
         {
             Debug.Log("Push Wrong Key");
-            curSpeed -= 0.02f;
+            curSpeed -= 0.03f;
         }
     }
 }
