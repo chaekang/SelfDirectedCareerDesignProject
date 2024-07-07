@@ -8,6 +8,7 @@ public class SpawnUp : MonoBehaviour
     public GameObject ntCling;
 
     private float timer;
+    private bool previousNtFinish = false;
 
     private void Awake()
     {
@@ -35,13 +36,21 @@ public class SpawnUp : MonoBehaviour
             }
         }
 
+        // ntFinish가 true가 된 직후에 한 번만 curPoint를 0으로 초기화
+        if (GameManager.instance.spawner.ntFinish && !previousNtFinish)
+        {
+            GameManager.instance.SynapseBar.curPoint = 0;
+        }
+
+        // 현재 ntFinish 상태를 저장
+        previousNtFinish = GameManager.instance.spawner.ntFinish;
+
         if (GameManager.instance.spawner.ntFinish && GameManager.instance.player.onSynapse)
         {
             timer += Time.deltaTime;
 
             // curPoint에 따라 randomTime을 조정
             float curPoint = GameManager.instance.SynapseBar.curPoint;
-            curPoint = 0;
 
             // curPoint가 0보다 작거나 같으면 분비되는 nt가 없도록 함
             if (curPoint <= 0)
@@ -74,11 +83,9 @@ public class SpawnUp : MonoBehaviour
 
     void Spawn()
     {
-        float curPoint = GameManager.instance.SynapseBar.curPoint;
         Vector2 spawnPosition = GetRandomPosition(area);
 
         GameObject spawnedPrefab = GameManager.instance.pool.Get(1);
         spawnedPrefab.transform.position = spawnPosition;
-
     }
 }

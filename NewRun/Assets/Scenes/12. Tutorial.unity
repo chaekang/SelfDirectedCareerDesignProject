@@ -26571,13 +26571,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: SynapsePlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 3093773358462560291, guid: 6248d76f8283cc942afe3c5bda2a06d7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4053236956162318007, guid: 6248d76f8283cc942afe3c5bda2a06d7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 133.41
+      value: 348.44
       objectReference: {fileID: 0}
     - target: {fileID: 4053236956162318007, guid: 6248d76f8283cc942afe3c5bda2a06d7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 76.5
+      value: 10.83
       objectReference: {fileID: 0}
     - target: {fileID: 4053236956162318007, guid: 6248d76f8283cc942afe3c5bda2a06d7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -37175,7 +37179,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 857.5, y: 466.7}
+  m_AnchoredPosition: {x: -844, y: 466.7}
   m_SizeDelta: {x: 140, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1252028720
