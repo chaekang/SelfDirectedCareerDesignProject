@@ -33,7 +33,7 @@ public class _Camera : MonoBehaviour
 
         if (playerScript.camMove)
         {
-            if(sceneScript.isPoison == true && sceneScript.endStage == true)
+            if(sceneScript.endStage == true)
             {
                 sceneLight.shapeLightFalloffSize = 120;
             }

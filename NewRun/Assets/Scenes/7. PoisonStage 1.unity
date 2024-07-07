@@ -22688,8 +22688,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0041503906, y: 0.007349968, z: 0}
-    m_Extent: {x: 20.49645, y: 20.50195, z: 0}
+    m_Center: {x: -0.0061998367, y: 0.0023498535, z: 0}
+    m_Extent: {x: 20.500301, y: 20.50685, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -24382,6 +24382,10 @@ PrefabInstance:
     - target: {fileID: 2617002087213364627, guid: 5b8259c06d8f06f41a010376ade2ed0e, type: 3}
       propertyPath: m_Color.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3751131413924308621, guid: 5b8259c06d8f06f41a010376ade2ed0e, type: 3}
+      propertyPath: maxSpeed
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3751131413924308621, guid: 5b8259c06d8f06f41a010376ade2ed0e, type: 3}
       propertyPath: decressSpeed
@@ -27879,8 +27883,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.0002002716, y: -0.002401352, z: 0}
-    m_Extent: {x: 45.499702, y: 45.5011, z: 0}
+    m_Center: {x: -0.0020008087, y: 0.0037002563, z: 0}
+    m_Extent: {x: 45.502, y: 45.5034, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -29630,7 +29634,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dendrite: {fileID: 149762213}
-  isPoison: 0
   isTutorial: 0
   endStage: 0
 --- !u!4 &1347535011
@@ -34349,8 +34352,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0018501282, y: 0.0016994476, z: 0}
-    m_Extent: {x: 20.50355, y: 20.497, z: 0}
+    m_Center: {x: -0.004350662, y: -0.0016002655, z: 0}
+    m_Extent: {x: 20.49815, y: 20.5081, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
