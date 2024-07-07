@@ -22687,8 +22687,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.0033006668, y: 0.0058994293, z: 0}
-    m_Extent: {x: 20.5057, y: 20.4988, z: 0}
+    m_Center: {x: -0.0076999664, y: 0.0041999817, z: 0}
+    m_Extent: {x: 20.4983, y: 20.4974, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -23430,6 +23430,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6478363374845001533, guid: c8b0fa60fa72558489e6058adc745143, type: 3}
   m_PrefabInstance: {fileID: 1067819849}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &789162140 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4381205472426640746, guid: 793ebbaa6338b584cb2afc1f3a95f376, type: 3}
+  m_PrefabInstance: {fileID: 149762211}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08838b2ad2af5c64294c21d176029804, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &790264704
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34227,8 +34238,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.00715065, y: -0.0016994476, z: 0}
-    m_Extent: {x: 20.49835, y: 20.504, z: 0}
+    m_Center: {x: -0.0010499954, y: 0.00034999847, z: 0}
+    m_Extent: {x: 20.495949, y: 20.50515, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -34453,9 +34464,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1521831082}
   pool: {fileID: 1543774879}
-  spawner: {fileID: 0}
+  spawner: {fileID: 789162140}
   SynapseBar: {fileID: 1265818013}
-  synapsePlayer: {fileID: 0}
+  synapsePlayer: {fileID: 2005398155}
   dendriteManager: {fileID: 0}
   changeScene: {fileID: 1347535010}
   tutorialManager: {fileID: 0}
@@ -35499,6 +35510,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4053236956162318007, guid: 6248d76f8283cc942afe3c5bda2a06d7, type: 3}
   m_PrefabInstance: {fileID: 1462021101}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2005398155 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5299634902351508804, guid: 6248d76f8283cc942afe3c5bda2a06d7, type: 3}
+  m_PrefabInstance: {fileID: 1462021101}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2005398150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe247b395f890174c87236b31abe0c85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2015149236
 MonoBehaviour:
   m_ObjectHideFlags: 0
