@@ -55,15 +55,6 @@ public class _Player : MonoBehaviour
     public bool KPoison = false;
     public bool canChangeDirection = true;
 
-    // 체널 개수
-    public TextMeshProUGUI Na_num;
-    public TextMeshProUGUI K_num;
-    public TextMeshProUGUI NaToxic_num;
-    public TextMeshProUGUI KToxic_num;
-    public int NaNum;
-    public int KNum;
-    public int NaToxicNum;
-    public int KToxicNum;
 
     void Start()
     {
@@ -270,11 +261,6 @@ public class _Player : MonoBehaviour
             {
                 NaPoison = true;
                 GameManager.instance.audioManager.PlaySound("PoisonChannel");
-                if (poisonF && !GameManager.instance.changeScene.isTutorial)
-                {
-                    NaToxicNum--;
-                    NaToxic_num.text = NaToxicNum.ToString();
-                }
                 poisonF = false;
                 DeletePoison();
             }
@@ -291,11 +277,6 @@ public class _Player : MonoBehaviour
             {
                 GameManager.instance.audioManager.PlaySound("PoisonChannel");
                 KPoison = true;
-                if (poisonS && !GameManager.instance.changeScene.isTutorial)
-                {
-                    KToxicNum--;
-                    KToxic_num.text = KToxicNum.ToString();
-                }
 
                 poisonS = false;
                 DeletePoison();
@@ -315,14 +296,10 @@ public class _Player : MonoBehaviour
         if (!GameManager.instance.changeScene.isTutorial && channel_Na)
         {
             channel_Na = false;
-            NaNum--;
-            Na_num.text = NaNum.ToString();
         } 
         else if (!GameManager.instance.changeScene.isTutorial && channel_K)
         {
             channel_K = false;
-            KNum--;
-            K_num.text = KNum.ToString();
         }
         init_channel.gameObject.SetActive(false);
         channel_anim.gameObject.SetActive(true);
