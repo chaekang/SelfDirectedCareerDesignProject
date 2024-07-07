@@ -777,6 +777,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3178709371372384747, guid: 779265a101852c045a3badb578aa9bce, type: 3}
+      propertyPath: panel
+      value: 
+      objectReference: {fileID: 934928118}
     - target: {fileID: 3441379914419582892, guid: 779265a101852c045a3badb578aa9bce, type: 3}
       propertyPath: m_Name
       value: Synapse 1
@@ -27874,6 +27878,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6277671525190267242, guid: 93e5c5261fbbe6b478e945594bca7585, type: 3}
   m_PrefabInstance: {fileID: 934928115}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &934928118 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3223558725388647152, guid: 93e5c5261fbbe6b478e945594bca7585, type: 3}
+  m_PrefabInstance: {fileID: 934928115}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &935500135
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29214,8 +29223,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.0010004044, y: 0.0003004074, z: 0}
-    m_Extent: {x: 20.507801, y: 20.491901, z: 0}
+    m_Center: {x: -0.0030002594, y: 0.0015497208, z: 0}
+    m_Extent: {x: 20.4972, y: 20.49545, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0

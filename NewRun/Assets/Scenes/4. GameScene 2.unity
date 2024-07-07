@@ -6958,6 +6958,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42bf81ec445ad2346b9a941087b4a17b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &839561840 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3223558725388647152, guid: 93e5c5261fbbe6b478e945594bca7585, type: 3}
+  m_PrefabInstance: {fileID: 4559116390550497993}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &863513621
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39618,6 +39623,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1956072984694576367, guid: 793ebbaa6338b584cb2afc1f3a95f376, type: 3}
+      propertyPath: panel
+      value: 
+      objectReference: {fileID: 839561840}
+    - target: {fileID: 4381205472426640746, guid: 793ebbaa6338b584cb2afc1f3a95f376, type: 3}
+      propertyPath: panel
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6149922098977704651, guid: 793ebbaa6338b584cb2afc1f3a95f376, type: 3}
       propertyPath: m_LocalPosition.x
       value: 144.81552
