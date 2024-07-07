@@ -94,6 +94,7 @@ public class _Player : MonoBehaviour
 
         if (GameManager.instance.spawner.ntFinish && !disappear)
         {
+            Debug.Log("nt finish");
             gameObject.SetActive(false);
             synapsePlayer.SetActive(true);
         }

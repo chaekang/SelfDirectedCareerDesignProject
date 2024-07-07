@@ -61,7 +61,6 @@ public class Spawner : MonoBehaviour
     {
         Spawn();
         yield return new WaitForSeconds(5f);
-        GameManager.instance.SynapseBar.curPoint = 0;
         ntFinish = true;
     }
 
