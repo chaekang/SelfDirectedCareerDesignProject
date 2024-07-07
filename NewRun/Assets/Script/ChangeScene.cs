@@ -144,6 +144,7 @@ public class ChangeScene : MonoBehaviour
             SceneManager.LoadScene(12);
 
         }
+
         // 소마씬으로 이동
         if (!isPoison && dendrite != null && dendrite.isFinish && !dendrite.isEnd)
         {

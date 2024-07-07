@@ -14,6 +14,7 @@ public class Info : MonoBehaviour
 
     public void Click_info_btn()
     {
+        GameManager.instance.audioManager.PlaySound("UIButton");
         info[index].gameObject.SetActive(true);
         info_pannel.SetActive(true);
         exitBtn.SetActive(false); // info_pannel이 켜지면 exitBtn을 끔
@@ -21,6 +22,7 @@ public class Info : MonoBehaviour
 
     public void Click_x_btn()
     {
+        GameManager.instance.audioManager.PlaySound("UIButton");
         info[index].gameObject.SetActive(false);
         index = 0;
         info_pannel.SetActive(false);
@@ -29,6 +31,7 @@ public class Info : MonoBehaviour
 
     public void Click_rightbtn()
     {
+        GameManager.instance.audioManager.PlaySound("UIButton");
         if (info.Length > index + 1)
         {
             info[index].gameObject.SetActive(false);
@@ -45,6 +48,7 @@ public class Info : MonoBehaviour
 
     public void Click_leftbtn()
     {
+        GameManager.instance.audioManager.PlaySound("UIButton");
         if (0 < index)
         {
             info[index].gameObject.SetActive(false);

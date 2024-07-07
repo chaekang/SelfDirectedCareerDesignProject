@@ -25713,13 +25713,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ADChannel: {fileID: 8300000, guid: 5ea4e8644812713478bbe3e0697378e8, type: 3}
-  ADPoisonChannel: {fileID: 8300000, guid: 8ec2fa7817e421646a5192b01ad84681, type: 3}
+  ADPoisonChannel: {fileID: 8300000, guid: 45e1ab06ec9c0264184484d3d5f6744a, type: 3}
   ADSynapse: {fileID: 8300000, guid: b3037acc8fb4084448480d371323632b, type: 3}
   ADStart: {fileID: 8300000, guid: fe399f3f7ff1c464196b49b6502804bd, type: 3}
-  ADDirection: {fileID: 8300000, guid: e6474bd2321a10949b65737ca036c25d, type: 3}
+  ADDirection: {fileID: 8300000, guid: 8803a55b29a33f448935a9d5182c703c, type: 3}
   ADUIButton: {fileID: 8300000, guid: 6973b79a10d80544dba908551daca300, type: 3}
   audioSource: {fileID: 0}
-  mixerGroup: {fileID: 0}
+  mixerGroup: {fileID: 1144233076506798629, guid: abe152ea5da5a854bb30d1907d08a7b3, type: 2}
 --- !u!4 &226179276
 Transform:
   m_ObjectHideFlags: 0
@@ -26020,9 +26020,9 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -1723903997413706523, guid: abe152ea5da5a854bb30d1907d08a7b3, type: 2}
   m_audioClip: {fileID: 8300000, guid: 456de62c7b7d6364293838611a7008eb, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
