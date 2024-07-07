@@ -9,7 +9,7 @@ public class ChangeScene : MonoBehaviour
     static int somaSceneCount = 1;
     static int poisonSomaScene = 1;
     bool isListenerRegistered = false;
-    public bool isPoison = false;
+    public static bool isPoison;
     public bool isTutorial = false;
     public bool endStage = false;
 
