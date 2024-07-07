@@ -26123,6 +26123,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4053236956162318007, guid: 6248d76f8283cc942afe3c5bda2a06d7, type: 3}
   m_PrefabInstance: {fileID: 452312953}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &452312955 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5299634902351508804, guid: 6248d76f8283cc942afe3c5bda2a06d7, type: 3}
+  m_PrefabInstance: {fileID: 452312953}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 569747315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe247b395f890174c87236b31abe0c85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &453946207
 GameObject:
   m_ObjectHideFlags: 0
@@ -33748,9 +33759,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1869308273}
   pool: {fileID: 1183604543}
-  spawner: {fileID: 0}
+  spawner: {fileID: 1529307971}
   SynapseBar: {fileID: 756217455}
-  synapsePlayer: {fileID: 0}
+  synapsePlayer: {fileID: 452312955}
   dendriteManager: {fileID: 0}
   changeScene: {fileID: 2084833216}
   tutorialManager: {fileID: 0}
@@ -35456,6 +35467,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0eb802ebeb4c8048b7d726f3fb447eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1529307971 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4381205472426640746, guid: 793ebbaa6338b584cb2afc1f3a95f376, type: 3}
+  m_PrefabInstance: {fileID: 1529307967}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08838b2ad2af5c64294c21d176029804, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1533930774
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36914,8 +36936,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.00045013428, y: -0.0024499893, z: 0}
-    m_Extent: {x: 20.50295, y: 20.497551, z: 0}
+    m_Center: {x: -0.0015001297, y: -0.0030994415, z: 0}
+    m_Extent: {x: 20.5043, y: 20.5005, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -38440,11 +38462,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8051621916040589126, guid: 819938070e28943428a6e384b5356d94, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.86
+      value: 0.77
       objectReference: {fileID: 0}
     - target: {fileID: 8051621916040589126, guid: 819938070e28943428a6e384b5356d94, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.56
+      value: -0.6
       objectReference: {fileID: 0}
     - target: {fileID: 8051621916040589126, guid: 819938070e28943428a6e384b5356d94, type: 3}
       propertyPath: m_LocalPosition.z

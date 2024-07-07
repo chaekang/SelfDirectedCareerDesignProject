@@ -149,7 +149,6 @@ public class _Player : MonoBehaviour
         // 벽과 충돌
         if (collision.gameObject.tag == "Wall")
         {
-            Debug.Log("Wall 충돌");
             wall = true;
         }
         // 시냅스 끝에 도착
@@ -168,25 +167,21 @@ public class _Player : MonoBehaviour
     {
         if (collision.gameObject.tag == "Channel_Na") 
         {
-            Debug.Log("Na");
             channel_Na = true;
             SetChild(collision); 
         }
         else if (collision.gameObject.tag == "Channel_K")
         {
-            Debug.Log("K");
             channel_K = true;
             SetChild(collision);
         }
         else if (collision.gameObject.tag == "Channel_Na_Poison")
         {
-            Debug.Log("Na_Poison");
             poisonF = true;
             SetChild(collision);
         }
         else if (collision.gameObject.tag == "Channel_K_Poison")
         {
-            Debug.Log("K_Poison");
             poisonS = true;
             SetChild(collision);
         }
@@ -338,14 +333,9 @@ public class _Player : MonoBehaviour
             {
                 if (!GameManager.instance.changeScene.isTutorial)
                 {
-                    Debug.Log("PoisonFish 삭제가 되지 않음");
                     speedBarScript.DecreaseSpeedByPoison();
 
                 }
-            }
-            else
-            {
-                Debug.Log("PoisonFish 삭제됨");
             }
         }
         else if (collision.gameObject.tag == "Channel_K_Poison")
@@ -354,15 +344,9 @@ public class _Player : MonoBehaviour
             {
                 if (!GameManager.instance.changeScene.isTutorial)
                 {
-                    Debug.Log("PoisonFPoisonSnakeish 삭제가 되지 않음");
                     speedBarScript.DecreaseSpeedByPoison();
                 }
             }
-            else
-            {
-                Debug.Log("PoisonSnake 삭제됨");
-            }
-
         }
     }
 }
